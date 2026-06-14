@@ -1,0 +1,1383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Axis Engineering — Linear Induction Motor Design & Simulation</title>
+<meta name="description" content="Axis Engineering designs, manufactures and validates linear induction motors and magnetic braking solutions for transit, launch and industrial systems. Driven without contact." />
+<meta name="theme-color" content="#002B5C" />
+<link rel="icon" type="image/svg+xml" href="assets/axis-mark.svg" />
+<meta property="og:title" content="Axis Engineering — Linear Motor Specialists" />
+<meta property="og:description" content="Linear induction motor and magnetic braking design, manufacture and simulation. Driven without contact." />
+<meta property="og:image" content="assets/og-banner.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:type" content="website" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+<style>
+/* ============================================================
+   AXIS ENGINEERING — single-file site
+   Palette: navy #002B5C  •  electric blue #2050E8  •  white
+   ============================================================ */
+:root{
+  --navy-900:#001B3A;
+  --navy-800:#002B5C;
+  --navy-700:#013A78;
+  --navy-600:#0B4D93;
+  --blue:#2050E8;
+  --blue-bright:#3D74FF;
+  --cyan:#62B4FF;
+  --red:#CE1A2B;
+  --red-bright:#E5344A;
+  --ink:#0A1A2C;
+  --slate:#566678;
+  --slate-light:#8294A6;
+  --bg:#ffffff;
+  --bg-soft:#F3F7FC;
+  --bg-mid:#E9F1FA;
+  --line:#DCE6F1;
+  --line-soft:#EAF1F8;
+  --white:#ffffff;
+  --radius:16px;
+  --radius-lg:24px;
+  --shadow-sm:0 1px 2px rgba(2,23,48,.06), 0 4px 14px rgba(2,23,48,.05);
+  --shadow-md:0 10px 30px rgba(2,23,48,.10);
+  --shadow-lg:0 30px 70px rgba(1,18,40,.30);
+  --maxw:1200px;
+  --font-display:'Space Grotesk', 'Segoe UI', system-ui, sans-serif;
+  --font-body:'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:var(--font-body);
+  color:var(--ink);
+  background:var(--bg);
+  line-height:1.6;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4,.display{font-family:var(--font-display);line-height:1.08;letter-spacing:-.02em;font-weight:700}
+a{color:inherit;text-decoration:none}
+img,svg{display:block;max-width:100%}
+section{position:relative}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+.eyebrow{
+  font-family:var(--font-display);
+  font-size:.78rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--blue);display:inline-flex;align-items:center;gap:.6em;
+}
+.eyebrow::before{content:"";width:26px;height:2px;background:linear-gradient(90deg,var(--blue),transparent);border-radius:2px}
+.eyebrow.center{justify-content:center}
+.eyebrow.center::before{display:none}
+.muted{color:var(--slate)}
+
+/* ---------- Buttons ---------- */
+.btn{
+  display:inline-flex;align-items:center;gap:.55em;
+  font-family:var(--font-display);font-weight:600;font-size:.98rem;
+  padding:.85em 1.5em;border-radius:999px;cursor:pointer;border:1.5px solid transparent;
+  transition:transform .2s ease, box-shadow .25s ease, background .25s ease, color .2s ease;
+  white-space:nowrap;
+}
+.btn svg{width:18px;height:18px}
+.btn-primary{background:var(--blue);color:#fff;box-shadow:0 10px 26px rgba(32,80,232,.35)}
+.btn-primary:hover{background:var(--blue-bright);transform:translateY(-2px);box-shadow:0 16px 34px rgba(32,80,232,.45)}
+.btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.35)}
+.btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.08);transform:translateY(-2px)}
+.btn-dark{background:var(--navy-800);color:#fff}
+.btn-dark:hover{background:var(--navy-700);transform:translateY(-2px);box-shadow:var(--shadow-md)}
+.btn-outline{background:#fff;color:var(--navy-800);border-color:var(--line)}
+.btn-outline:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-2px)}
+
+/* ============================================================
+   NAV
+   ============================================================ */
+header.nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  transition:background .3s ease, box-shadow .3s ease, padding .3s ease, border-color .3s;
+  padding:18px 0;border-bottom:1px solid transparent;
+}
+header.nav.scrolled{
+  background:rgba(255,255,255,.82);
+  backdrop-filter:saturate(160%) blur(14px);
+  -webkit-backdrop-filter:saturate(160%) blur(14px);
+  border-bottom:1px solid var(--line);
+  padding:12px 0;box-shadow:0 6px 24px rgba(2,23,48,.06);
+}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{display:flex;align-items:center;gap:12px;cursor:pointer}
+.brand .mark{position:relative;display:inline-block;height:38px;width:auto;flex:none}
+.brand img.mark{width:auto;height:38px;display:block}
+.brand .mark img{height:38px;width:auto;display:block;transition:opacity .3s ease}
+.brand .mark .mark-white{position:absolute;top:0;left:0}
+header.nav:not(.scrolled) .brand .mark .mark-navy{opacity:0}
+header.nav.scrolled .brand .mark .mark-white{opacity:0}
+.brand .wordmark{display:flex;flex-direction:column;line-height:1}
+.brand .wm-top{font-family:var(--font-display);font-weight:700;font-size:1.22rem;letter-spacing:.04em;color:var(--navy-800);transition:color .3s}
+.brand .wm-sub{font-family:var(--font-display);font-weight:600;font-size:.58rem;letter-spacing:.42em;color:var(--blue);margin-top:3px}
+header.nav:not(.scrolled) .brand .wm-top{color:#fff}
+.nav-links{display:flex;align-items:center;gap:30px}
+.nav-links a{
+  font-size:.95rem;font-weight:500;color:rgba(255,255,255,.85);position:relative;transition:color .2s;
+}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:-6px;height:2px;width:0;background:var(--blue);transition:width .25s}
+.nav-links a:hover::after{width:100%}
+.nav-links a:hover{color:#fff}
+header.nav.scrolled .nav-links a{color:var(--slate)}
+header.nav.scrolled .nav-links a:hover{color:var(--navy-800)}
+.nav-cta{display:flex;align-items:center;gap:14px}
+.nav-toggle{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px;padding:8px}
+.nav-toggle span{width:26px;height:2.5px;background:#fff;border-radius:2px;transition:.3s}
+header.nav.scrolled .nav-toggle span{background:var(--navy-800)}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero{
+  position:relative;min-height:100vh;display:flex;align-items:center;
+  background:
+    radial-gradient(1200px 700px at 78% -5%, rgba(61,116,255,.30), transparent 60%),
+    radial-gradient(900px 600px at 8% 110%, rgba(11,77,147,.45), transparent 55%),
+    linear-gradient(165deg,#001226 0%, var(--navy-800) 55%, #013A78 120%);
+  color:#fff;overflow:hidden;padding:120px 0 60px;
+}
+.hero .grid-bg{
+  position:absolute;inset:0;
+  background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),
+                   linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);
+  background-size:64px 64px;
+  mask-image:radial-gradient(circle at 50% 40%,#000 0%,transparent 80%);
+  -webkit-mask-image:radial-gradient(circle at 50% 40%,#000 0%,transparent 80%);
+  pointer-events:none;
+}
+.hero-grid{
+  position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center;width:100%;
+}
+.hero-copy{max-width:600px}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:.6em;padding:.5em 1em;border-radius:999px;
+  background:rgba(98,180,255,.12);border:1px solid rgba(98,180,255,.30);
+  font-size:.78rem;font-weight:600;letter-spacing:.04em;color:var(--cyan);margin-bottom:26px;
+}
+.hero-badge .dot{width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 0 0 rgba(98,180,255,.6);animation:pulse 2.4s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(98,180,255,.55)}70%{box-shadow:0 0 0 10px rgba(98,180,255,0)}100%{box-shadow:0 0 0 0 rgba(98,180,255,0)}}
+.hero h1{font-size:clamp(2.6rem,5.6vw,4.5rem);letter-spacing:-.03em;margin-bottom:8px}
+.hero h1 .line2{
+  background:linear-gradient(100deg,var(--cyan),var(--blue-bright));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hero .lede{font-size:1.18rem;color:rgba(255,255,255,.82);margin:22px 0 34px;max-width:540px}
+.hero .lede strong{color:#fff;font-weight:600}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:46px}
+.hero-stats{display:flex;gap:34px;flex-wrap:wrap}
+.hstat .num{font-family:var(--font-display);font-weight:700;font-size:1.9rem;color:#fff;letter-spacing:-.02em}
+.hstat .num span{color:var(--cyan)}
+.hstat .lab{font-size:.82rem;color:rgba(255,255,255,.6);letter-spacing:.02em;margin-top:2px}
+
+/* ---- Hero animated linear motor ---- */
+.hero-visual{position:relative;display:flex;align-items:center;justify-content:center}
+.motor-stage{width:100%;max-width:560px;filter:drop-shadow(0 40px 60px rgba(0,10,30,.55))}
+.glow-orb{position:absolute;width:340px;height:340px;border-radius:50%;
+  background:radial-gradient(circle,rgba(61,116,255,.5),transparent 65%);filter:blur(20px);z-index:0;animation:floaty 7s ease-in-out infinite}
+@keyframes floaty{0%,100%{transform:translateY(-8px)}50%{transform:translateY(8px)}}
+
+.hero-scroll{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;color:rgba(255,255,255,.55);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase}
+.hero-scroll .mouse{width:22px;height:36px;border:2px solid rgba(255,255,255,.35);border-radius:12px;position:relative}
+.hero-scroll .mouse::after{content:"";position:absolute;top:7px;left:50%;transform:translateX(-50%);width:3px;height:7px;background:var(--cyan);border-radius:2px;animation:scrolly 1.8s infinite}
+@keyframes scrolly{0%{opacity:0;top:6px}40%{opacity:1}80%{opacity:0;top:16px}100%{opacity:0}}
+
+/* ============================================================
+   LOGO STRIP / trust
+   ============================================================ */
+.applic-strip{background:var(--navy-900);color:#fff;padding:30px 0;border-top:1px solid rgba(255,255,255,.06)}
+.strip-inner{display:flex;align-items:center;justify-content:space-between;gap:30px;flex-wrap:wrap}
+.strip-label{font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.45);font-weight:600;white-space:nowrap}
+.strip-items{display:flex;gap:36px;flex-wrap:wrap;align-items:center}
+.strip-items .si{display:flex;align-items:center;gap:9px;color:rgba(255,255,255,.78);font-family:var(--font-display);font-weight:500;font-size:.98rem}
+.strip-items .si svg{width:20px;height:20px;color:var(--cyan)}
+
+/* ============================================================
+   SECTION shells
+   ============================================================ */
+.section{padding:110px 0}
+.section.soft{background:var(--bg-soft)}
+.sec-head{max-width:680px;margin-bottom:56px}
+.sec-head.center{margin-left:auto;margin-right:auto;text-align:center}
+.sec-head h2{font-size:clamp(2rem,3.6vw,2.9rem);margin:18px 0 16px;color:var(--ink)}
+.sec-head p{font-size:1.12rem;color:var(--slate)}
+
+/* ---------- Intro / value ---------- */
+.intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.intro-copy h2{font-size:clamp(1.9rem,3.3vw,2.6rem);margin:16px 0 20px}
+.intro-copy p{color:var(--slate);font-size:1.08rem;margin-bottom:18px}
+.intro-points{list-style:none;margin-top:26px;display:grid;gap:16px}
+.intro-points li{display:flex;gap:14px;align-items:flex-start}
+.intro-points .ic{flex:none;width:30px;height:30px;border-radius:9px;background:var(--bg-mid);display:grid;place-items:center;color:var(--blue)}
+.intro-points .ic svg{width:17px;height:17px}
+.intro-points b{font-family:var(--font-display);display:block;font-size:1rem;color:var(--ink)}
+.intro-points span{font-size:.95rem;color:var(--slate)}
+.intro-visual{position:relative}
+.spec-card{
+  background:linear-gradient(165deg,var(--navy-800),var(--navy-900));border-radius:var(--radius-lg);
+  padding:34px;color:#fff;box-shadow:var(--shadow-lg);position:relative;overflow:hidden;
+}
+.spec-card::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:34px 34px;mask-image:radial-gradient(circle at 70% 20%,#000,transparent 75%);-webkit-mask-image:radial-gradient(circle at 70% 20%,#000,transparent 75%)}
+.spec-card h4{position:relative;font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;color:var(--cyan);margin-bottom:22px}
+.spec-row{position:relative;display:flex;justify-content:space-between;align-items:baseline;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.1)}
+.spec-row:last-child{border-bottom:none}
+.spec-row .k{color:rgba(255,255,255,.7);font-size:.95rem}
+.spec-row .v{font-family:var(--font-display);font-weight:600;font-size:1.05rem}
+.spec-row .v small{color:var(--cyan);font-weight:500}
+
+/* ============================================================
+   HOW IT WORKS
+   ============================================================ */
+.how-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.principle-diagram{background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);padding:26px;box-shadow:var(--shadow-sm)}
+.how-steps{display:grid;gap:22px;margin-top:30px}
+.how-step{display:flex;gap:18px}
+.how-step .n{flex:none;width:40px;height:40px;border-radius:11px;background:var(--navy-800);color:#fff;font-family:var(--font-display);font-weight:700;display:grid;place-items:center;font-size:1.05rem}
+.how-step h4{font-size:1.12rem;margin-bottom:5px}
+.how-step p{color:var(--slate);font-size:.98rem}
+.eq-pill{display:inline-block;margin-top:8px;font-family:var(--font-display);background:var(--bg-mid);color:var(--navy-700);border-radius:8px;padding:4px 11px;font-size:.92rem;border:1px solid var(--line)}
+.eq-pill i{color:var(--blue);font-style:normal}
+
+/* ============================================================
+   MOTOR TYPES
+   ============================================================ */
+.types-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:26px;max-width:800px;margin:0 auto}
+/* ---- build-up animation: one primary -> SSLIM -> DSLIM -> framed ---- */
+.build-anim{background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);padding:18px 18px 4px;box-shadow:var(--shadow-sm);margin:0 auto 44px;max-width:860px}
+.build-anim svg{display:block;width:100%}
+.ba-p1{animation:baP1 14s ease-in-out infinite}
+.ba-plate{animation:baPlate 14s ease-in-out infinite}
+.ba-bi{animation:baBi 14s ease-in-out infinite}
+.ba-p2{animation:baP2 14s ease-in-out infinite}
+.ba-frame{animation:baFrame 14s ease-in-out infinite}
+.ba-bolts{animation:baBolts 14s ease-in-out infinite}
+.ba-arrows{animation:baArrows 14s ease-in-out infinite}
+.ba-c1{animation:baC1 14s linear infinite}
+.ba-c2{animation:baC2 14s linear infinite}
+.ba-c3{animation:baC3 14s linear infinite}
+.ba-c4{animation:baC4 14s linear infinite}
+.ba-b1{animation:baB1 14s linear infinite}
+.ba-b2{animation:baB2 14s linear infinite}
+@keyframes baP1{0%{opacity:0;transform:translateY(36px)}5%,100%{opacity:1;transform:translateY(0)}}
+@keyframes baPlate{0%,21%{opacity:0;transform:translateY(-24px)}26%,94%{opacity:1;transform:translateY(0)}98%,100%{opacity:0;transform:translateY(0)}}
+@keyframes baBi{0%,21%{opacity:0}26%,42%{opacity:1}46%,100%{opacity:0}}
+@keyframes baP2{0%,45%{opacity:0;transform:translateY(-52px)}51%,94%{opacity:1;transform:translateY(0)}98%,100%{opacity:0;transform:translateY(0)}}
+@keyframes baFrame{0%,64%{opacity:0;stroke-dashoffset:1200}67%{opacity:1;stroke-dashoffset:900}74%,94%{opacity:1;stroke-dashoffset:0}98%,100%{opacity:0;stroke-dashoffset:0}}
+@keyframes baBolts{0%,72%{opacity:0}76%,94%{opacity:1}98%,100%{opacity:0}}
+@keyframes baArrows{0%,74%{opacity:0}78%,92%{opacity:1}96%,100%{opacity:0}}
+@keyframes baC1{0%{opacity:0}3%,18%{opacity:1}22%,100%{opacity:0}}
+@keyframes baC2{0%,23%{opacity:0}27%,40%{opacity:1}44%,100%{opacity:0}}
+@keyframes baC3{0%,47%{opacity:0}51%,61%{opacity:1}65%,100%{opacity:0}}
+@keyframes baC4{0%,68%{opacity:0}72%,92%{opacity:1}96%,100%{opacity:0}}
+@keyframes baB1{0%,23%{opacity:0}27%,42%{opacity:1}46%,100%{opacity:0}}
+@keyframes baB2{0%,47%{opacity:0}51%,92%{opacity:1}96%,100%{opacity:0}}
+.type-card{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);padding:30px;
+  transition:transform .3s ease, box-shadow .3s ease, border-color .3s;position:relative;overflow:hidden;
+}
+.type-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-md);border-color:rgba(32,80,232,.3)}
+.type-card .tag{position:absolute;top:22px;right:22px;font-family:var(--font-display);font-weight:700;font-size:.72rem;letter-spacing:.1em;color:var(--blue);background:var(--bg-mid);padding:5px 10px;border-radius:7px}
+.type-diagram{height:120px;margin-bottom:22px;display:flex;align-items:center;justify-content:center}
+.type-card h3{font-size:1.35rem;margin-bottom:8px}
+.type-card .sub{font-size:.86rem;color:var(--blue);font-weight:600;font-family:var(--font-display);margin-bottom:14px;letter-spacing:.02em}
+.type-card p{color:var(--slate);font-size:.97rem;margin-bottom:18px}
+.type-card ul{list-style:none;display:grid;gap:9px}
+.type-card ul li{display:flex;gap:9px;align-items:flex-start;font-size:.92rem;color:var(--ink)}
+.type-card ul li::before{content:"";flex:none;width:7px;height:7px;border-radius:2px;background:var(--red);margin-top:7px;transform:rotate(45deg)}
+/* primary-location configuration */
+.config-block{margin-top:84px;padding-top:62px;border-top:1px solid var(--line)}
+.config-block .sec-head{margin-bottom:46px}
+.config-block .sec-head h2{font-size:clamp(1.65rem,2.9vw,2.25rem)}
+.cost-mirror{display:grid;gap:9px;margin:18px 0 16px;padding:15px 0;border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)}
+.cost-row{display:flex;align-items:center;gap:10px}
+.cost-row .cost-k{flex:1;font-size:.9rem;color:var(--slate)}
+.cost-row .bars{display:inline-flex;gap:3px}
+.cost-row .bars i{width:13px;height:7px;border-radius:2px;background:var(--bg-mid)}
+.cost-row .bars.lvl1 i:first-child{background:var(--blue)}
+.cost-row .bars.lvl3 i{background:var(--red)}
+.cost-row .lvl{font-family:var(--font-display);font-weight:600;font-size:.8rem;width:56px;text-align:right}
+.cost-row .lvl.low{color:var(--blue)}
+.cost-row .lvl.high{color:var(--red)}
+.best-for{font-size:.9rem;color:var(--ink)}
+.best-for b{font-family:var(--font-display);color:var(--blue);font-weight:600;margin-right:5px}
+/* permanent-magnet brakes */
+.brake-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.brake-benefits{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:46px}
+.bbenefit{display:flex;align-items:center;gap:9px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:11px 18px;font-size:.92rem;font-weight:500;color:var(--ink);box-shadow:var(--shadow-sm)}
+.bbenefit svg{width:18px;height:18px;color:var(--blue);flex:none}
+@media (max-width:1000px){.brake-grid{grid-template-columns:1fr;max-width:460px;margin:0 auto}}
+
+/* ============================================================
+   APPLICATIONS
+   ============================================================ */
+.apps-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.app-card{
+  position:relative;border-radius:var(--radius-lg);overflow:hidden;min-height:280px;
+  display:flex;flex-direction:column;justify-content:flex-end;padding:28px;color:#fff;
+  background:var(--navy-800);transition:transform .35s ease;
+}
+.app-card:hover{transform:translateY(-6px)}
+.app-card .app-bg{position:absolute;inset:0;z-index:0;opacity:.9;transition:transform .6s ease}
+.app-card:hover .app-bg{transform:scale(1.06)}
+.app-card .app-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(0,18,38,.15) 0%,rgba(0,18,38,.55) 55%,rgba(0,18,38,.92) 100%)}
+.app-card .app-content{position:relative;z-index:2}
+.app-card .app-ic{width:46px;height:46px;border-radius:12px;background:rgba(98,180,255,.18);border:1px solid rgba(98,180,255,.4);display:grid;place-items:center;margin-bottom:14px;backdrop-filter:blur(4px)}
+.app-card .app-ic svg{width:24px;height:24px;color:#fff}
+.app-card h3{font-size:1.3rem;margin-bottom:7px}
+.app-card p{font-size:.95rem;color:rgba(255,255,255,.82)}
+
+/* ============================================================
+   CAPABILITIES
+   ============================================================ */
+.cap-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.cap-card{display:flex;gap:20px;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px;transition:border-color .3s, box-shadow .3s, transform .3s}
+.cap-card:hover{border-color:rgba(32,80,232,.3);box-shadow:var(--shadow-sm);transform:translateY(-4px)}
+.cap-card .cap-ic{flex:none;width:54px;height:54px;border-radius:14px;background:linear-gradient(150deg,var(--blue),var(--navy-700));display:grid;place-items:center;color:#fff;box-shadow:0 10px 22px rgba(32,80,232,.3)}
+.cap-card .cap-ic svg{width:26px;height:26px}
+.cap-card h3{font-size:1.18rem;margin-bottom:7px}
+.cap-card p{color:var(--slate);font-size:.96rem}
+
+/* ============================================================
+   ADVANTAGES (dark)
+   ============================================================ */
+.adv{background:linear-gradient(160deg,#001226,var(--navy-800));color:#fff;overflow:hidden}
+.adv .grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:54px 54px;mask-image:radial-gradient(circle at 30% 30%,#000,transparent 75%);-webkit-mask-image:radial-gradient(circle at 30% 30%,#000,transparent 75%)}
+.adv .sec-head h2{color:#fff}
+.adv .sec-head p{color:rgba(255,255,255,.72)}
+.adv-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;position:relative}
+.adv-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius);padding:26px;transition:background .3s, transform .3s}
+.adv-card:hover{background:rgba(255,255,255,.07);transform:translateY(-5px)}
+.adv-card .ac-ic{width:48px;height:48px;border-radius:12px;background:rgba(98,180,255,.14);display:grid;place-items:center;color:var(--cyan);margin-bottom:16px}
+.adv-card .ac-ic svg{width:24px;height:24px}
+.adv-card h4{font-size:1.1rem;margin-bottom:7px}
+.adv-card p{font-size:.93rem;color:rgba(255,255,255,.7)}
+
+/* ============================================================
+   STATS BAND
+   ============================================================ */
+.band{background:var(--blue);color:#fff;padding:64px 0;position:relative;overflow:hidden}
+.band::after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.07) 1px,transparent 1px);background-size:48px 48px;opacity:.6}
+.band-grid{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center}
+.band-grid .bnum{font-family:var(--font-display);font-weight:700;font-size:clamp(2.2rem,4vw,3.2rem);letter-spacing:-.02em}
+.band-grid .blab{font-size:.95rem;color:rgba(255,255,255,.85);margin-top:4px}
+.band-cap{position:relative;text-align:center;margin-top:30px;font-size:.82rem;color:rgba(255,255,255,.7)}
+
+/* ============================================================
+   PROCESS
+   ============================================================ */
+.proc{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative}
+.proc-step{padding:0 22px;position:relative}
+.proc-step:not(:last-child)::after{content:"";position:absolute;top:26px;right:-8px;width:16px;height:16px;border-top:2px solid var(--line);border-right:2px solid var(--line);transform:rotate(45deg)}
+.proc-step .pn{width:54px;height:54px;border-radius:14px;background:#fff;border:1.5px solid var(--line);display:grid;place-items:center;font-family:var(--font-display);font-weight:700;color:var(--blue);font-size:1.2rem;margin-bottom:18px;box-shadow:var(--shadow-sm)}
+.proc-step h4{font-size:1.12rem;margin-bottom:8px}
+.proc-step p{color:var(--slate);font-size:.95rem}
+
+/* ============================================================
+   CTA / CONTACT
+   ============================================================ */
+.cta{padding:0 0 110px}
+.cta-box{
+  position:relative;overflow:hidden;border-radius:32px;padding:64px;color:#fff;
+  background:
+    radial-gradient(700px 400px at 85% 10%,rgba(61,116,255,.4),transparent 60%),
+    linear-gradient(150deg,var(--navy-800),#001226);
+  box-shadow:var(--shadow-lg);
+}
+.cta-box::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:46px 46px;mask-image:radial-gradient(circle at 80% 0%,#000,transparent 70%);-webkit-mask-image:radial-gradient(circle at 80% 0%,#000,transparent 70%)}
+.cta-grid{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center}
+.cta-box h2{font-size:clamp(2rem,3.6vw,2.9rem);margin-bottom:16px}
+.cta-box p{color:rgba(255,255,255,.82);font-size:1.1rem;margin-bottom:28px}
+.cta-actions{display:flex;gap:14px;flex-wrap:wrap}
+.contact-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:var(--radius-lg);padding:30px;backdrop-filter:blur(6px)}
+.contact-card .cc-row{display:flex;gap:14px;align-items:center;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.1)}
+.contact-card .cc-row:last-child{border-bottom:none}
+.contact-card .cc-ic{flex:none;width:42px;height:42px;border-radius:11px;background:rgba(98,180,255,.16);display:grid;place-items:center;color:var(--cyan)}
+.contact-card .cc-ic svg{width:20px;height:20px}
+.contact-card .cc-k{font-size:.78rem;color:rgba(255,255,255,.55);text-transform:uppercase;letter-spacing:.1em}
+.contact-card .cc-v{font-family:var(--font-display);font-weight:600;font-size:1.02rem}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.brandband{background:#fff;border-top:1px solid var(--line);padding:66px 24px;text-align:center}
+.brandband-inner{display:flex;align-items:center;justify-content:center;gap:36px}
+.brandband .bb-rule{height:1px;flex:1;max-width:170px;background:linear-gradient(90deg,transparent,var(--line))}
+.brandband .bb-rule:last-child{background:linear-gradient(90deg,var(--line),transparent)}
+.brandband picture{display:block;flex:none;line-height:0}
+.brandband .bb-logo{height:230px;width:auto;max-width:none;display:block;transition:transform .35s ease}
+.brandband a:hover .bb-logo{transform:translateY(-3px)}
+@media (max-width:760px){.brandband{padding:46px 24px}.brandband .bb-rule{display:none}.brandband .bb-logo{height:170px}}
+
+footer{background:var(--navy-900);color:rgba(255,255,255,.7);padding:64px 0 30px}
+.foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:40px;margin-bottom:46px}
+.foot-brand .brand .wm-top{color:#fff}
+.foot-brand p{margin-top:18px;font-size:.95rem;max-width:300px;color:rgba(255,255,255,.6)}
+.foot-col h5{font-family:var(--font-display);color:#fff;font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:18px}
+.foot-col a{display:block;font-size:.95rem;margin-bottom:11px;color:rgba(255,255,255,.62);transition:color .2s}
+.foot-col a:hover{color:var(--cyan)}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:24px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:.86rem;color:rgba(255,255,255,.45)}
+.foot-tag{font-family:var(--font-display);letter-spacing:.18em;font-size:.78rem;color:var(--cyan);text-transform:uppercase}
+
+/* ============================================================
+   Reveal animation
+   ============================================================ */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+.reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}
+
+/* ============================================================
+   SVG animations
+   ============================================================ */
+@keyframes carriage{0%{transform:translateX(-40px)}48%{transform:translateX(330px)}50%{transform:translateX(330px);opacity:1}52%{opacity:0}53%{transform:translateX(-60px);opacity:0}55%{opacity:1}100%{transform:translateX(-40px)}}
+/* travelling-field segment pulse handled via per-segment animation-delay below */
+.seg{animation:segpulse 1.4s linear infinite}
+@keyframes segpulse{0%,100%{opacity:.22}50%{opacity:1}}
+.fluxline{stroke-dasharray:5 7;animation:fluxmove 1s linear infinite}
+@keyframes fluxmove{to{stroke-dashoffset:-12}}
+.fieldwave{animation:wavemove 2.6s linear infinite}
+@keyframes wavemove{to{transform:translateX(-72px)}}
+.vehicle{animation:glide 5.5s cubic-bezier(.45,0,.55,1) infinite}
+@keyframes glide{0%{transform:translateX(0)}45%{transform:translateX(300px)}50%{transform:translateX(300px);opacity:1}51%{opacity:0}52%{transform:translateX(-30px)}56%{opacity:1}100%{transform:translateX(0)}}
+
+@media (prefers-reduced-motion: reduce){
+  *{animation:none !important;scroll-behavior:auto}
+  .reveal{opacity:1;transform:none}
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width:1000px){
+  .nav-links{display:none}
+  .nav-toggle{display:flex}
+  .nav-links.open{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:#fff;padding:24px;gap:18px;box-shadow:var(--shadow-md);border-top:1px solid var(--line)}
+  .nav-links.open a{color:var(--navy-800)}
+  .hero-grid{grid-template-columns:1fr;gap:40px}
+  .hero-visual{order:-1;max-width:480px;margin:0 auto}
+  .intro-grid,.how-grid,.cta-grid{grid-template-columns:1fr;gap:40px}
+  .types-grid{grid-template-columns:1fr;max-width:460px;margin:0 auto}
+  .apps-grid,.cap-grid{grid-template-columns:1fr 1fr}
+  .adv-grid{grid-template-columns:1fr 1fr}
+  .band-grid{grid-template-columns:1fr 1fr;gap:36px 20px}
+  .proc{grid-template-columns:1fr 1fr;gap:40px 0}
+  .proc-step::after{display:none}
+  .foot-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:760px){
+  .nav-cta .btn{display:none}
+  .section{padding:78px 0}
+  .cta-box{padding:38px 26px}
+  .apps-grid,.cap-grid,.adv-grid,.band-grid,.foot-grid{grid-template-columns:1fr}
+  .band-grid{gap:34px}
+  .hero{padding:110px 0 80px}
+  .hero-stats{gap:24px}
+  .strip-inner{justify-content:center;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<!-- ====================== NAV ====================== -->
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <div class="brand" onclick="document.getElementById('top').scrollIntoView()">
+      <!-- inline A-on-track mark -->
+      <span class="mark">
+        <img class="mark-navy" src="assets/axis-symbol.png" width="800" height="558" alt="Axis Engineering" />
+        <img class="mark-white" src="assets/axis-symbol-white.png" width="800" height="558" alt="" aria-hidden="true" />
+      </span>
+      <div class="wordmark">
+        <span class="wm-top">AXIS</span>
+        <span class="wm-sub">ENGINEERING</span>
+      </div>
+    </div>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#technology">Technology</a>
+      <a href="#types">Motors</a>
+      <a href="#brakes">Brakes</a>
+      <a href="#applications">Applications</a>
+      <a href="#capabilities">Capabilities</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="nav-cta">
+      <a href="#contact" class="btn btn-primary">Start a project
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- ====================== HERO ====================== -->
+<section class="hero" id="top">
+  <div class="grid-bg"></div>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <div class="hero-badge"><span class="dot"></span>Linear Motor Specialist</div>
+      <h1>Driven Without<br><span class="line2">Contact.</span></h1>
+      <p class="lede">Axis Engineering designs, manufactures and validates <strong>Linear Induction Motors</strong> and <strong>Magnetic Braking Solutions</strong> — contactless thrust and braking for transit, launch and industrial systems. No gears. No friction drive. No contact wear.</p>
+      <div class="hero-actions">
+        <a href="#technology" class="btn btn-primary">How it works
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#capabilities" class="btn btn-ghost">Our capabilities</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hstat"><div class="num">0</div><div class="lab">Drive-train contact points</div></div>
+        <div class="hstat"><div class="num">2<span>×</span></div><div class="lab">Independent solver methods</div></div>
+        <div class="hstat"><div class="num">SS<span>·</span>DS</div><div class="lab">Motor &amp; brake topologies</div></div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="glow-orb"></div>
+      <!-- ===== Animated linear motor ===== -->
+      <svg class="motor-stage" viewBox="0 0 560 420" fill="none" role="img" aria-label="Animated linear induction motor">
+        <defs>
+          <linearGradient id="veh" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#0E5BB8"/><stop offset="1" stop-color="#002B5C"/></linearGradient>
+          <linearGradient id="rail" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#1A3A66"/><stop offset="1" stop-color="#0A1F3C"/></linearGradient>
+          <linearGradient id="segG" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#62B4FF"/><stop offset="1" stop-color="#2050E8"/></linearGradient>
+          <linearGradient id="segR" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#FF5C6B"/><stop offset="1" stop-color="#CE1A2B"/></linearGradient>
+          <radialGradient id="halo" cx="50%" cy="50%" r="50%">
+            <stop offset="0" stop-color="#3D74FF" stop-opacity=".6"/><stop offset="1" stop-color="#3D74FF" stop-opacity="0"/></radialGradient>
+          <filter id="soft"><feGaussianBlur stdDeviation="3"/></filter>
+        </defs>
+
+        <!-- field halo -->
+        <ellipse cx="280" cy="250" rx="250" ry="60" fill="url(#halo)" opacity=".5"/>
+
+        <!-- ===== travelling magnetic field wave ===== -->
+        <g opacity=".9" clip-path="url(#wclip)">
+          <clipPath id="wclip"><rect x="70" y="150" width="420" height="120"/></clipPath>
+          <g class="fieldwave">
+            <path d="M40 210 q18 -34 36 0 t36 0 t36 0 t36 0 t36 0 t36 0 t36 0 t36 0 t36 0 t36 0 t36 0 t36 0 t36 0"
+                  stroke="#62B4FF" stroke-width="2.4" fill="none" opacity=".7"/>
+            <path d="M40 210 q18 34 36 0 t36 0 t36 0 t36 0 t36 0 t36 0 t36 0 t36 0 t36 0 t36 0 t36 0 t36 0 t36 0"
+                  stroke="#3D74FF" stroke-width="2.4" fill="none" opacity=".45"/>
+          </g>
+        </g>
+
+        <!-- ===== reaction plate / vehicle ===== -->
+        <g class="vehicle">
+          <ellipse cx="170" cy="250" rx="120" ry="20" fill="#3D74FF" opacity=".25" filter="url(#soft)"/>
+          <!-- body -->
+          <rect x="70" y="150" width="200" height="74" rx="20" fill="url(#veh)" stroke="#2E6FD6" stroke-width="1.5"/>
+          <!-- windows -->
+          <rect x="86" y="166" width="38" height="30" rx="7" fill="#0A1F3C" opacity=".75"/>
+          <rect x="130" y="166" width="38" height="30" rx="7" fill="#0A1F3C" opacity=".75"/>
+          <rect x="174" y="166" width="38" height="30" rx="7" fill="#0A1F3C" opacity=".75"/>
+          <rect x="218" y="166" width="38" height="30" rx="7" fill="#0A1F3C" opacity=".75"/>
+          <!-- accent strip -->
+          <rect x="78" y="205" width="184" height="6" rx="3" fill="#62B4FF"/>
+          <!-- thrust arrow -->
+          <path d="M276 187 h28 m-8 -7 l9 7 -9 7" stroke="#62B4FF" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </g>
+
+        <!-- flux coupling lines under vehicle -->
+        <g stroke="#62B4FF" stroke-width="1.6" opacity=".5">
+          <line class="fluxline" x1="120" y1="230" x2="120" y2="286"/>
+          <line class="fluxline" x1="170" y1="230" x2="170" y2="286" style="animation-delay:.2s"/>
+          <line class="fluxline" x1="220" y1="230" x2="220" y2="286" style="animation-delay:.4s"/>
+        </g>
+
+        <!-- ===== primary / stator track with travelling-field segments ===== -->
+        <rect x="40" y="290" width="480" height="44" rx="10" fill="url(#rail)" stroke="#1B3A66" stroke-width="1.2"/>
+        <g>
+          <!-- 16 stator teeth that pulse in a travelling field; alternating red/blue poles -->
+          <rect class="seg" x="52"  y="298" width="20" height="28" rx="4" fill="url(#segR)" style="animation-delay:0s"/>
+          <rect class="seg" x="80"  y="298" width="20" height="28" rx="4" fill="url(#segG)" style="animation-delay:-.087s"/>
+          <rect class="seg" x="108" y="298" width="20" height="28" rx="4" fill="url(#segR)" style="animation-delay:-.175s"/>
+          <rect class="seg" x="136" y="298" width="20" height="28" rx="4" fill="url(#segG)" style="animation-delay:-.262s"/>
+          <rect class="seg" x="164" y="298" width="20" height="28" rx="4" fill="url(#segR)" style="animation-delay:-.35s"/>
+          <rect class="seg" x="192" y="298" width="20" height="28" rx="4" fill="url(#segG)" style="animation-delay:-.437s"/>
+          <rect class="seg" x="220" y="298" width="20" height="28" rx="4" fill="url(#segR)" style="animation-delay:-.525s"/>
+          <rect class="seg" x="248" y="298" width="20" height="28" rx="4" fill="url(#segG)" style="animation-delay:-.612s"/>
+          <rect class="seg" x="276" y="298" width="20" height="28" rx="4" fill="url(#segR)" style="animation-delay:-.7s"/>
+          <rect class="seg" x="304" y="298" width="20" height="28" rx="4" fill="url(#segG)" style="animation-delay:-.787s"/>
+          <rect class="seg" x="332" y="298" width="20" height="28" rx="4" fill="url(#segR)" style="animation-delay:-.875s"/>
+          <rect class="seg" x="360" y="298" width="20" height="28" rx="4" fill="url(#segG)" style="animation-delay:-.962s"/>
+          <rect class="seg" x="388" y="298" width="20" height="28" rx="4" fill="url(#segR)" style="animation-delay:-1.05s"/>
+          <rect class="seg" x="416" y="298" width="20" height="28" rx="4" fill="url(#segG)" style="animation-delay:-1.137s"/>
+          <rect class="seg" x="444" y="298" width="20" height="28" rx="4" fill="url(#segR)" style="animation-delay:-1.225s"/>
+          <rect class="seg" x="472" y="298" width="20" height="28" rx="4" fill="url(#segG)" style="animation-delay:-1.312s"/>
+        </g>
+
+        <!-- labels -->
+        <text x="280" y="364" text-anchor="middle" fill="#7FA8D8" font-family="Space Grotesk, sans-serif" font-size="13" letter-spacing="2">PRIMARY · TRAVELLING FIELD →</text>
+        <text x="170" y="138" text-anchor="middle" fill="#A9C6EE" font-family="Space Grotesk, sans-serif" font-size="13" letter-spacing="1">REACTION PLATE</text>
+      </svg>
+    </div>
+  </div>
+
+  <div class="hero-scroll"><span>Scroll</span><span class="mouse"></span></div>
+</section>
+
+<!-- ====================== BRAND BAND (top) ====================== -->
+<section class="brandband">
+  <div class="wrap brandband-inner reveal">
+    <span class="bb-rule" aria-hidden="true"></span>
+    <picture><source srcset="assets/axis-logo-1600.webp" type="image/webp"><img class="bb-logo" src="assets/axis-logo-1600.png" width="1600" height="1808" alt="Axis Engineering — Driven Without Contact" /></picture>
+    <span class="bb-rule" aria-hidden="true"></span>
+  </div>
+</section>
+
+<!-- ====================== APPLICATION STRIP ====================== -->
+<div class="applic-strip">
+  <div class="wrap strip-inner">
+    <span class="strip-label">Engineered for</span>
+    <div class="strip-items">
+      <span class="si"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="3" width="16" height="14" rx="2"/><path d="M4 11h16M8 21l2-4M16 21l-2-4" stroke-linecap="round"/></svg>People movers &amp; transit</span>
+      <span class="si"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 17V7l8 5 8-9v17" stroke-linecap="round" stroke-linejoin="round"/></svg>Coaster &amp; launch systems</span>
+      <span class="si"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h4l3-8 4 16 3-8h4" stroke-linecap="round" stroke-linejoin="round"/></svg>Maglev propulsion</span>
+      <span class="si"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="8" width="18" height="10" rx="1"/><path d="M7 8V5h10v3M7 18v2M17 18v2" stroke-linecap="round"/></svg>Material handling</span>
+    </div>
+  </div>
+</div>
+
+<!-- ====================== INTRO / WHO ====================== -->
+<section class="section" id="about">
+  <div class="wrap intro-grid">
+    <div class="intro-copy reveal">
+      <span class="eyebrow">Who we are</span>
+      <h2>A specialist house for linear motor design &amp; manufacture.</h2>
+      <p>The linear induction motor is a rotary motor "unrolled" — the stator becomes a straight <strong>primary</strong>, the rotor becomes a flat <strong>reaction plate</strong>, and rotation becomes travel. It sounds simple. Getting the electromagnetics, the end-effects and the thermal limits right is anything but.</p>
+      <p>Axis Engineering lives in that detail. We combine validated equivalent-circuit models, finite-element analysis (FEA) and full route simulation to deliver LIM designs that hit their thrust, efficiency and temperature targets — proven in the model before metal is cut.</p>
+      <ul class="intro-points">
+        <li><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><b>Physics, not guesswork</b><span>Analytical equivalent-circuit models, finite-element analysis and end-effect corrections from the published literature.</span></div></li>
+        <li><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><b>Whole-system thinking</b><span>From magnetic saturation and fin penetration to the duty-cycle plate temperature over a complete route profile.</span></div></li>
+        <li><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><b>Clear, documented results</b><span>You get the sized design, drive requirements and a transparent analysis report — every number traceable to a validated method.</span></div></li>
+      </ul>
+    </div>
+
+    <div class="intro-visual reveal d2">
+      <div class="spec-card">
+        <h4>Typical LIM design envelope</h4>
+        <div class="spec-row"><span class="k">Topologies</span><span class="v">Single &amp; double-sided</span></div>
+        <div class="spec-row"><span class="k">Synchronous speed</span><span class="v">v<sub>s</sub> = 2·τ·f <small>m/s</small></span></div>
+        <div class="spec-row"><span class="k">Reaction rail</span><span class="v">Aluminium/copper <small>± steel back-iron</small></span></div>
+        <div class="spec-row"><span class="k">Air gap</span><span class="v">2 – 40 <small>mm mechanical</small></span></div>
+        <div class="spec-row"><span class="k">Drive</span><span class="v">VVVF inverter <small>or direct-on-line</small></span></div>
+        <div class="spec-row"><span class="k">Thrust control</span><span class="v">via slip &amp; frequency</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== HOW IT WORKS ====================== -->
+<section class="section soft" id="technology">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">The principle</span>
+      <h2>How a linear induction motor works</h2>
+      <p>Three-phase current in the primary winding sets up a magnetic field that <em>travels</em> along the motor instead of rotating. That moving field drags the conductive reaction plate along with it — directly producing linear thrust.</p>
+    </div>
+
+    <div class="how-grid">
+      <div class="principle-diagram reveal">
+        <svg viewBox="0 0 520 360" fill="none" role="img" aria-label="Linear induction motor principle diagram">
+          <defs>
+            <marker id="ah" markerWidth="9" markerHeight="9" refX="6" refY="4.5" orient="auto"><path d="M0 0L9 4.5L0 9Z" fill="#2050E8"/></marker>
+            <marker id="ahw" markerWidth="9" markerHeight="9" refX="6" refY="4.5" orient="auto"><path d="M0 0L9 4.5L0 9Z" fill="#fff"/></marker>
+          </defs>
+
+          <!-- reaction plate -->
+          <rect x="40" y="60" width="440" height="34" rx="6" fill="#E2E9F1" stroke="#C3D3E6"/>
+          <rect x="40" y="60" width="440" height="10" rx="5" fill="#F4F7FC"/>
+          <text x="260" y="46" text-anchor="middle" fill="#566678" font-family="Space Grotesk" font-size="12">ALUMINIUM / COPPER REACTION PLATE  +  STEEL BACK-IRON</text>
+
+          <!-- induced current loops -->
+          <g stroke="#2050E8" stroke-width="2" fill="none" opacity=".8">
+            <ellipse cx="150" cy="77" rx="22" ry="9"/><path d="M172 77" marker-end="url(#ah)"/>
+            <ellipse cx="300" cy="77" rx="22" ry="9"/>
+          </g>
+          <text x="225" y="118" text-anchor="middle" fill="#2050E8" font-family="Space Grotesk" font-size="12">induced eddy currents</text>
+
+          <!-- air gap -->
+          <line x1="40" y1="128" x2="480" y2="128" stroke="#C3D3E6" stroke-dasharray="4 4"/>
+          <text x="495" y="120" text-anchor="end" fill="#8294A6" font-family="Space Grotesk" font-size="11">air gap g</text>
+
+          <!-- primary core -->
+          <rect x="40" y="150" width="440" height="70" rx="8" fill="#012B5C"/>
+          <!-- slots + 3-phase coils -->
+          <g>
+            <rect x="60"  y="158" width="26" height="40" rx="4" fill="#E5322E"/>
+            <rect x="92"  y="158" width="26" height="40" rx="4" fill="#E5A12E"/>
+            <rect x="124" y="158" width="26" height="40" rx="4" fill="#2050E8"/>
+            <rect x="156" y="158" width="26" height="40" rx="4" fill="#E5322E"/>
+            <rect x="188" y="158" width="26" height="40" rx="4" fill="#E5A12E"/>
+            <rect x="220" y="158" width="26" height="40" rx="4" fill="#2050E8"/>
+            <rect x="252" y="158" width="26" height="40" rx="4" fill="#E5322E"/>
+            <rect x="284" y="158" width="26" height="40" rx="4" fill="#E5A12E"/>
+            <rect x="316" y="158" width="26" height="40" rx="4" fill="#2050E8"/>
+            <rect x="348" y="158" width="26" height="40" rx="4" fill="#E5322E"/>
+            <rect x="380" y="158" width="26" height="40" rx="4" fill="#E5A12E"/>
+            <rect x="412" y="158" width="26" height="40" rx="4" fill="#2050E8"/>
+            <rect x="444" y="158" width="20" height="40" rx="4" fill="#E5322E"/>
+          </g>
+          <!-- solid navy band below the slots keeps the label readable -->
+          <text x="260" y="212" text-anchor="middle" fill="#fff" font-family="Space Grotesk" font-size="12.5" font-weight="600" letter-spacing="1.4">PRIMARY · 3-PHASE WINDING (A·B·C)</text>
+
+          <!-- travelling field arrow -->
+          <line x1="70" y1="250" x2="430" y2="250" stroke="#2050E8" stroke-width="3" marker-end="url(#ah)"/>
+          <text x="250" y="242" text-anchor="middle" fill="#012B5C" font-family="Space Grotesk" font-weight="600" font-size="14">Travelling magnetic field — vₛ = 2·τ·f</text>
+
+          <!-- thrust arrow on plate -->
+          <line x1="220" y1="42" x2="330" y2="42" stroke="#0A8A3F" stroke-width="3" marker-end="url(#ah)" opacity="0"/>
+          <!-- pole pitch tau -->
+          <g stroke="#8294A6" stroke-width="1.4">
+            <line x1="60" y1="300" x2="156" y2="300"/>
+            <line x1="60" y1="294" x2="60" y2="306"/><line x1="156" y1="294" x2="156" y2="306"/>
+          </g>
+          <text x="108" y="322" text-anchor="middle" fill="#566678" font-family="Space Grotesk" font-size="13">pole pitch τ</text>
+
+          <!-- thrust F -->
+          <g transform="translate(360,290)">
+            <rect x="0" y="-16" width="118" height="44" rx="9" fill="#0A8A3F" opacity=".1"/>
+            <text x="59" y="2" text-anchor="middle" fill="#0A8A3F" font-family="Space Grotesk" font-weight="700" font-size="15">Thrust F</text>
+            <text x="59" y="20" text-anchor="middle" fill="#0A8A3F" font-family="Space Grotesk" font-size="11">∝ slip · B²</text>
+          </g>
+        </svg>
+      </div>
+
+      <div class="reveal d2">
+        <div class="how-steps">
+          <div class="how-step">
+            <div class="n">1</div>
+            <div><h4>A field that travels</h4><p>Balanced three-phase current in the primary winding produces a magnetic field that sweeps along the motor's length at the synchronous speed.</p>
+            <span class="eq-pill">v<sub>s</sub> = 2 · <i>τ</i> · <i>f</i></span></div>
+          </div>
+          <div class="how-step">
+            <div class="n">2</div>
+            <div><h4>Currents are induced</h4><p>The moving field cuts the aluminium or copper reaction plate and induces eddy currents in it — exactly as a transformer's secondary is energised, but spread along a line.</p></div>
+          </div>
+          <div class="how-step">
+            <div class="n">3</div>
+            <div><h4>Thrust appears — no contact</h4><p>Those induced currents react against the field to produce a direct linear force. The plate is pushed forward without ever touching the primary.</p>
+            <span class="eq-pill">F ∝ slip · B<sub>gap</sub>²</span></div>
+          </div>
+          <div class="how-step">
+            <div class="n">4</div>
+            <div><h4>Slip sets the force</h4><p>The plate runs a little slower than the field — that difference is the <em>slip</em>. Control slip and frequency through the inverter and you command thrust, from a standstill launch to cruise.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== MOTOR TYPES ====================== -->
+<section class="section" id="types">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow center">Topologies</span>
+      <h2>Two ways to build the thrust</h2>
+      <p>Every application has a different answer to the trade between thrust density, normal force, efficiency and rail cost. We design and optimise both.</p>
+    </div>
+
+    <!-- ===== build-up animation: one primary -> SSLIM -> DSLIM -> framed motor ===== -->
+    <div class="build-anim reveal">
+      <svg viewBox="0 0 720 380" fill="none" role="img" aria-label="Animation: one primary becomes a single-sided then double-sided LIM inside a frame">
+        <!-- frame (drawn on in stage 4) -->
+        <rect class="ba-frame" x="180" y="70" width="360" height="224" rx="14" stroke="#2050E8" stroke-width="3" style="stroke-dasharray:1200;stroke-dashoffset:0"/>
+        <g class="ba-bolts" fill="#2050E8">
+          <circle cx="196" cy="86" r="4"/><circle cx="524" cy="86" r="4"/>
+          <circle cx="196" cy="278" r="4"/><circle cx="524" cy="278" r="4"/>
+        </g>
+
+        <!-- top primary (stage 3) -->
+        <g class="ba-p2">
+          <rect x="220" y="96" width="280" height="50" rx="6" fill="#012B5C"/>
+          <g fill="#2050E8"><rect x="230" y="126" width="22" height="16" rx="2"/><rect x="260" y="126" width="22" height="16" rx="2"/><rect x="290" y="126" width="22" height="16" rx="2"/><rect x="320" y="126" width="22" height="16" rx="2"/><rect x="350" y="126" width="22" height="16" rx="2"/><rect x="380" y="126" width="22" height="16" rx="2"/><rect x="410" y="126" width="22" height="16" rx="2"/><rect x="440" y="126" width="22" height="16" rx="2"/><rect x="470" y="126" width="22" height="16" rx="2"/></g>
+          <text x="360" y="117" text-anchor="middle" fill="#fff" opacity=".8" font-family="Space Grotesk" font-size="11" letter-spacing="2">PRIMARY</text>
+          <line x1="220" y1="159" x2="500" y2="159" stroke="#D2DEEC" stroke-dasharray="4 4"/>
+        </g>
+
+        <!-- back-iron (stage 2 only) -->
+        <rect class="ba-bi" x="210" y="158" width="300" height="14" rx="2" fill="#A7B8CD" style="opacity:0"/>
+
+        <!-- reaction plate (stage 2 on) -->
+        <g class="ba-plate">
+          <rect x="210" y="172" width="300" height="16" rx="2" fill="#C9D7E8"/>
+          <line x1="220" y1="199" x2="500" y2="199" stroke="#D2DEEC" stroke-dasharray="4 4"/>
+        </g>
+
+        <!-- bottom primary (stage 1, always present) -->
+        <g class="ba-p1">
+          <rect x="220" y="210" width="280" height="50" rx="6" fill="#012B5C"/>
+          <g fill="#2050E8"><rect x="230" y="215" width="22" height="16" rx="2"/><rect x="260" y="215" width="22" height="16" rx="2"/><rect x="290" y="215" width="22" height="16" rx="2"/><rect x="320" y="215" width="22" height="16" rx="2"/><rect x="350" y="215" width="22" height="16" rx="2"/><rect x="380" y="215" width="22" height="16" rx="2"/><rect x="410" y="215" width="22" height="16" rx="2"/><rect x="440" y="215" width="22" height="16" rx="2"/><rect x="470" y="215" width="22" height="16" rx="2"/></g>
+          <text x="360" y="250" text-anchor="middle" fill="#fff" opacity=".8" font-family="Space Grotesk" font-size="11" letter-spacing="2">PRIMARY</text>
+        </g>
+
+        <!-- attraction arrows, contained by the frame (stage 4) -->
+        <g class="ba-arrows" fill="#E5344A" style="opacity:0">
+          <path d="M250 170 L242 156 L247 156 L247 148 L253 148 L253 156 L258 156 Z"/>
+          <path d="M250 190 L258 204 L253 204 L253 212 L247 212 L247 204 L242 204 Z"/>
+          <path d="M470 170 L462 156 L467 156 L467 148 L473 148 L473 156 L478 156 Z"/>
+          <path d="M470 190 L478 204 L473 204 L473 212 L467 212 L467 204 L462 204 Z"/>
+        </g>
+
+        <!-- stage badges -->
+        <g class="ba-b1" style="opacity:0">
+          <rect x="596" y="78" width="86" height="26" rx="8" fill="#E9F1FA" stroke="#DCE6F1"/>
+          <text x="639" y="96" text-anchor="middle" font-family="Space Grotesk" font-size="12" font-weight="700" fill="#2050E8" letter-spacing="1">SSLIM</text>
+        </g>
+        <g class="ba-b2" style="opacity:0">
+          <rect x="596" y="78" width="86" height="26" rx="8" fill="#E9F1FA" stroke="#DCE6F1"/>
+          <text x="639" y="96" text-anchor="middle" font-family="Space Grotesk" font-size="12" font-weight="700" fill="#2050E8" letter-spacing="1">DSLIM</text>
+        </g>
+
+        <!-- captions -->
+        <text class="ba-c1" x="360" y="352" text-anchor="middle" font-family="Space Grotesk" font-size="14.5" font-weight="500" fill="#44546A" style="opacity:0">Start with one rectangular primary.</text>
+        <text class="ba-c2" x="360" y="352" text-anchor="middle" font-family="Space Grotesk" font-size="14.5" font-weight="500" fill="#44546A" style="opacity:0">Face it with a steel-backed Al/Cu plate — single-sided (SSLIM).</text>
+        <text class="ba-c3" x="360" y="352" text-anchor="middle" font-family="Space Grotesk" font-size="14.5" font-weight="500" fill="#44546A" style="opacity:0">Mirror a second primary across a bare plate — double-sided (DSLIM).</text>
+        <text class="ba-c4" x="360" y="352" text-anchor="middle" font-family="Space Grotesk" font-size="14.5" font-weight="500" fill="#44546A" style="opacity:0">The pair bolts into one frame — magnetic pull reacted by the frame, not the vehicle.</text>
+      </svg>
+    </div>
+
+    <div class="types-grid">
+      <!-- SSLIM -->
+      <div class="type-card reveal">
+        <span class="tag">SSLIM</span>
+        <div class="type-diagram">
+          <svg viewBox="0 0 196 120" fill="none">
+            <!-- steel back-iron + aluminium/copper reaction plate -->
+            <rect x="66" y="28" width="114" height="9" rx="2" fill="#A7B8CD"/>
+            <rect x="66" y="37" width="114" height="15" rx="2" fill="#C9D7E8"/>
+            <text x="58" y="34.5" text-anchor="end" fill="#8294A6" font-family="Space Grotesk" font-size="8">back-iron</text>
+            <text x="58" y="47.5" text-anchor="end" fill="#8294A6" font-family="Space Grotesk" font-size="8">Al/Cu plate</text>
+            <!-- air gap -->
+            <line x1="66" y1="60" x2="180" y2="60" stroke="#D2DEEC" stroke-dasharray="4 4"/>
+            <!-- single primary -->
+            <rect x="66" y="68" width="114" height="30" rx="4" fill="#012B5C"/>
+            <g fill="#2050E8"><rect x="72" y="74" width="9" height="18" rx="2"/><rect x="86" y="74" width="9" height="18" rx="2"/><rect x="100" y="74" width="9" height="18" rx="2"/><rect x="114" y="74" width="9" height="18" rx="2"/><rect x="128" y="74" width="9" height="18" rx="2"/><rect x="142" y="74" width="9" height="18" rx="2"/><rect x="156" y="74" width="9" height="18" rx="2"/><rect x="170" y="74" width="9" height="18" rx="2"/></g>
+            <text x="58" y="86" text-anchor="end" fill="#566678" font-family="Space Grotesk" font-size="8">primary</text>
+          </svg>
+        </div>
+        <h3>Single-Sided</h3>
+        <div class="sub">One primary · steel-backed rail</div>
+        <p>One primary acts against an aluminium or copper plate over a steel return path. The simplest, most economical track — the workhorse of transit.</p>
+        <ul>
+          <li>Lowest reaction-rail cost</li>
+          <li>Significant normal attraction to the steel backing</li>
+          <li>Ideal for long guideways</li>
+        </ul>
+      </div>
+
+      <!-- DSLIM -->
+      <div class="type-card reveal d2">
+        <span class="tag">DSLIM</span>
+        <div class="type-diagram">
+          <svg viewBox="0 0 196 120" fill="none">
+            <!-- upper primary -->
+            <rect x="66" y="18" width="114" height="28" rx="4" fill="#012B5C"/>
+            <g fill="#2050E8"><rect x="72" y="23" width="9" height="18" rx="2"/><rect x="86" y="23" width="9" height="18" rx="2"/><rect x="100" y="23" width="9" height="18" rx="2"/><rect x="114" y="23" width="9" height="18" rx="2"/><rect x="128" y="23" width="9" height="18" rx="2"/><rect x="142" y="23" width="9" height="18" rx="2"/><rect x="156" y="23" width="9" height="18" rx="2"/><rect x="170" y="23" width="9" height="18" rx="2"/></g>
+            <text x="58" y="34.5" text-anchor="end" fill="#566678" font-family="Space Grotesk" font-size="8">primary</text>
+            <!-- air gaps + aluminium/copper plate -->
+            <line x1="66" y1="52" x2="180" y2="52" stroke="#D2DEEC" stroke-dasharray="4 4"/>
+            <rect x="66" y="56" width="114" height="15" rx="2" fill="#C9D7E8"/>
+            <text x="58" y="66.5" text-anchor="end" fill="#8294A6" font-family="Space Grotesk" font-size="8">Al/Cu plate</text>
+            <line x1="66" y1="75" x2="180" y2="75" stroke="#D2DEEC" stroke-dasharray="4 4"/>
+            <!-- lower primary -->
+            <rect x="66" y="79" width="114" height="28" rx="4" fill="#012B5C"/>
+            <g fill="#2050E8"><rect x="72" y="84" width="9" height="18" rx="2"/><rect x="86" y="84" width="9" height="18" rx="2"/><rect x="100" y="84" width="9" height="18" rx="2"/><rect x="114" y="84" width="9" height="18" rx="2"/><rect x="128" y="84" width="9" height="18" rx="2"/><rect x="142" y="84" width="9" height="18" rx="2"/><rect x="156" y="84" width="9" height="18" rx="2"/><rect x="170" y="84" width="9" height="18" rx="2"/></g>
+            <text x="58" y="96" text-anchor="end" fill="#566678" font-family="Space Grotesk" font-size="8">primary</text>
+          </svg>
+        </div>
+        <h3>Double-Sided</h3>
+        <div class="sub">Two primaries · plate only</div>
+        <p>Two primaries sandwich a bare aluminium or copper plate. The strong normal pull on each side is reacted by the motor frame — not the vehicle — and the magnetic circuit closes through the opposing core for high thrust density.</p>
+        <ul>
+          <li>Highest thrust per kg of active material</li>
+          <li>Normal pull contained by the frame, not the vehicle</li>
+          <li>Aluminium or copper plate, no back-iron</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ===== Primary location / deployment ===== -->
+    <div class="config-block">
+      <div class="sec-head center reveal">
+        <span class="eyebrow center">Configuration</span>
+        <h2>Where the primary lives</h2>
+        <p>The same motor can be deployed two ways — and the choice flips the cost between the motor and the track.</p>
+      </div>
+      <div class="types-grid">
+        <!-- Vehicle-mounted / short primary -->
+        <div class="type-card reveal">
+          <span class="tag">ON-BOARD</span>
+          <div class="type-diagram">
+            <svg viewBox="0 0 260 120" fill="none">
+              <!-- reaction rail along the whole guideway -->
+              <rect x="8" y="84" width="244" height="14" rx="2" fill="#C9D7E8"/>
+              <g stroke="#fff" stroke-width="1.4" opacity=".7"><line x1="46" y1="84" x2="46" y2="98"/><line x1="84" y1="84" x2="84" y2="98"/><line x1="122" y1="84" x2="122" y2="98"/><line x1="160" y1="84" x2="160" y2="98"/><line x1="198" y1="84" x2="198" y2="98"/><line x1="236" y1="84" x2="236" y2="98"/></g>
+              <text x="130" y="113" text-anchor="middle" fill="#8294A6" font-family="Space Grotesk" font-size="8.5">reaction rail — full route</text>
+              <!-- vehicle -->
+              <rect x="94" y="18" width="72" height="32" rx="9" fill="#E3EBF5" stroke="#B9CAE0" stroke-width="1.4"/>
+              <rect x="101" y="24" width="15" height="12" rx="3" fill="#0A1F3C" opacity=".62"/>
+              <rect x="122" y="24" width="15" height="12" rx="3" fill="#0A1F3C" opacity=".62"/>
+              <rect x="143" y="24" width="15" height="12" rx="3" fill="#0A1F3C" opacity=".62"/>
+              <!-- single primary, mounted on the vehicle -->
+              <rect x="100" y="54" width="60" height="15" rx="3" fill="#012B5C"/>
+              <g fill="#2050E8"><rect x="104" y="58" width="7" height="7" rx="1"/><rect x="116" y="58" width="7" height="7" rx="1"/><rect x="128" y="58" width="7" height="7" rx="1"/><rect x="140" y="58" width="7" height="7" rx="1"/><rect x="152" y="58" width="7" height="7" rx="1"/></g>
+            </svg>
+          </div>
+          <h3>Vehicle-mounted</h3>
+          <div class="sub">Short primary · on the vehicle</div>
+          <p>One primary set rides on each vehicle; the reaction rail runs the length of the guideway. The fewest motors to build — you pay instead for continuous rail.</p>
+          <div class="cost-mirror">
+            <div class="cost-row"><span class="cost-k">LIM (primary) cost</span><span class="bars lvl1"><i></i><i></i><i></i></span><span class="lvl low">Lowest</span></div>
+            <div class="cost-row"><span class="cost-k">Reaction-rail cost</span><span class="bars lvl3"><i></i><i></i><i></i></span><span class="lvl high">Highest</span></div>
+          </div>
+          <div class="best-for"><b>Best for</b> long transit routes &amp; people movers</div>
+        </div>
+
+        <!-- Wayside / long primary -->
+        <div class="type-card reveal d2">
+          <span class="tag">WAYSIDE</span>
+          <div class="type-diagram">
+            <svg viewBox="0 0 260 120" fill="none">
+              <!-- primary winding built into the whole track -->
+              <rect x="8" y="82" width="244" height="16" rx="2" fill="#012B5C"/>
+              <g fill="#2050E8"><rect x="14" y="86" width="7" height="8" rx="1"/><rect x="31" y="86" width="7" height="8" rx="1"/><rect x="48" y="86" width="7" height="8" rx="1"/><rect x="65" y="86" width="7" height="8" rx="1"/><rect x="82" y="86" width="7" height="8" rx="1"/><rect x="99" y="86" width="7" height="8" rx="1"/><rect x="116" y="86" width="7" height="8" rx="1"/><rect x="133" y="86" width="7" height="8" rx="1"/><rect x="150" y="86" width="7" height="8" rx="1"/><rect x="167" y="86" width="7" height="8" rx="1"/><rect x="184" y="86" width="7" height="8" rx="1"/><rect x="201" y="86" width="7" height="8" rx="1"/><rect x="218" y="86" width="7" height="8" rx="1"/><rect x="235" y="86" width="7" height="8" rx="1"/></g>
+              <text x="130" y="113" text-anchor="middle" fill="#8294A6" font-family="Space Grotesk" font-size="8.5">primary winding — full route</text>
+              <!-- vehicle -->
+              <rect x="94" y="18" width="72" height="32" rx="9" fill="#E3EBF5" stroke="#B9CAE0" stroke-width="1.4"/>
+              <rect x="101" y="24" width="15" height="12" rx="3" fill="#0A1F3C" opacity=".62"/>
+              <rect x="122" y="24" width="15" height="12" rx="3" fill="#0A1F3C" opacity=".62"/>
+              <rect x="143" y="24" width="15" height="12" rx="3" fill="#0A1F3C" opacity=".62"/>
+              <!-- short reaction plate on the vehicle -->
+              <rect x="100" y="56" width="60" height="12" rx="2" fill="#C9D7E8"/>
+            </svg>
+          </div>
+          <h3>Track-mounted</h3>
+          <div class="sub">Long primary · along the track</div>
+          <p>The primary winding is built into the track; the vehicle carries only a short reaction plate. The vehicle stays light and passive — but you wind the whole active length.</p>
+          <div class="cost-mirror">
+            <div class="cost-row"><span class="cost-k">LIM (primary) cost</span><span class="bars lvl3"><i></i><i></i><i></i></span><span class="lvl high">Highest</span></div>
+            <div class="cost-row"><span class="cost-k">Reaction-rail cost</span><span class="bars lvl1"><i></i><i></i><i></i></span><span class="lvl low">Lowest</span></div>
+          </div>
+          <div class="best-for"><b>Best for</b> launches, maglev &amp; short high-thrust zones</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== PERMANENT-MAGNET BRAKES ====================== -->
+<section class="section soft" id="brakes">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow center">Product · braking</span>
+      <h2>Permanent-magnet brakes</h2>
+      <p>Run a LIM in reverse. Replace the powered winding with a <strong>fixed permanent-magnet field</strong> and let the relative motion between vehicle and track do the work — the magnets induce eddy currents in a conductive plate, and those currents oppose the motion. The result is a smooth, contactless retarding force with no power, no hydraulics, no contact and no fade — and it brakes harder the faster you go.</p>
+    </div>
+
+    <div class="brake-grid">
+      <!-- Single-sided, track-mounted -->
+      <div class="type-card reveal">
+        <span class="tag">SS · TRACK</span>
+        <div class="type-diagram">
+          <svg viewBox="0 0 196 120" fill="none">
+            <rect x="66" y="34" width="114" height="15" rx="2" fill="#C9D7E8"/>
+            <text x="58" y="45.5" text-anchor="end" fill="#566678" font-family="Space Grotesk" font-size="8">fin</text>
+            <line x1="66" y1="57" x2="180" y2="57" stroke="#D2DEEC" stroke-dasharray="4 4"/>
+            <g>
+              <rect x="66"  y="65" width="14" height="24" rx="3" fill="#E5322E"/>
+              <rect x="82"  y="65" width="14" height="24" rx="3" fill="#2050E8"/>
+              <rect x="98"  y="65" width="14" height="24" rx="3" fill="#E5322E"/>
+              <rect x="114" y="65" width="14" height="24" rx="3" fill="#2050E8"/>
+              <rect x="130" y="65" width="14" height="24" rx="3" fill="#E5322E"/>
+              <rect x="146" y="65" width="14" height="24" rx="3" fill="#2050E8"/>
+              <rect x="162" y="65" width="14" height="24" rx="3" fill="#E5322E"/>
+            </g>
+            <text x="58" y="80.5" text-anchor="end" fill="#8294A6" font-family="Space Grotesk" font-size="8">magnets</text>
+          </svg>
+        </div>
+        <h3>Single-sided · track</h3>
+        <div class="sub">Magnets fixed to the track</div>
+        <p>A magnet array sits on the track; the vehicle's conductive fin sweeps through its field. The classic stop-section and coaster fin brake.</p>
+      </div>
+
+      <!-- Single-sided, vehicle-mounted -->
+      <div class="type-card reveal d2">
+        <span class="tag">SS · VEHICLE</span>
+        <div class="type-diagram">
+          <svg viewBox="0 0 196 120" fill="none">
+            <g>
+              <rect x="66"  y="31" width="14" height="24" rx="3" fill="#E5322E"/>
+              <rect x="82"  y="31" width="14" height="24" rx="3" fill="#2050E8"/>
+              <rect x="98"  y="31" width="14" height="24" rx="3" fill="#E5322E"/>
+              <rect x="114" y="31" width="14" height="24" rx="3" fill="#2050E8"/>
+              <rect x="130" y="31" width="14" height="24" rx="3" fill="#E5322E"/>
+              <rect x="146" y="31" width="14" height="24" rx="3" fill="#2050E8"/>
+              <rect x="162" y="31" width="14" height="24" rx="3" fill="#E5322E"/>
+            </g>
+            <text x="58" y="46.5" text-anchor="end" fill="#8294A6" font-family="Space Grotesk" font-size="8">magnets</text>
+            <line x1="66" y1="63" x2="180" y2="63" stroke="#D2DEEC" stroke-dasharray="4 4"/>
+            <rect x="66" y="71" width="114" height="15" rx="2" fill="#C9D7E8"/>
+            <text x="58" y="82.5" text-anchor="end" fill="#566678" font-family="Space Grotesk" font-size="8">rail</text>
+          </svg>
+        </div>
+        <h3>Single-sided · vehicle</h3>
+        <div class="sub">Magnets carried on the vehicle</div>
+        <p>The magnet array rides on the vehicle and a conductive reaction rail runs the route — so braking is available anywhere along the track.</p>
+      </div>
+
+      <!-- Double-sided -->
+      <div class="type-card reveal d3">
+        <span class="tag">DOUBLE</span>
+        <div class="type-diagram">
+          <svg viewBox="0 0 196 120" fill="none">
+            <g>
+              <rect x="66"  y="20" width="14" height="20" rx="3" fill="#E5322E"/>
+              <rect x="82"  y="20" width="14" height="20" rx="3" fill="#2050E8"/>
+              <rect x="98"  y="20" width="14" height="20" rx="3" fill="#E5322E"/>
+              <rect x="114" y="20" width="14" height="20" rx="3" fill="#2050E8"/>
+              <rect x="130" y="20" width="14" height="20" rx="3" fill="#E5322E"/>
+              <rect x="146" y="20" width="14" height="20" rx="3" fill="#2050E8"/>
+              <rect x="162" y="20" width="14" height="20" rx="3" fill="#E5322E"/>
+            </g>
+            <text x="58" y="32" text-anchor="end" fill="#8294A6" font-family="Space Grotesk" font-size="8">magnets</text>
+            <rect x="66" y="51" width="114" height="14" rx="2" fill="#C9D7E8"/>
+            <text x="58" y="61" text-anchor="end" fill="#566678" font-family="Space Grotesk" font-size="8">fin</text>
+            <g>
+              <rect x="66"  y="76" width="14" height="20" rx="3" fill="#2050E8"/>
+              <rect x="82"  y="76" width="14" height="20" rx="3" fill="#E5322E"/>
+              <rect x="98"  y="76" width="14" height="20" rx="3" fill="#2050E8"/>
+              <rect x="114" y="76" width="14" height="20" rx="3" fill="#E5322E"/>
+              <rect x="130" y="76" width="14" height="20" rx="3" fill="#2050E8"/>
+              <rect x="146" y="76" width="14" height="20" rx="3" fill="#E5322E"/>
+              <rect x="162" y="76" width="14" height="20" rx="3" fill="#2050E8"/>
+            </g>
+            <text x="58" y="88" text-anchor="end" fill="#8294A6" font-family="Space Grotesk" font-size="8">magnets</text>
+          </svg>
+        </div>
+        <h3>Double-sided</h3>
+        <div class="sub">Fin between two arrays</div>
+        <p>Two magnet arrays grip a conductive fin between them — the strongest, most balanced braking, with the magnet pulls reacted in the caliper frame.</p>
+      </div>
+    </div>
+
+    <div class="brake-benefits reveal">
+      <div class="bbenefit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Passive — no power or hydraulics</div>
+      <div class="bbenefit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Contactless — no wear, no fade</div>
+      <div class="bbenefit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Fail-safe on power loss</div>
+      <div class="bbenefit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Smooth &amp; speed-proportional</div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== APPLICATIONS ====================== -->
+<section class="section soft" id="applications">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow center">Where they run</span>
+      <h2>From the platform edge to the launch track</h2>
+      <p>Wherever motion has to be precise, repeatable and unbothered by weather or grip, a linear motor earns its place.</p>
+    </div>
+
+    <div class="apps-grid">
+      <!-- transit -->
+      <div class="app-card reveal">
+        <svg class="app-bg" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice"><rect width="400" height="400" fill="#013A78"/><g opacity=".25" stroke="#62B4FF" stroke-width="2" fill="none"><path d="M0 300h400M0 320h400"/><rect x="60" y="120" width="280" height="150" rx="24"/><path d="M90 150h60M170 150h60M250 150h60"/></g><rect x="60" y="120" width="280" height="150" rx="24" fill="#0E5BB8" opacity=".5"/></svg>
+        <div class="app-overlay"></div>
+        <div class="app-content">
+          <div class="app-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="3" width="16" height="14" rx="2"/><path d="M4 11h16M8 21l2-3M16 21l-2-3" stroke-linecap="round"/></svg></div>
+          <h3>Automated transit &amp; people movers</h3>
+          <p>Driverless metros and airport shuttles that climb steep grades and brake in the wet — because thrust never depends on wheel grip.</p>
+        </div>
+      </div>
+
+      <!-- coaster / launch -->
+      <div class="app-card reveal d2">
+        <svg class="app-bg" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice"><rect width="400" height="400" fill="#012B5C"/><g opacity=".3" stroke="#62B4FF" stroke-width="3" fill="none"><path d="M-20 320 Q120 60 260 200 T440 120"/></g><g opacity=".5" fill="#0E5BB8"><circle cx="260" cy="200" r="10"/></g></svg>
+        <div class="app-overlay"></div>
+        <div class="app-content">
+          <div class="app-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 18V6l7 5 8-8v15" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h3>Coaster &amp; sled launch</h3>
+          <p>0-to-launch in seconds. Linear motors fling coaster trains and test sleds with smooth, programmable acceleration and instant repeatability.</p>
+        </div>
+      </div>
+
+      <!-- maglev -->
+      <div class="app-card reveal d3">
+        <svg class="app-bg" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice"><rect width="400" height="400" fill="#013A78"/><g opacity=".3" stroke="#62B4FF" stroke-width="2" fill="none"><path d="M0 240h400M0 260h400"/></g><rect x="40" y="180" width="320" height="46" rx="23" fill="#0E5BB8" opacity=".6"/><g stroke="#62B4FF" stroke-width="2" opacity=".5"><line x1="60" y1="234" x2="60" y2="252"/><line x1="120" y1="234" x2="120" y2="252"/><line x1="180" y1="234" x2="180" y2="252"/><line x1="240" y1="234" x2="240" y2="252"/><line x1="300" y1="234" x2="300" y2="252"/></g></svg>
+        <div class="app-overlay"></div>
+        <div class="app-content">
+          <div class="app-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h3l3-7 4 14 3-7h5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h3>Maglev &amp; high-speed propulsion</h3>
+          <p>When the vehicle leaves the rail entirely, the linear motor is the only thing left to push it — silent, contactless propulsion at speed.</p>
+        </div>
+      </div>
+
+      <!-- material handling -->
+      <div class="app-card reveal">
+        <svg class="app-bg" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice"><rect width="400" height="400" fill="#012B5C"/><g opacity=".3" fill="#0E5BB8"><rect x="40" y="200" width="60" height="50" rx="6"/><rect x="120" y="200" width="60" height="50" rx="6"/><rect x="200" y="200" width="60" height="50" rx="6"/><rect x="280" y="200" width="60" height="50" rx="6"/></g><line x1="20" y1="270" x2="380" y2="270" stroke="#62B4FF" stroke-width="3" opacity=".4"/></svg>
+        <div class="app-overlay"></div>
+        <div class="app-content">
+          <div class="app-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="8" width="18" height="10" rx="1"/><path d="M7 8V5h10v3" stroke-linecap="round"/></svg></div>
+          <h3>Material handling &amp; conveyance</h3>
+          <p>Baggage, pallets and parcels moved by the track itself — independent carriers, no chains or belts to wear, sorted at electronic speed.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== CAPABILITIES ====================== -->
+<section class="section" id="capabilities">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">What we do</span>
+      <h2>Engineering capability, end to end</h2>
+      <p>We take a linear motor from a line on a requirements sheet to a validated, manufactured machine — with the analysis to back every number.</p>
+    </div>
+
+    <div class="cap-grid">
+      <div class="cap-card reveal">
+        <div class="cap-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M3 3v18h18" stroke-linecap="round"/><path d="M7 14l3-4 3 3 5-7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div><h3>Electromagnetic design</h3><p>Air-gap flux density, winding factors, equivalent-circuit impedances and thrust–speed curves — the core sizing of the machine, done rigorously.</p></div>
+      </div>
+      <div class="cap-card reveal d2">
+        <div class="cap-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M9 9v12" stroke-linecap="round"/></svg></div>
+        <div><h3>Multi-model validation</h3><p>Independent equivalent-circuit models cross-checked against finite-element analysis (FEA) — so a result is never trusted on one method alone.</p></div>
+      </div>
+      <div class="cap-card reveal">
+        <div class="cap-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M4 19V5M4 19h16M8 15l4-6 3 3 5-8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div><h3>Full route simulation</h3><p>We time-step a vehicle along your real profile — grades, curves, station stops — to predict thrust, energy draw and acceleration at every point of the journey.</p></div>
+      </div>
+      <div class="cap-card reveal d2">
+        <div class="cap-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M12 3v6m0 0a4 4 0 1 0 0 8 4 4 0 0 0 0-8zM12 17v4" stroke-linecap="round"/><path d="M5 7l2 2M19 7l-2 2" stroke-linecap="round"/></svg></div>
+        <div><h3>Thermal modelling</h3><p>Reaction-plate and winding temperature over a full duty cycle, including fin-enhanced cooling — so the design survives the worst-case run, not just the brochure point.</p></div>
+      </div>
+      <div class="cap-card reveal">
+        <div class="cap-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2" stroke-linecap="round"/></svg></div>
+        <div><h3>End-effect &amp; edge corrections</h3><p>Longitudinal entry/exit end-effects and transverse edge effects are where simple models fail. We apply the published corrections and know their limits.</p></div>
+      </div>
+      <div class="cap-card reveal d2">
+        <div class="cap-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M4 7h16M4 12h16M4 17h10" stroke-linecap="round"/><circle cx="19" cy="17" r="2"/></svg></div>
+        <div><h3>Parameter sweeps &amp; optimisation</h3><p>Family-of-curves studies across pole count, slot fill, frequency and gap — finding the design that meets thrust and temperature with margin to spare.</p></div>
+      </div>
+      <div class="cap-card reveal">
+        <div class="cap-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3" stroke-linecap="round"/></svg></div>
+        <div><h3>Feasibility &amp; concept studies</h3><p>Early trade studies that tell you whether a linear motor fits your duty, envelope and budget — and which topology to back — before detailed design begins.</p></div>
+      </div>
+      <div class="cap-card reveal d2">
+        <div class="cap-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M9 18V5l12-2v13" stroke-linecap="round" stroke-linejoin="round"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></div>
+        <div><h3>Drive &amp; supply sizing</h3><p>Inverter or direct-on-line rating, line current and energy/AVC sizing tied directly to the duty cycle — the electrical system specified alongside the motor, not after it.</p></div>
+      </div>
+      <div class="cap-card reveal">
+        <div class="cap-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div><h3>Manufacture &amp; supply</h3><p>We build what we design — motors manufactured to the validated drawings and supplied ready to install, so the electromagnetic intent survives into the hardware.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== ADVANTAGES (dark) ====================== -->
+<section class="section adv">
+  <div class="grid-bg"></div>
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow center">Why linear</span>
+      <h2>What you gain by losing the contact</h2>
+      <p>Take the gearbox, the friction drive and the adhesion limit out of the system, and a lot of hard problems simply disappear.</p>
+    </div>
+
+    <div class="adv-grid">
+      <div class="adv-card reveal">
+        <div class="ac-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h4>No drive wear, low maintenance</h4>
+        <p>Nothing in the drive touches. No gears, brushes or friction wheels to grind down and replace.</p>
+      </div>
+      <div class="adv-card reveal d2">
+        <div class="ac-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 18c4-9 14-9 18 0" stroke-linecap="round"/><path d="M6 18l3-3M18 18l-3-3" stroke-linecap="round"/></svg></div>
+        <h4>Grip-independent thrust</h4>
+        <p>Force is set electromagnetically, so steep grades, rain and ice can't make the drive slip.</p>
+      </div>
+      <div class="adv-card reveal d3">
+        <div class="ac-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L4 14h7l-1 8 9-12h-7z" stroke-linejoin="round"/></svg></div>
+        <h4>Fast, simple control</h4>
+        <p>Thrust responds as fast as the inverter — smooth, repeatable launches, with no feedback loop to tune for most duties. Where an application needs tighter speed control, the loop can be closed.</p>
+      </div>
+      <div class="adv-card reveal d4">
+        <div class="ac-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 14a8 8 0 0 1 16 0" stroke-linecap="round"/><path d="M9 19h6M12 14v5" stroke-linecap="round"/></svg></div>
+        <h4>Quiet &amp; clean</h4>
+        <p>No mechanical drivetrain means far less noise and vibration — and nothing to lubricate or shed.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== STATS BAND ====================== -->
+<section class="band">
+  <div class="wrap band-grid">
+    <div class="reveal"><div class="bnum" data-count="2" data-suffix="">2</div><div class="blab">Cross-checked solver methods</div></div>
+    <div class="reveal d2"><div class="bnum" data-count="8" data-suffix="+">8+</div><div class="blab">Published methods implemented</div></div>
+    <div class="reveal d3"><div class="bnum" data-count="0" data-suffix="">0</div><div class="blab">Drive-train contact points</div></div>
+    <div class="reveal d4"><div class="bnum" data-count="100" data-suffix="%">100%</div><div class="blab">Of the route simulated</div></div>
+  </div>
+  <p class="band-cap wrap">Figures describe Axis Engineering's modelling approach, not a single product. Every design is sized to its own requirements.</p>
+</section>
+
+<!-- ====================== PROCESS ====================== -->
+<section class="section" id="process">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow center">How we work</span>
+      <h2>From requirement to validated design</h2>
+    </div>
+    <div class="proc">
+      <div class="proc-step reveal"><div class="pn">01</div><h4>Define</h4><p>We pin down the duty: speed profile, payload, gap, supply and the environment it has to survive.</p></div>
+      <div class="proc-step reveal d2"><div class="pn">02</div><h4>Model</h4><p>The machine is sized with our equivalent-circuit models and FEA, then swept for the best topology, pole count and geometry.</p></div>
+      <div class="proc-step reveal d3"><div class="pn">03</div><h4>Validate</h4><p>Full route and thermal simulation confirms it holds up over the worst-case journey, with margin checked.</p></div>
+      <div class="proc-step reveal d4"><div class="pn">04</div><h4>Build &amp; deliver</h4><p>We manufacture the motor to the validated design and supply it with its drive requirements and a clear analysis report.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== CTA / CONTACT ====================== -->
+<section class="cta" id="contact">
+  <div class="wrap">
+    <div class="cta-box reveal">
+      <div class="cta-grid">
+        <div>
+          <span class="eyebrow" style="color:var(--cyan)">Start a project</span>
+          <h2>Have a linear motor problem worth solving?</h2>
+          <p>Whether you're scoping a new guideway, launching a ride, or replacing a worn-out mechanical drive — tell us the duty and we'll tell you what's possible.</p>
+          <div class="cta-actions">
+            <a href="mailto:sales@axisengineering.co.uk?subject=Project%20enquiry" class="btn btn-primary">Email the team
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a href="#about" class="btn btn-ghost">Learn more</a>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="cc-row">
+            <div class="cc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div><div class="cc-k">Email</div><div class="cc-v"><a href="mailto:sales@axisengineering.co.uk" style="color:inherit">sales@axisengineering.co.uk</a></div></div>
+          </div>
+          <div class="cc-row">
+            <div class="cc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h4l2 5-3 2a12 12 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z" stroke-linejoin="round"/></svg></div>
+            <div><div class="cc-k">Enquiries</div><div class="cc-v">Engineering &amp; consulting</div></div>
+          </div>
+          <div class="cc-row">
+            <div class="cc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12z" stroke-linejoin="round"/><circle cx="12" cy="9" r="2.5"/></svg></div>
+            <div><div class="cc-k">Address</div><div class="cc-v"><a href="https://maps.google.com/?q=Unit+15+Elms+Business+Park+Atherstone+Road+DE12+7AP" target="_blank" rel="noopener" style="color:inherit">Unit 15, Elms Business Park,<br>Atherstone Road, DE12 7AP</a></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== BRAND BAND ====================== -->
+<section class="brandband">
+  <div class="wrap brandband-inner reveal">
+    <span class="bb-rule" aria-hidden="true"></span>
+    <a href="#top" aria-label="Axis Engineering — back to top">
+      <picture><source srcset="assets/axis-logo-1600.webp" type="image/webp"><img class="bb-logo" src="assets/axis-logo-1600.png" width="1600" height="1808" alt="Axis Engineering — Driven Without Contact" /></picture>
+    </a>
+    <span class="bb-rule" aria-hidden="true"></span>
+  </div>
+</section>
+
+<!-- ====================== FOOTER ====================== -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="brand">
+          <img class="mark" src="assets/axis-symbol-white.png" width="800" height="558" alt="Axis Engineering" />
+          <div class="wordmark"><span class="wm-top">AXIS</span><span class="wm-sub">ENGINEERING</span></div>
+        </div>
+        <p>Linear induction motor and magnetic braking design, manufacture and simulation for transit, launch and industrial systems.</p>
+        <p>Unit 15, Elms Business Park,<br>Atherstone Road, DE12 7AP</p>
+      </div>
+      <div class="foot-col">
+        <h5>Explore</h5>
+        <a href="#technology">How it works</a>
+        <a href="#types">Motor types</a>
+        <a href="#applications">Applications</a>
+        <a href="#capabilities">Capabilities</a>
+      </div>
+      <div class="foot-col">
+        <h5>Company</h5>
+        <a href="#about">About</a>
+        <a href="#process">How we work</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="foot-col">
+        <h5>Topologies</h5>
+        <a href="#types">Single-sided · SSLIM</a>
+        <a href="#types">Double-sided · DSLIM</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="year">2026</span> Axis Engineering. All rights reserved.</span>
+      <span class="foot-tag">Driven Without Contact</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ---------- nav scroll state ---------- */
+const nav = document.getElementById('nav');
+const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 40);
+onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
+
+/* ---------- mobile menu ---------- */
+const toggle = document.getElementById('navToggle');
+const links = document.getElementById('navLinks');
+toggle.addEventListener('click', () => links.classList.toggle('open'));
+links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+
+/* ---------- reveal on scroll ---------- */
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+}, {threshold:0.12, rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+/* ---------- animated counters ---------- */
+const counters = document.querySelectorAll('.bnum');
+const cio = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    const el = e.target;
+    const target = +el.dataset.count;
+    const suffix = el.dataset.suffix || '';
+    let cur = 0;
+    const steps = 45;
+    const inc = target / steps;
+    const tick = () => {
+      cur += inc;
+      if (cur >= target){ el.textContent = target + suffix; }
+      else { el.textContent = Math.round(cur) + suffix; requestAnimationFrame(tick); }
+    };
+    tick();
+    cio.unobserve(el);
+  });
+}, {threshold:0.5});
+counters.forEach(c => cio.observe(c));
+
+/* ---------- year ---------- */
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

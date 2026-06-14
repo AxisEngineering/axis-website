@@ -1,0 +1,7 @@
+# Private working notes — never publish
+*.docx
+
+# Build artefacts & OS junk
+*.zip
+.DS_Store
+Thumbs.db
