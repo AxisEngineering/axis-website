@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 104 152" fill="none">
+  <!-- Axis Engineering mark: bold tunnel A with red/blue perspective track + arrow -->
+  <path d="M10 116 L37 18 Q50 2 63 18 L90 116 L66 116 L56 44 Q50 34 44 44 L34 116 Z" fill="#16243E"/>
+  <polygon points="42,74 58,74 60,86 40,86" fill="#CE1A2B"/>
+  <polygon points="39.5,89 60.5,89 62.5,103 37.5,103" fill="#1F4FE0"/>
+  <g fill="#CE1A2B"><rect x="10" y="131" width="9" height="12" rx="1.6"/><rect x="34" y="131" width="9" height="12" rx="1.6"/><rect x="58" y="131" width="9" height="12" rx="1.6"/></g>
+  <g fill="#1F4FE0"><rect x="22" y="131" width="9" height="12" rx="1.6"/><rect x="46" y="131" width="9" height="12" rx="1.6"/><rect x="70" y="131" width="9" height="12" rx="1.6"/></g>
+  <path d="M82 128 L95 137 L82 146 Z" fill="#1F4FE0"/>
+</svg>
