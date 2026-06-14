@@ -395,6 +395,7 @@ header.nav.scrolled .nav-toggle span{background:var(--navy-800)}
 }
 .cta-box::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:46px 46px;mask-image:radial-gradient(circle at 80% 0%,#000,transparent 70%);-webkit-mask-image:radial-gradient(circle at 80% 0%,#000,transparent 70%)}
 .cta-grid{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center}
+.cta-grid>div{min-width:0}
 .cta-box h2{font-size:clamp(2rem,3.6vw,2.9rem);margin-bottom:16px}
 .cta-box p{color:rgba(255,255,255,.82);font-size:1.1rem;margin-bottom:28px}
 .cta-actions{display:flex;gap:14px;flex-wrap:wrap}
@@ -404,7 +405,7 @@ header.nav.scrolled .nav-toggle span{background:var(--navy-800)}
 .contact-card .cc-ic{flex:none;width:42px;height:42px;border-radius:11px;background:rgba(98,180,255,.16);display:grid;place-items:center;color:var(--cyan)}
 .contact-card .cc-ic svg{width:20px;height:20px}
 .contact-card .cc-k{font-size:.78rem;color:rgba(255,255,255,.55);text-transform:uppercase;letter-spacing:.1em}
-.contact-card .cc-v{font-family:var(--font-display);font-weight:600;font-size:1.02rem}
+.contact-card .cc-v{font-family:var(--font-display);font-weight:600;font-size:1.02rem;overflow-wrap:anywhere}
 
 /* ============================================================
    FOOTER
@@ -475,6 +476,10 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.7);padding:64px 0 30px
 }
 @media (max-width:760px){
   .nav-cta .btn{display:none}
+  .build-anim,.principle-diagram{overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .build-anim svg,.principle-diagram svg{width:100%}
+  .build-anim svg{min-width:600px}
+  .principle-diagram svg{min-width:560px}
   .section{padding:78px 0}
   .cta-box{padding:38px 26px}
   .apps-grid,.cap-grid,.adv-grid,.band-grid,.foot-grid{grid-template-columns:1fr}
