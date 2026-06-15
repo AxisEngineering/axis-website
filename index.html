@@ -3,16 +3,50 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Axis Engineering — Linear Induction Motor Design & Simulation</title>
-<meta name="description" content="Axis Engineering designs, manufactures and validates linear induction motors and magnetic braking solutions for transit, launch and industrial systems. Driven without contact." />
+<title>Axis Engineering — Linear Induction Motors & Magnetic Brakes</title>
+<meta name="description" content="Axis Engineering designs and manufactures linear induction motors (LIMs) and permanent-magnet brakes for transit, launch and industrial systems." />
 <meta name="theme-color" content="#002B5C" />
 <link rel="icon" type="image/svg+xml" href="assets/axis-mark.svg" />
-<meta property="og:title" content="Axis Engineering — Linear Motor Specialists" />
-<meta property="og:description" content="Linear induction motor and magnetic braking design, manufacture and simulation. Driven without contact." />
-<meta property="og:image" content="assets/og-banner.png" />
+
+<!-- Open Graph -->
+<meta property="og:title" content="Axis Engineering — Linear Motors & Magnetic Brakes, Designed & Built" />
+<meta property="og:description" content="Linear induction motor and permanent-magnet braking design, manufacture and simulation. Driven without contact." />
+<meta property="og:image" content="https://axisengineering.github.io/axis-website/assets/og-banner.png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Axis Engineering — Driven Without Contact" />
 <meta property="og:type" content="website" />
+<meta property="og:url" content="https://axisengineering.github.io/axis-website/" />
+<meta property="og:site_name" content="Axis Engineering" />
+<meta property="og:locale" content="en_GB" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Axis Engineering — Linear Motors & Magnetic Brakes, Designed & Built" />
+<meta name="twitter:description" content="Linear induction motor and permanent-magnet braking design, manufacture and simulation. Driven without contact." />
+<meta name="twitter:image" content="https://axisengineering.github.io/axis-website/assets/og-banner.png" />
+<meta name="twitter:image:alt" content="Axis Engineering — Driven Without Contact" />
+
+<!-- Structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Axis Engineering",
+  "description": "Design, manufacture and simulation of linear induction motors (LIMs) and permanent-magnet braking solutions for transit, launch and industrial systems.",
+  "url": "https://axisengineering.github.io/axis-website/",
+  "email": "sales@axisengineering.co.uk",
+  "logo": "https://axisengineering.github.io/axis-website/assets/axis-logo-1600.png",
+  "slogan": "Driven Without Contact",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Unit 15, Elms Business Park, Atherstone Road",
+    "postalCode": "DE12 7AP",
+    "addressCountry": "GB"
+  },
+  "knowsAbout": ["Linear induction motors", "SSLIM", "DSLIM", "Permanent-magnet eddy-current brakes", "Maglev propulsion", "Finite element analysis", "Route simulation"]
+}
+</script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -65,6 +99,10 @@ body{
 h1,h2,h3,h4,.display{font-family:var(--font-display);line-height:1.08;letter-spacing:-.02em;font-weight:700}
 a{color:inherit;text-decoration:none}
 img,svg{display:block;max-width:100%}
+/* keyboard focus — visible on both light and dark backgrounds */
+:focus-visible{outline:3px solid var(--blue-bright);outline-offset:3px;border-radius:5px}
+.btn:focus-visible{outline-offset:4px}
+.nav-links a:focus-visible,.foot-col a:focus-visible{outline-offset:5px}
 section{position:relative}
 .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
 .eyebrow{
@@ -370,7 +408,6 @@ header.nav.scrolled .nav-toggle span{background:var(--navy-800)}
 .band-grid{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center}
 .band-grid .bnum{font-family:var(--font-display);font-weight:700;font-size:clamp(2.2rem,4vw,3.2rem);letter-spacing:-.02em}
 .band-grid .blab{font-size:.95rem;color:rgba(255,255,255,.85);margin-top:4px}
-.band-cap{position:relative;text-align:center;margin-top:30px;font-size:.82rem;color:rgba(255,255,255,.7)}
 
 /* ============================================================
    PROCESS
@@ -406,6 +443,16 @@ header.nav.scrolled .nav-toggle span{background:var(--navy-800)}
 .contact-card .cc-ic svg{width:20px;height:20px}
 .contact-card .cc-k{font-size:.78rem;color:rgba(255,255,255,.55);text-transform:uppercase;letter-spacing:.1em}
 .contact-card .cc-v{font-family:var(--font-display);font-weight:600;font-size:1.02rem;overflow-wrap:anywhere}
+
+/* ---------- mid-page CTA ---------- */
+.midcta{display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap;
+  margin-top:54px;background:linear-gradient(120deg,#fff,var(--bg-mid));
+  border:1px solid var(--line);border-radius:var(--radius-lg);
+  padding:32px 38px;box-shadow:var(--shadow-sm)}
+.midcta h3{font-size:1.35rem;margin-bottom:5px;color:var(--ink)}
+.midcta p{color:var(--slate);font-size:.98rem;max-width:560px}
+.midcta .btn{flex:none}
+@media (max-width:640px){.midcta{padding:26px;gap:18px}.midcta .btn{width:100%;justify-content:center}}
 
 /* ============================================================
    FOOTER
@@ -495,7 +542,7 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.7);padding:64px 0 30px
 <!-- ====================== NAV ====================== -->
 <header class="nav" id="nav">
   <div class="wrap nav-inner">
-    <div class="brand" onclick="document.getElementById('top').scrollIntoView()">
+    <a class="brand" href="#top" aria-label="Axis Engineering — back to top">
       <!-- inline A-on-track mark -->
       <span class="mark">
         <img class="mark-navy" src="assets/axis-symbol.png" width="800" height="558" alt="Axis Engineering" />
@@ -505,7 +552,7 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.7);padding:64px 0 30px
         <span class="wm-top">AXIS</span>
         <span class="wm-sub">ENGINEERING</span>
       </div>
-    </div>
+    </a>
 
     <nav class="nav-links" id="navLinks">
       <a href="#technology">Technology</a>
@@ -520,7 +567,7 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.7);padding:64px 0 30px
       <a href="#contact" class="btn btn-primary">Start a project
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
-      <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
     </div>
   </div>
 </header>
@@ -637,7 +684,7 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.7);padding:64px 0 30px
 <section class="brandband">
   <div class="wrap brandband-inner reveal">
     <span class="bb-rule" aria-hidden="true"></span>
-    <picture><source srcset="assets/axis-logo-1600.webp" type="image/webp"><img class="bb-logo" src="assets/axis-logo-1600.png" width="1600" height="1808" alt="Axis Engineering — Driven Without Contact" /></picture>
+    <picture><source srcset="assets/axis-logo-1600.webp" type="image/webp"><img class="bb-logo" src="assets/axis-logo-1600.png" width="1600" height="1808" loading="lazy" decoding="async" alt="Axis Engineering — Driven Without Contact" /></picture>
     <span class="bb-rule" aria-hidden="true"></span>
   </div>
 </section>
@@ -675,6 +722,8 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.7);padding:64px 0 30px
         <h4>Typical LIM design envelope</h4>
         <div class="spec-row"><span class="k">Topologies</span><span class="v">Single &amp; double-sided</span></div>
         <div class="spec-row"><span class="k">Synchronous speed</span><span class="v">v<sub>s</sub> = 2·τ·f <small>m/s</small></span></div>
+        <div class="spec-row"><span class="k">Speed range</span><span class="v">0 – 100+ <small>m/s</small></span></div>
+        <div class="spec-row"><span class="k">Continuous thrust</span><span class="v">Sized to duty <small>to multi-kN / primary</small></span></div>
         <div class="spec-row"><span class="k">Reaction rail</span><span class="v">Aluminium/copper <small>± steel back-iron</small></span></div>
         <div class="spec-row"><span class="k">Air gap</span><span class="v">2 – 40 <small>mm mechanical</small></span></div>
         <div class="spec-row"><span class="k">Drive</span><span class="v">VVVF inverter <small>or direct-on-line</small></span></div>
@@ -698,7 +747,6 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.7);padding:64px 0 30px
         <svg viewBox="0 0 520 360" fill="none" role="img" aria-label="Linear induction motor principle diagram">
           <defs>
             <marker id="ah" markerWidth="9" markerHeight="9" refX="6" refY="4.5" orient="auto"><path d="M0 0L9 4.5L0 9Z" fill="#2050E8"/></marker>
-            <marker id="ahw" markerWidth="9" markerHeight="9" refX="6" refY="4.5" orient="auto"><path d="M0 0L9 4.5L0 9Z" fill="#fff"/></marker>
           </defs>
 
           <!-- reaction plate -->
@@ -990,7 +1038,7 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.7);padding:64px 0 30px
     <div class="sec-head center reveal">
       <span class="eyebrow center">Product · braking</span>
       <h2>Permanent-magnet brakes</h2>
-      <p>Run a LIM in reverse. Replace the powered winding with a <strong>fixed permanent-magnet field</strong> and let the relative motion between vehicle and track do the work — the magnets induce eddy currents in a conductive plate, and those currents oppose the motion. The result is a smooth, contactless retarding force with no power, no hydraulics, no contact and no fade — and it brakes harder the faster you go.</p>
+      <p>Run a LIM in reverse. Replace the powered winding with a <strong>fixed permanent-magnet field</strong> and let the relative motion between vehicle and track do the work — the magnets induce eddy currents in a conductive plate, and those currents oppose the motion. The result is a smooth, contactless retarding force with no power, no hydraulics, no contact and no friction pads to wear or fade — and across its working speed range, the faster it travels the harder it brakes.</p>
     </div>
 
     <div class="brake-grid">
@@ -1081,9 +1129,9 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.7);padding:64px 0 30px
 
     <div class="brake-benefits reveal">
       <div class="bbenefit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Passive — no power or hydraulics</div>
-      <div class="bbenefit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Contactless — no wear, no fade</div>
+      <div class="bbenefit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Contactless — no pads to wear or fade</div>
       <div class="bbenefit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Fail-safe on power loss</div>
-      <div class="bbenefit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Smooth &amp; speed-proportional</div>
+      <div class="bbenefit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Smooth &amp; speed-responsive</div>
     </div>
   </div>
 </section>
@@ -1142,6 +1190,16 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.7);padding:64px 0 30px
         </div>
       </div>
     </div>
+
+    <div class="midcta reveal">
+      <div>
+        <h3>Have a duty cycle in mind?</h3>
+        <p>Tell us the speed, payload, gap and supply — we'll tell you which topology fits and whether a linear motor is the right call for it.</p>
+      </div>
+      <a href="#contact" class="btn btn-primary">Start a project
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
   </div>
 </section>
 
@@ -1151,7 +1209,7 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.7);padding:64px 0 30px
     <div class="sec-head reveal">
       <span class="eyebrow">What we do</span>
       <h2>Engineering capability, end to end</h2>
-      <p>We take a linear motor from a line on a requirements sheet to a validated, manufactured machine — with the analysis to back every number.</p>
+      <p>We take a linear motor from a line on a requirements sheet to a validated, manufactured machine — with the analysis to back every number. We work from early feasibility studies through to delivered single motors and small batches.</p>
     </div>
 
     <div class="cap-grid">
@@ -1238,7 +1296,6 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.7);padding:64px 0 30px
     <div class="reveal d3"><div class="bnum" data-count="0" data-suffix="">0</div><div class="blab">Drive-train contact points</div></div>
     <div class="reveal d4"><div class="bnum" data-count="100" data-suffix="%">100%</div><div class="blab">Of the route simulated</div></div>
   </div>
-  <p class="band-cap wrap">Figures describe Axis Engineering's modelling approach, not a single product. Every design is sized to its own requirements.</p>
 </section>
 
 <!-- ====================== PROCESS ====================== -->
@@ -1280,7 +1337,7 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.7);padding:64px 0 30px
           </div>
           <div class="cc-row">
             <div class="cc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h4l2 5-3 2a12 12 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z" stroke-linejoin="round"/></svg></div>
-            <div><div class="cc-k">Enquiries</div><div class="cc-v">Engineering &amp; consulting</div></div>
+            <div><div class="cc-k">Enquiries</div><div class="cc-v">Design, manufacture &amp; simulation</div></div>
           </div>
           <div class="cc-row">
             <div class="cc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12z" stroke-linejoin="round"/><circle cx="12" cy="9" r="2.5"/></svg></div>
@@ -1297,7 +1354,7 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.7);padding:64px 0 30px
   <div class="wrap brandband-inner reveal">
     <span class="bb-rule" aria-hidden="true"></span>
     <a href="#top" aria-label="Axis Engineering — back to top">
-      <picture><source srcset="assets/axis-logo-1600.webp" type="image/webp"><img class="bb-logo" src="assets/axis-logo-1600.png" width="1600" height="1808" alt="Axis Engineering — Driven Without Contact" /></picture>
+      <picture><source srcset="assets/axis-logo-1600.webp" type="image/webp"><img class="bb-logo" src="assets/axis-logo-1600.png" width="1600" height="1808" loading="lazy" decoding="async" alt="Axis Engineering — Driven Without Contact" /></picture>
     </a>
     <span class="bb-rule" aria-hidden="true"></span>
   </div>
@@ -1309,7 +1366,7 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.7);padding:64px 0 30px
     <div class="foot-grid">
       <div class="foot-brand">
         <div class="brand">
-          <img class="mark" src="assets/axis-symbol-white.png" width="800" height="558" alt="Axis Engineering" />
+          <img class="mark" src="assets/axis-symbol-white.png" width="800" height="558" loading="lazy" decoding="async" alt="Axis Engineering" />
           <div class="wordmark"><span class="wm-top">AXIS</span><span class="wm-sub">ENGINEERING</span></div>
         </div>
         <p>Linear induction motor and magnetic braking design, manufacture and simulation for transit, launch and industrial systems.</p>
@@ -1350,8 +1407,16 @@ onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
 /* ---------- mobile menu ---------- */
 const toggle = document.getElementById('navToggle');
 const links = document.getElementById('navLinks');
-toggle.addEventListener('click', () => links.classList.toggle('open'));
-links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+const setMenu = (open) => {
+  links.classList.toggle('open', open);
+  toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  if (open){ const first = links.querySelector('a'); if (first) first.focus(); }
+};
+toggle.addEventListener('click', () => setMenu(!links.classList.contains('open')));
+links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && links.classList.contains('open')){ setMenu(false); toggle.focus(); }
+});
 
 /* ---------- reveal on scroll ---------- */
 const io = new IntersectionObserver((entries) => {
@@ -1359,14 +1424,16 @@ const io = new IntersectionObserver((entries) => {
 }, {threshold:0.12, rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-/* ---------- animated counters ---------- */
+/* ---------- animated counters (skip under reduced motion) ---------- */
 const counters = document.querySelectorAll('.bnum');
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const cio = new IntersectionObserver((entries) => {
   entries.forEach(e => {
     if (!e.isIntersecting) return;
     const el = e.target;
     const target = +el.dataset.count;
     const suffix = el.dataset.suffix || '';
+    if (reduceMotion){ el.textContent = target + suffix; cio.unobserve(el); return; }
     let cur = 0;
     const steps = 45;
     const inc = target / steps;
