@@ -301,6 +301,7 @@ header.nav.scrolled .nav-toggle span{background:var(--navy-800)}
 .ba-frame{animation:baFrame 14s ease-in-out infinite}
 .ba-bolts{animation:baBolts 14s ease-in-out infinite}
 .ba-arrows{animation:baArrows 14s ease-in-out infinite}
+.ba-ssarrows{animation:baSSArrows 14s ease-in-out infinite}
 .ba-c1{animation:baC1 14s linear infinite}
 .ba-c2{animation:baC2 14s linear infinite}
 .ba-c3{animation:baC3 14s linear infinite}
@@ -314,6 +315,7 @@ header.nav.scrolled .nav-toggle span{background:var(--navy-800)}
 @keyframes baFrame{0%,64%{opacity:0;stroke-dashoffset:1200}67%{opacity:1;stroke-dashoffset:900}74%,94%{opacity:1;stroke-dashoffset:0}98%,100%{opacity:0;stroke-dashoffset:0}}
 @keyframes baBolts{0%,72%{opacity:0}76%,94%{opacity:1}98%,100%{opacity:0}}
 @keyframes baArrows{0%,74%{opacity:0}78%,92%{opacity:1}96%,100%{opacity:0}}
+@keyframes baSSArrows{0%,26%{opacity:0}30%,42%{opacity:1}45%,100%{opacity:0}}
 @keyframes baC1{0%{opacity:0}3%,18%{opacity:1}22%,100%{opacity:0}}
 @keyframes baC2{0%,23%{opacity:0}27%,40%{opacity:1}44%,100%{opacity:0}}
 @keyframes baC3{0%,47%{opacity:0}51%,61%{opacity:1}65%,100%{opacity:0}}
@@ -878,6 +880,14 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.7);padding:64px 0 30px
           <text x="360" y="250" text-anchor="middle" fill="#fff" opacity=".8" font-family="Space Grotesk" font-size="11" letter-spacing="2">PRIMARY</text>
         </g>
 
+        <!-- single-sided normal attraction: the core is pulled up across the gap to the steel back-iron (stage 2) -->
+        <g class="ba-ssarrows" fill="#E5344A" style="opacity:0">
+          <path d="M290 190 L298 204 L293 204 L293 212 L287 212 L287 204 L282 204 Z"/>
+          <path d="M360 190 L368 204 L363 204 L363 212 L357 212 L357 204 L352 204 Z"/>
+          <path d="M430 190 L438 204 L433 204 L433 212 L427 212 L427 204 L422 204 Z"/>
+          <text x="540" y="206" text-anchor="start" fill="#E5344A" font-family="Space Grotesk" font-size="11" font-weight="600">normal pull</text>
+        </g>
+
         <!-- attraction arrows, contained by the frame (stage 4) -->
         <g class="ba-arrows" fill="#E5344A" style="opacity:0">
           <path d="M250 170 L242 156 L247 156 L247 148 L253 148 L253 156 L258 156 Z"/>
@@ -898,7 +908,7 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.7);padding:64px 0 30px
 
         <!-- captions -->
         <text class="ba-c1" x="360" y="352" text-anchor="middle" font-family="Space Grotesk" font-size="14.5" font-weight="500" fill="#44546A" style="opacity:0">Start with one rectangular primary.</text>
-        <text class="ba-c2" x="360" y="352" text-anchor="middle" font-family="Space Grotesk" font-size="14.5" font-weight="500" fill="#44546A" style="opacity:0">Face it with a steel-backed Al/Cu plate — single-sided (SSLIM).</text>
+        <text class="ba-c2" x="360" y="352" text-anchor="middle" font-family="Space Grotesk" font-size="14.5" font-weight="500" fill="#44546A" style="opacity:0">Face it with a steel-backed Al/Cu plate — single-sided (SSLIM). The steel pulls the core in.</text>
         <text class="ba-c3" x="360" y="352" text-anchor="middle" font-family="Space Grotesk" font-size="14.5" font-weight="500" fill="#44546A" style="opacity:0">Mirror a second primary across a bare plate — double-sided (DSLIM).</text>
         <text class="ba-c4" x="360" y="352" text-anchor="middle" font-family="Space Grotesk" font-size="14.5" font-weight="500" fill="#44546A" style="opacity:0">The pair bolts into one frame — magnetic pull reacted by the frame, not the vehicle.</text>
       </svg>
