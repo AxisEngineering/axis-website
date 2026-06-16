@@ -365,6 +365,19 @@ header.nav.scrolled .nav-toggle span{background:var(--navy-800)}
 @keyframes bkForce{0%,50%{opacity:0}58%{opacity:1}80%{opacity:.85}88%,100%{opacity:0}}
 @keyframes bkCapA{0%,4%{opacity:0}12%,46%{opacity:1}54%,100%{opacity:0}}
 @keyframes bkCapB{0%,56%{opacity:0}64%,92%{opacity:1}97%,100%{opacity:0}}
+/* ---- launch-motor animation: a travelling field accelerates the vehicle ---- */
+.lm-veh{animation:lmVeh 7s linear infinite}
+.lm-wave{animation:lmWave 1.6s linear infinite}
+.lm-thrust{animation:lmThrust 7s ease-in-out infinite}
+.lm-speed{animation:lmSpeed 7s ease-in-out infinite}
+.lm-capA{animation:lmCapA 7s ease-in-out infinite}
+.lm-capB{animation:lmCapB 7s ease-in-out infinite}
+@keyframes lmVeh{0%{transform:translateX(-120px);opacity:0}5%{opacity:1}22%{transform:translateX(-92px)}38%{transform:translateX(-44px)}52%{transform:translateX(34px)}64%{transform:translateX(140px)}74%{transform:translateX(270px)}83%{transform:translateX(410px)}90%{transform:translateX(530px);opacity:1}95%{transform:translateX(600px);opacity:1}100%{transform:translateX(650px);opacity:0}}
+@keyframes lmWave{to{transform:translateX(72px)}}
+@keyframes lmThrust{0%,28%{opacity:0}40%,85%{opacity:1}92%,100%{opacity:0}}
+@keyframes lmSpeed{0%,30%{opacity:0}55%{opacity:.5}80%{opacity:.95}92%,100%{opacity:0}}
+@keyframes lmCapA{0%,5%{opacity:0}12%,46%{opacity:1}54%,100%{opacity:0}}
+@keyframes lmCapB{0%,56%{opacity:0}64%,92%{opacity:1}97%,100%{opacity:0}}
 .brake-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
 .brake-benefits{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:46px}
 .bbenefit{display:flex;align-items:center;gap:9px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:11px 18px;font-size:.92rem;font-weight:500;color:var(--ink);box-shadow:var(--shadow-sm)}
@@ -924,6 +937,111 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.7);padding:64px 0 30px
         <text class="ba-c2" x="360" y="352" text-anchor="middle" font-family="Space Grotesk" font-size="14.5" font-weight="500" fill="#44546A" style="opacity:0">Face it with a steel-backed Al/Cu plate — single-sided (SSLIM). The steel pulls the core in.</text>
         <text class="ba-c3" x="360" y="352" text-anchor="middle" font-family="Space Grotesk" font-size="14.5" font-weight="500" fill="#44546A" style="opacity:0">Mirror a second primary across a bare plate — double-sided (DSLIM).</text>
         <text class="ba-c4" x="360" y="352" text-anchor="middle" font-family="Space Grotesk" font-size="14.5" font-weight="500" fill="#44546A" style="opacity:0">The pair bolts into one frame — magnetic pull reacted by the frame, not the vehicle.</text>
+      </svg>
+    </div>
+
+    <!-- ===== launch-motor animation: travelling field accelerates a vehicle (single-sided) ===== -->
+    <div class="brake-anim reveal">
+      <svg viewBox="0 0 760 250" fill="none" role="img" aria-label="Animation: a three-phase primary fixed to the track sets up a magnetic field that travels along it; the travelling field drags the vehicle's conductive reaction plate, launching the vehicle forward with no contact">
+        <defs>
+          <linearGradient id="lmcab" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0E5BB8"/><stop offset="1" stop-color="#012B5C"/></linearGradient>
+          <linearGradient id="lmplate" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E8C68A"/><stop offset="1" stop-color="#C9974B"/></linearGradient>
+          <marker id="lmThrustArrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#2050E8"/></marker>
+          <clipPath id="lmwclip"><rect x="280" y="152" width="320" height="44"/></clipPath>
+        </defs>
+
+        <!-- config badge -->
+        <g><rect x="596" y="214" width="136" height="24" rx="8" fill="#E9F1FA" stroke="#DCE6F1"/><text x="664" y="230" text-anchor="middle" font-family="Space Grotesk" font-size="11" font-weight="700" fill="#2050E8" letter-spacing="1">SINGLE-SIDED</text></g>
+        <g><rect x="28" y="214" width="104" height="24" rx="8" fill="#F4F8FC" stroke="#DCE6F1"/><text x="80" y="230" text-anchor="middle" font-family="Space Grotesk" font-size="10.5" font-weight="600" fill="#8294A6" letter-spacing="1.5">SIDE VIEW</text></g>
+
+        <!-- fixed track / guideway -->
+        <rect x="0" y="192" width="760" height="9" fill="#C9D7E8"/>
+        <rect x="0" y="201" width="760" height="3" fill="#E3EBF5"/>
+        <g stroke="#B9CAE0" stroke-width="2" opacity=".5">
+          <line x1="60" y1="205" x2="52" y2="214"/><line x1="150" y1="205" x2="142" y2="214"/><line x1="650" y1="205" x2="642" y2="214"/><line x1="710" y1="205" x2="702" y2="214"/>
+        </g>
+
+        <!-- primary (3-phase stator) fixed on the track -->
+        <rect x="280" y="174" width="320" height="18" rx="3" fill="#012B5C"/>
+        <g fill="#2050E8"><rect x="288" y="178" width="14" height="10" rx="1"/><rect x="306" y="178" width="14" height="10" rx="1"/><rect x="324" y="178" width="14" height="10" rx="1"/><rect x="342" y="178" width="14" height="10" rx="1"/><rect x="360" y="178" width="14" height="10" rx="1"/><rect x="378" y="178" width="14" height="10" rx="1"/><rect x="396" y="178" width="14" height="10" rx="1"/><rect x="414" y="178" width="14" height="10" rx="1"/><rect x="432" y="178" width="14" height="10" rx="1"/><rect x="450" y="178" width="14" height="10" rx="1"/><rect x="468" y="178" width="14" height="10" rx="1"/><rect x="486" y="178" width="14" height="10" rx="1"/><rect x="504" y="178" width="14" height="10" rx="1"/><rect x="522" y="178" width="14" height="10" rx="1"/><rect x="540" y="178" width="14" height="10" rx="1"/><rect x="558" y="178" width="14" height="10" rx="1"/></g>
+        <text x="440" y="232" text-anchor="middle" fill="#8294A6" font-family="Space Grotesk" font-size="10.5" letter-spacing="1">PRIMARY &#183; TRAVELLING FIELD &#8594;</text>
+
+        <!-- travelling magnetic field (sine wave), clipped to the primary -->
+        <g clip-path="url(#lmwclip)">
+          <g class="lm-wave">
+            <path d="M196 168 q18 -16 36 0 t36 0 t36 0 t36 0 t36 0 t36 0 t36 0 t36 0 t36 0 t36 0 t36 0 t36 0 t36 0 t36 0" stroke="#62B4FF" stroke-width="2.6" fill="none" opacity=".8"/>
+            <path d="M196 168 q18 16 36 0 t36 0 t36 0 t36 0 t36 0 t36 0 t36 0 t36 0 t36 0 t36 0 t36 0 t36 0 t36 0 t36 0" stroke="#3D74FF" stroke-width="2.6" fill="none" opacity=".5"/>
+          </g>
+        </g>
+
+        <!-- vehicle: cab + wheels + conductive reaction plate (accelerates away) -->
+        <g class="lm-veh">
+          <g class="lm-speed" stroke="#8294A6" stroke-width="2.6" stroke-linecap="round" style="opacity:0">
+            <line x1="36" y1="116" x2="-6" y2="116"/><line x1="36" y1="125" x2="-18" y2="125"/><line x1="36" y1="134" x2="-6" y2="134"/>
+          </g>
+          <rect x="100" y="150" width="64" height="11" rx="2" fill="url(#lmplate)" stroke="#A9874F" stroke-width="1"/>
+          <rect x="44" y="100" width="150" height="50" rx="13" fill="url(#lmcab)" stroke="#2E6FD6" stroke-width="1.2"/>
+          <rect x="58" y="110" width="26" height="20" rx="4" fill="#0A1F3C" opacity=".72"/><rect x="92" y="110" width="26" height="20" rx="4" fill="#0A1F3C" opacity=".72"/><rect x="126" y="110" width="26" height="20" rx="4" fill="#0A1F3C" opacity=".72"/><rect x="160" y="110" width="22" height="20" rx="4" fill="#0A1F3C" opacity=".72"/>
+          <rect x="52" y="140" width="134" height="5" rx="2.5" fill="#62B4FF"/>
+          <circle cx="74" cy="188" r="11" fill="#16243E"/><circle cx="74" cy="188" r="4" fill="#7FA8D8"/>
+          <circle cx="164" cy="188" r="11" fill="#16243E"/><circle cx="164" cy="188" r="4" fill="#7FA8D8"/>
+          <g class="lm-thrust" style="opacity:0">
+            <line x1="76" y1="80" x2="150" y2="80" stroke="#2050E8" stroke-width="4.5" marker-end="url(#lmThrustArrow)"/>
+            <text x="113" y="60" text-anchor="middle" fill="#2050E8" font-family="Space Grotesk" font-size="11" font-weight="600">thrust on vehicle</text>
+          </g>
+        </g>
+
+        <!-- captions -->
+        <text class="lm-capA" x="380" y="30" text-anchor="middle" font-family="Space Grotesk" font-size="14.5" font-weight="500" fill="#44546A" style="opacity:0">A three-phase primary sets up a magnetic field that travels along the track.</text>
+        <text class="lm-capB" x="380" y="30" text-anchor="middle" font-family="Space Grotesk" font-size="14.5" font-weight="500" fill="#44546A" style="opacity:0">The travelling field drags the vehicle's reaction plate &#8212; launching it forward.</text>
+      </svg>
+    </div>
+
+    <!-- ===== launch-motor animation: double-sided, PLAN VIEW (looking down from above) ===== -->
+    <div class="brake-anim reveal">
+      <svg viewBox="0 0 760 250" fill="none" role="img" aria-label="Plan-view animation, looking down from above: the vehicle's reaction plate (drawn dotted, because it is hidden beneath the vehicle) runs along the centreline between two primaries; both primaries' travelling fields drag it the same way, launching the vehicle forward with high thrust and cancelled side-pull">
+        <defs>
+          <marker id="lmThrustArrow3" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#2050E8"/></marker>
+          <clipPath id="lmwclipP"><rect x="282" y="114" width="316" height="32"/></clipPath>
+        </defs>
+
+        <!-- view label + config badge -->
+        <g><rect x="28" y="214" width="104" height="24" rx="8" fill="#F4F8FC" stroke="#DCE6F1"/><text x="80" y="230" text-anchor="middle" font-family="Space Grotesk" font-size="10.5" font-weight="600" fill="#8294A6" letter-spacing="1.5">PLAN VIEW</text></g>
+        <g><rect x="596" y="214" width="136" height="24" rx="8" fill="#E9F1FA" stroke="#DCE6F1"/><text x="664" y="230" text-anchor="middle" font-family="Space Grotesk" font-size="11" font-weight="700" fill="#2050E8" letter-spacing="1">DOUBLE-SIDED</text></g>
+
+        <!-- guideway seen from above -->
+        <rect x="0" y="84" width="760" height="92" fill="#F4F8FC"/>
+        <line x1="0" y1="86" x2="760" y2="86" stroke="#C9D7E8" stroke-width="2"/>
+        <line x1="0" y1="174" x2="760" y2="174" stroke="#C9D7E8" stroke-width="2"/>
+
+        <!-- two primaries flanking the centre slot (fixed) -->
+        <rect x="280" y="100" width="320" height="14" rx="2" fill="#012B5C"/>
+        <g fill="#2050E8"><rect x="288" y="108" width="14" height="6" rx="1"/><rect x="306" y="108" width="14" height="6" rx="1"/><rect x="324" y="108" width="14" height="6" rx="1"/><rect x="342" y="108" width="14" height="6" rx="1"/><rect x="360" y="108" width="14" height="6" rx="1"/><rect x="378" y="108" width="14" height="6" rx="1"/><rect x="396" y="108" width="14" height="6" rx="1"/><rect x="414" y="108" width="14" height="6" rx="1"/><rect x="432" y="108" width="14" height="6" rx="1"/><rect x="450" y="108" width="14" height="6" rx="1"/><rect x="468" y="108" width="14" height="6" rx="1"/><rect x="486" y="108" width="14" height="6" rx="1"/><rect x="504" y="108" width="14" height="6" rx="1"/><rect x="522" y="108" width="14" height="6" rx="1"/></g>
+        <rect x="280" y="146" width="320" height="14" rx="2" fill="#012B5C"/>
+        <g fill="#2050E8"><rect x="288" y="146" width="14" height="6" rx="1"/><rect x="306" y="146" width="14" height="6" rx="1"/><rect x="324" y="146" width="14" height="6" rx="1"/><rect x="342" y="146" width="14" height="6" rx="1"/><rect x="360" y="146" width="14" height="6" rx="1"/><rect x="378" y="146" width="14" height="6" rx="1"/><rect x="396" y="146" width="14" height="6" rx="1"/><rect x="414" y="146" width="14" height="6" rx="1"/><rect x="432" y="146" width="14" height="6" rx="1"/><rect x="450" y="146" width="14" height="6" rx="1"/><rect x="468" y="146" width="14" height="6" rx="1"/><rect x="486" y="146" width="14" height="6" rx="1"/><rect x="504" y="146" width="14" height="6" rx="1"/><rect x="522" y="146" width="14" height="6" rx="1"/></g>
+        <text x="440" y="196" text-anchor="middle" fill="#8294A6" font-family="Space Grotesk" font-size="10.5" letter-spacing="1">TWO PRIMARIES &#183; TRAVELLING FIELDS &#8594;</text>
+
+        <!-- travelling fields in the slot (both sweep the same way) -->
+        <g clip-path="url(#lmwclipP)"><g class="lm-wave"><path d="M210 119 q18 -4 36 0 t36 0 t36 0 t36 0 t36 0 t36 0 t36 0 t36 0 t36 0 t36 0 t36 0 t36 0 t36 0 t36 0" stroke="#62B4FF" stroke-width="2.2" fill="none" opacity=".8"/></g></g>
+        <g clip-path="url(#lmwclipP)"><g class="lm-wave"><path d="M210 141 q18 4 36 0 t36 0 t36 0 t36 0 t36 0 t36 0 t36 0 t36 0 t36 0 t36 0 t36 0 t36 0 t36 0 t36 0" stroke="#3D74FF" stroke-width="2.2" fill="none" opacity=".55"/></g></g>
+
+        <!-- the vehicle (plan) + its reaction plate, drawn dotted because it is hidden beneath -->
+        <g class="lm-veh">
+          <g class="lm-speed" stroke="#8294A6" stroke-width="2.6" stroke-linecap="round" style="opacity:0">
+            <line x1="34" y1="118" x2="-8" y2="118"/><line x1="34" y1="130" x2="-22" y2="130"/><line x1="34" y1="142" x2="-8" y2="142"/>
+          </g>
+          <rect x="100" y="124" width="92" height="12" rx="2" fill="#E8C68A" fill-opacity=".32" stroke="#C9974B" stroke-width="1.5" stroke-dasharray="4 3"/>
+          <rect x="44" y="92" width="168" height="76" rx="16" fill="#16243E" fill-opacity=".06" stroke="#16243E" stroke-width="2"/>
+          <g fill="#16243E"><rect x="62" y="88" width="20" height="8" rx="2"/><rect x="174" y="88" width="20" height="8" rx="2"/><rect x="62" y="164" width="20" height="8" rx="2"/><rect x="174" y="164" width="20" height="8" rx="2"/></g>
+          <g class="lm-thrust" style="opacity:0">
+            <line x1="80" y1="72" x2="154" y2="72" stroke="#2050E8" stroke-width="4.5" marker-end="url(#lmThrustArrow3)"/>
+            <text x="117" y="52" text-anchor="middle" fill="#2050E8" font-family="Space Grotesk" font-size="11" font-weight="600">thrust on vehicle</text>
+          </g>
+        </g>
+
+        <!-- captions -->
+        <text class="lm-capA" x="380" y="30" text-anchor="middle" font-family="Space Grotesk" font-size="14.5" font-weight="500" fill="#44546A" style="opacity:0">From above: the reaction plate (dotted) runs between two primaries.</text>
+        <text class="lm-capB" x="380" y="30" text-anchor="middle" font-family="Space Grotesk" font-size="14.5" font-weight="500" fill="#44546A" style="opacity:0">Both travelling fields drag it the same way &#8212; high thrust, side-pull cancelled.</text>
       </svg>
     </div>
 
