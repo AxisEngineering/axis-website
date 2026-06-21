@@ -434,7 +434,7 @@ header.nav.scrolled .nav-toggle span{background:var(--navy-800)}
    ============================================================ */
 .band{background:var(--blue);color:#fff;padding:64px 0;position:relative;overflow:hidden}
 .band::after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.07) 1px,transparent 1px);background-size:48px 48px;opacity:.6}
-.band-grid{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center}
+.band-grid{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:20px;text-align:center}
 .band-grid .bnum{font-family:var(--font-display);font-weight:700;font-size:clamp(2.2rem,4vw,3.2rem);letter-spacing:-.02em}
 .band-grid .blab{font-size:.95rem;color:rgba(255,255,255,.85);margin-top:4px}
 
@@ -755,7 +755,7 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.7);padding:64px 0 30px
         <div class="spec-row"><span class="k">Continuous thrust</span><span class="v">Sized to duty <small>to multi-kN / primary</small></span></div>
         <div class="spec-row"><span class="k">Reaction rail</span><span class="v">Aluminium/copper <small>± steel back-iron</small></span></div>
         <div class="spec-row"><span class="k">Air gap</span><span class="v">2 – 40 <small>mm mechanical</small></span></div>
-        <div class="spec-row"><span class="k">Drive</span><span class="v">VVVF inverter <small>or direct-on-line</small></span></div>
+        <div class="spec-row"><span class="k">Drive</span><span class="v">Inverter <small>(VVVF) or direct-on-line</small></span></div>
         <div class="spec-row"><span class="k">Thrust control</span><span class="v">via slip &amp; frequency</span></div>
       </div>
     </div>
@@ -851,7 +851,7 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.7);padding:64px 0 30px
           <div class="how-step">
             <div class="n">3</div>
             <div><h4>Thrust appears — no contact</h4><p>Those induced currents react against the field to produce a direct linear force. The plate is pushed forward without ever touching the primary.</p>
-            <span class="eq-pill">F ∝ slip · B<sub>gap</sub>²</span></div>
+            <span class="eq-pill">F ∝ slip · B<sub>gap</sub>² <i>at low slip</i></span></div>
           </div>
           <div class="how-step">
             <div class="n">4</div>
@@ -1096,7 +1096,7 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.7);padding:64px 0 30px
         </div>
         <h3>Double-sided</h3>
         <div class="sub">Two primaries · plate only</div>
-        <p>Two primaries sandwich a bare aluminium or copper plate. The strong normal pull on each side is reacted by the motor frame — not the vehicle — and the magnetic circuit closes through the opposing core for high thrust density.</p>
+        <p>Two primaries sandwich a bare aluminium or copper plate. The strong pull on each side is reacted by the motor frame, not the vehicle — and the opposing cores give high thrust density.</p>
         <ul>
           <li>Highest thrust per kg of active material</li>
           <li>Normal pull contained by the frame, not the vehicle</li>
@@ -1530,9 +1530,8 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.7);padding:64px 0 30px
 <section class="band">
   <div class="wrap band-grid">
     <div class="reveal"><div class="bnum" data-count="2" data-suffix="">2</div><div class="blab">Cross-checked solver methods</div></div>
-    <div class="reveal d2"><div class="bnum" data-count="30" data-suffix="+">30+</div><div class="blab">Published papers behind our tools</div></div>
-    <div class="reveal d3"><div class="bnum" data-count="0" data-suffix="">0</div><div class="blab">Drive-train contact points</div></div>
-    <div class="reveal d4"><div class="bnum" data-count="100" data-suffix="%">100%</div><div class="blab">Of the route simulated</div></div>
+    <div class="reveal d2"><div class="bnum" data-count="0" data-suffix="">0</div><div class="blab">Drive-train contact points</div></div>
+    <div class="reveal d3"><div class="bnum" data-count="100" data-suffix="%">100%</div><div class="blab">Of the route simulated</div></div>
   </div>
 </section>
 
