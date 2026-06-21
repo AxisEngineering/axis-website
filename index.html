@@ -832,7 +832,7 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.7);padding:64px 0 30px
           <g transform="translate(360,290)">
             <rect x="0" y="-16" width="118" height="44" rx="9" fill="#0A8A3F" opacity=".1"/>
             <text x="59" y="2" text-anchor="middle" fill="#0A8A3F" font-family="Space Grotesk" font-weight="700" font-size="15">Thrust F</text>
-            <text x="59" y="20" text-anchor="middle" fill="#0A8A3F" font-family="Space Grotesk" font-size="11">∝ slip · B²</text>
+            <text x="59" y="20" text-anchor="middle" fill="#0A8A3F" font-family="Space Grotesk" font-size="10">∝ slip · B² → peak</text>
           </g>
         </svg>
       </div>
@@ -851,11 +851,11 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.7);padding:64px 0 30px
           <div class="how-step">
             <div class="n">3</div>
             <div><h4>Thrust appears — no contact</h4><p>Those induced currents react against the field to produce a direct linear force. The plate is pushed forward without ever touching the primary.</p>
-            <span class="eq-pill">F ∝ slip · B<sub>gap</sub>² <i>at low slip</i></span></div>
+            <span class="eq-pill">F ∝ slip · B<sub>gap</sub>² <i>up to its peak</i></span></div>
           </div>
           <div class="how-step">
             <div class="n">4</div>
-            <div><h4>Slip sets the force</h4><p>The plate runs a little slower than the field — that difference is the <em>slip</em>. Control slip and frequency through the inverter and you command thrust, from a standstill launch to cruise.</p></div>
+            <div><h4>Slip sets the force</h4><p>The plate always runs slower than the field — that gap is the <em>slip</em>, and it's what generates the force. Command slip and frequency on the inverter and you set thrust directly; the speed simply follows, from a standstill launch to cruise.</p></div>
           </div>
         </div>
       </div>
@@ -1096,11 +1096,11 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.7);padding:64px 0 30px
         </div>
         <h3>Double-sided</h3>
         <div class="sub">Two primaries · plate only</div>
-        <p>In a double-sided linear induction motor (DSLIM), two primaries sandwich a bare aluminium or copper plate. The strong pull on each side is reacted by the motor frame, not the vehicle — and the opposing cores give high thrust density.</p>
+        <p>In a double-sided linear induction motor (DSLIM), two primaries drive a bare aluminium or copper fin from both sides. Track width is usually what limits how much motor you can fit — and working the fin from both sides gives roughly twice the thrust of a single-sided motor in the same track width. The attraction on each side cancels in the frame, so the vehicle never carries the normal force.</p>
         <ul>
-          <li>Highest thrust per kg of active material</li>
-          <li>Normal pull contained by the frame, not the vehicle</li>
-          <li>Aluminium or copper plate, no back-iron</li>
+          <li>&#8776;2&#215; the thrust of single-sided in the same track width</li>
+          <li>Normal pull cancels in the frame — the vehicle never feels it</li>
+          <li>Bare aluminium or copper fin, no back-iron</li>
         </ul>
       </div>
     </div>
@@ -1252,7 +1252,7 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.7);padding:64px 0 30px
         <g>
           <rect x="322" y="170" width="32" height="22" rx="3" fill="url(#bkrail)" stroke="#A9874F" stroke-width="1"/><rect x="356" y="170" width="32" height="22" rx="3" fill="url(#bkrail)" stroke="#A9874F" stroke-width="1"/><rect x="390" y="170" width="32" height="22" rx="3" fill="url(#bkrail)" stroke="#A9874F" stroke-width="1"/><rect x="424" y="170" width="32" height="22" rx="3" fill="url(#bkrail)" stroke="#A9874F" stroke-width="1"/><rect x="458" y="170" width="32" height="22" rx="3" fill="url(#bkrail)" stroke="#A9874F" stroke-width="1"/><rect x="492" y="170" width="32" height="22" rx="3" fill="url(#bkrail)" stroke="#A9874F" stroke-width="1"/><rect x="526" y="170" width="32" height="22" rx="3" fill="url(#bkrail)" stroke="#A9874F" stroke-width="1"/>
         </g>
-        <text x="441" y="232" text-anchor="middle" fill="#8294A6" font-family="Space Grotesk" font-size="10.5" letter-spacing="1">CONDUCTIVE REACTION FINS &#183; FIXED TO TRACK</text>
+        <text x="441" y="232" text-anchor="middle" fill="#8294A6" font-family="Space Grotesk" font-size="10.5" letter-spacing="1">CONDUCTIVE REACTION PLATES &#183; FIXED TO TRACK</text>
 
         <!-- vehicle: cab + wheels + onboard magnet array -->
         <g class="bk-veh">
