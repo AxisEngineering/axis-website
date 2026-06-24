@@ -38,12 +38,6 @@
   "email": "sales@axisengineering.co.uk",
   "logo": "https://axisengineering.github.io/axis-website/assets/axis-logo-1600.png",
   "slogan": "Driven Without Contact",
-  "founder": {
-    "@type": "Person",
-    "name": "Richard West-Haig",
-    "jobTitle": "Founder & Principal Engineer",
-    "honorificSuffix": "CEng MIET"
-  },
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Unit 15, Elms Business Park, Atherstone Road",
@@ -537,24 +531,6 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.7);padding:64px 0 30px
   .reveal{opacity:1;transform:none}
 }
 
-/* ============ FOUNDER ============ */
-.founder-card{display:grid;grid-template-columns:280px 1fr;gap:50px;align-items:center;background:var(--white);border:1px solid var(--line);border-radius:var(--radius-lg);box-shadow:var(--shadow-md);padding:48px 54px;max-width:980px;margin:0 auto}
-.founder-id{text-align:center}
-.founder-avatar{width:138px;height:138px;border-radius:50%;margin:0 auto 20px;display:flex;align-items:center;justify-content:center;background:linear-gradient(150deg,var(--navy-700),var(--navy-900) 72%);color:#fff;font-family:var(--font-display);font-weight:700;font-size:2.2rem;letter-spacing:.06em;box-shadow:var(--shadow-md);border:3px solid #fff;outline:1px solid var(--line)}
-.founder-name{font-family:var(--font-display);font-weight:700;font-size:1.32rem;color:var(--navy-900);letter-spacing:-.01em}
-.founder-role{font-size:.92rem;color:var(--slate);margin-top:4px}
-.founder-cred{font-family:var(--font-display);font-weight:600;font-size:.8rem;letter-spacing:.1em;color:var(--blue);margin-top:12px;text-transform:uppercase}
-.founder-body .eyebrow{margin-bottom:14px}
-.founder-body h2{font-size:clamp(1.7rem,3vw,2.2rem);color:var(--navy-900);margin-bottom:16px}
-.founder-body p{color:var(--slate);font-size:1.06rem;line-height:1.72;max-width:560px}
-.founder-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
-.founder-chip{font-family:var(--font-display);font-weight:600;font-size:.82rem;color:var(--navy-800);background:var(--bg-soft);border:1px solid var(--line);border-radius:999px;padding:8px 16px}
-@media (max-width:760px){
-  .founder-card{grid-template-columns:1fr;gap:30px;padding:38px 26px;text-align:center}
-  .founder-body p{margin:0 auto}
-  .founder-chips{justify-content:center}
-}
-
 /* ============================================================
    RESPONSIVE
    ============================================================ */
@@ -613,7 +589,6 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.7);padding:64px 0 30px
       <a href="#brakes">Brakes</a>
       <a href="#applications">Applications</a>
       <a href="#capabilities">Capabilities</a>
-      <a href="#founder">Founder</a>
       <a href="#contact">Contact</a>
     </nav>
 
@@ -1576,31 +1551,6 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.7);padding:64px 0 30px
   </div>
 </section>
 
-<!-- ====================== FOUNDER ====================== -->
-<section class="section soft" id="founder">
-  <div class="wrap">
-    <div class="founder-card reveal">
-      <div class="founder-id">
-        <div class="founder-avatar" aria-hidden="true">RWH</div>
-        <div class="founder-name">Richard West-Haig</div>
-        <div class="founder-role">Founder &amp; Principal Engineer</div>
-        <div class="founder-cred">CEng &middot; MIET</div>
-      </div>
-      <div class="founder-body">
-        <span class="eyebrow">The engineer behind Axis</span>
-        <h2>Founded on first principles.</h2>
-        <p>Axis began as a labour of love — the conviction that linear machines deserve the same rigour and honest analysis as any precision drive. The engineer who answers your enquiry is the same one who sizes the motor, writes the design tools and validates every result. No sales layer between you and the work.</p>
-        <div class="founder-chips">
-          <span class="founder-chip">CEng (MIET)</span>
-          <span class="founder-chip">10+ years in industry</span>
-          <span class="founder-chip">Real products in service</span>
-          <span class="founder-chip">Published research</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ====================== CTA / CONTACT ====================== -->
 <section class="cta" id="contact">
   <div class="wrap">
@@ -1669,7 +1619,6 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.7);padding:64px 0 30px
       <div class="foot-col">
         <h5>Company</h5>
         <a href="#about">About</a>
-        <a href="#founder">Founder</a>
         <a href="#process">How we work</a>
         <a href="#contact">Contact</a>
       </div>
