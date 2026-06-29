@@ -552,6 +552,23 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.7);padding:64px 0 30px
 .team-chip{font-family:var(--font-display);font-weight:600;font-size:.76rem;color:var(--navy-800);background:var(--bg-soft);border:1px solid var(--line);border-radius:999px;padding:6px 13px}
 @media (max-width:900px){.team-grid{grid-template-columns:1fr;max-width:440px}}
 
+/* ============ ENQUIRY FORM ============ */
+.enquiry-form{display:flex;flex-direction:column;gap:12px;margin-top:4px}
+.enquiry-form .ef-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.enquiry-form input,.enquiry-form select,.enquiry-form textarea{width:100%;font-family:var(--font-body);font-size:.95rem;color:var(--ink);background:#fff;border:1.5px solid transparent;border-radius:10px;padding:12px 14px;transition:border-color .2s,box-shadow .2s}
+.enquiry-form input::placeholder,.enquiry-form textarea::placeholder{color:var(--slate-light)}
+.enquiry-form select{cursor:pointer;color:var(--ink);appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' stroke='%238294A6' stroke-width='2'%3E%3Cpath d='M4 6l4 4 4-4'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:38px}
+.enquiry-form input:focus,.enquiry-form select:focus,.enquiry-form textarea:focus{outline:none;border-color:var(--blue-bright);box-shadow:0 0 0 3px rgba(61,116,255,.35)}
+.enquiry-form textarea{resize:vertical;min-height:72px;line-height:1.5}
+.enquiry-form .ef-submit{margin-top:2px;justify-content:center;border:none;cursor:pointer;width:100%}
+.enquiry-form .ef-submit[disabled]{opacity:.65;cursor:default}
+.enquiry-form .hp{position:absolute!important;left:-9999px;width:1px;height:1px;opacity:0}
+.ef-status{font-size:.9rem;line-height:1.45;margin:2px 0 0;min-height:1.2em}
+.ef-status.sending{color:rgba(255,255,255,.72)}
+.ef-status.ok{color:#6FE6A6}
+.ef-status.err{color:#FF9BA6}
+@media (max-width:540px){.enquiry-form .ef-row{grid-template-columns:1fr}}
+
 /* ============================================================
    RESPONSIVE
    ============================================================ */
@@ -1628,12 +1645,31 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.7);padding:64px 0 30px
           <span class="eyebrow" style="color:var(--cyan)">Start a project</span>
           <h2>Have a linear motor or braking problem worth solving?</h2>
           <p>Whether you're scoping a new guideway, launching a ride, fitting a contactless brake, or replacing a worn-out mechanical drive — tell us the duty and we'll tell you what's possible.</p>
-          <div class="cta-actions">
-            <a href="mailto:sales@axisengineering.co.uk?subject=Project%20enquiry" class="btn btn-primary">Email the team
+          <form id="enquiryForm" class="enquiry-form">
+            <input type="hidden" name="access_key" value="194452be-d267-48dd-8453-a73e0c021ea3">
+            <input type="hidden" name="subject" value="New project enquiry — Axis Engineering website">
+            <input type="hidden" name="from_name" value="Axis Engineering website">
+            <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <div class="ef-row">
+              <input type="text" name="name" placeholder="Your name" autocomplete="name" required>
+              <input type="text" name="company" placeholder="Company" autocomplete="organization">
+            </div>
+            <input type="email" name="email" placeholder="Email address" autocomplete="email" required>
+            <select name="application" required aria-label="Application type">
+              <option value="" disabled selected>Application type…</option>
+              <option>Linear motor — transit / people mover</option>
+              <option>Linear motor — launch / acceleration</option>
+              <option>Linear motor — industrial / material handling</option>
+              <option>Permanent-magnet brake</option>
+              <option>Feasibility / consultation</option>
+              <option>Other</option>
+            </select>
+            <textarea name="duty" rows="3" placeholder="One line on the duty — speed, mass, force, environment…" required></textarea>
+            <button type="submit" class="btn btn-primary ef-submit">Send enquiry
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
-            <a href="#about" class="btn btn-ghost">Learn more</a>
-          </div>
+            </button>
+            <p class="ef-status" role="status" aria-live="polite"></p>
+          </form>
         </div>
         <div class="contact-card">
           <div class="cc-row">
@@ -1756,6 +1792,42 @@ counters.forEach(c => cio.observe(c));
 
 /* ---------- year ---------- */
 document.getElementById('year').textContent = new Date().getFullYear();
+
+/* ---------- enquiry form (Web3Forms, AJAX) ---------- */
+const ef = document.getElementById('enquiryForm');
+if (ef) {
+  const status = ef.querySelector('.ef-status');
+  const btn = ef.querySelector('.ef-submit');
+  ef.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (ef.botcheck && ef.botcheck.checked) return;
+    btn.disabled = true;
+    status.className = 'ef-status sending';
+    status.textContent = 'Sending…';
+    try {
+      const payload = JSON.stringify(Object.fromEntries(new FormData(ef)));
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: payload
+      });
+      const data = await res.json();
+      if (res.ok && data.success) {
+        ef.reset();
+        status.className = 'ef-status ok';
+        status.textContent = 'Thanks — your enquiry is on its way. We’ll be in touch shortly.';
+      } else {
+        status.className = 'ef-status err';
+        status.textContent = (data && data.message) || 'Something went wrong — please email sales@axisengineering.co.uk.';
+      }
+    } catch (err) {
+      status.className = 'ef-status err';
+      status.textContent = 'Network error — please email sales@axisengineering.co.uk.';
+    } finally {
+      btn.disabled = false;
+    }
+  });
+}
 </script>
 </body>
 </html>
