@@ -38,6 +38,16 @@
   "email": "sales@axisengineering.co.uk",
   "logo": "https://axisengineering.github.io/axis-website/assets/axis-logo-1600.png",
   "slogan": "Driven Without Contact",
+  "founder": {
+    "@type": "Person",
+    "name": "Richard West-Haig",
+    "jobTitle": "Managing Director",
+    "honorificSuffix": "CEng MIET"
+  },
+  "employee": [
+    { "@type": "Person", "name": "Harry Kenyon", "jobTitle": "Operations Director" },
+    { "@type": "Person", "name": "Thomas Jacques", "jobTitle": "Lead Mechanical Engineer" }
+  ],
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Unit 15, Elms Business Park, Atherstone Road",
@@ -531,6 +541,17 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.7);padding:64px 0 30px
   .reveal{opacity:1;transform:none}
 }
 
+/* ============ TEAM ============ */
+.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;max-width:1080px;margin:0 auto}
+.team-card{display:flex;flex-direction:column;background:var(--white);border:1px solid var(--line);border-radius:var(--radius-lg);box-shadow:var(--shadow-md);padding:34px 28px;text-align:center}
+.team-avatar{width:92px;height:92px;border-radius:50%;margin:0 auto 18px;display:flex;align-items:center;justify-content:center;background:linear-gradient(150deg,var(--navy-700),var(--navy-900) 72%);color:#fff;font-family:var(--font-display);font-weight:700;font-size:1.5rem;letter-spacing:.05em;border:3px solid #fff;outline:1px solid var(--line)}
+.team-name{font-family:var(--font-display);font-weight:700;font-size:1.18rem;color:var(--navy-900)}
+.team-role{font-family:var(--font-display);font-weight:600;font-size:.82rem;letter-spacing:.04em;color:var(--blue);margin-top:5px;text-transform:uppercase}
+.team-bio{color:var(--slate);font-size:.98rem;line-height:1.62;margin:16px 0 0}
+.team-chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:auto;padding-top:18px}
+.team-chip{font-family:var(--font-display);font-weight:600;font-size:.76rem;color:var(--navy-800);background:var(--bg-soft);border:1px solid var(--line);border-radius:999px;padding:6px 13px}
+@media (max-width:900px){.team-grid{grid-template-columns:1fr;max-width:440px}}
+
 /* ============================================================
    RESPONSIVE
    ============================================================ */
@@ -589,6 +610,7 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.7);padding:64px 0 30px
       <a href="#brakes">Brakes</a>
       <a href="#applications">Applications</a>
       <a href="#capabilities">Capabilities</a>
+      <a href="#team">Team</a>
       <a href="#contact">Contact</a>
     </nav>
 
@@ -1551,6 +1573,52 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.7);padding:64px 0 30px
   </div>
 </section>
 
+<!-- ====================== TEAM ====================== -->
+<section class="section soft" id="team">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow center">The team</span>
+      <h2>The engineers behind every motor.</h2>
+      <p>Axis pairs first-principles electrical design with hands-on manufacturing experience — the people who design your motor are the people who build it.</p>
+    </div>
+    <div class="team-grid">
+      <div class="team-card reveal">
+        <div class="team-avatar" aria-hidden="true">RWH</div>
+        <div class="team-name">Richard West-Haig</div>
+        <div class="team-role">Managing Director</div>
+        <p class="team-bio">Leads Axis with the conviction that linear machines deserve the same rigour as any precision drive. Designs the motors, builds the in-house tools and validates every result.</p>
+        <div class="team-chips">
+          <span class="team-chip">CEng (MIET)</span>
+          <span class="team-chip">10+ years</span>
+          <span class="team-chip">Published research</span>
+        </div>
+      </div>
+      <div class="team-card reveal d2">
+        <div class="team-avatar" aria-hidden="true">HK</div>
+        <div class="team-name">Harry Kenyon</div>
+        <div class="team-role">Operations Director</div>
+        <p class="team-bio">A time-served production manager with over a decade running manufacturing companies. A welding coordinator with a hands-on approach, Harry makes sure every design is built right and delivered on time.</p>
+        <div class="team-chips">
+          <span class="team-chip">Welding coordinator</span>
+          <span class="team-chip">10+ years in manufacturing</span>
+          <span class="team-chip">Hands-on</span>
+        </div>
+      </div>
+      <div class="team-card reveal d3">
+        <div class="team-avatar" aria-hidden="true">TJ</div>
+        <div class="team-name">Thomas Jacques</div>
+        <div class="team-role">Lead Mechanical Engineer</div>
+        <p class="team-bio">Thomas has worked across an unusually broad range of industries — from power generation to clean energy — delivering a wide scope of demanding mechanical projects in each. He brings that hard-won, cross-sector depth to the mechanical design and integration of every Axis system.</p>
+        <div class="team-chips">
+          <span class="team-chip">5+ years</span>
+          <span class="team-chip">Power gen &rarr; clean energy</span>
+          <span class="team-chip">Broad project scope</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ====================== CTA / CONTACT ====================== -->
 <section class="cta" id="contact">
   <div class="wrap">
@@ -1619,6 +1687,7 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.7);padding:64px 0 30px
       <div class="foot-col">
         <h5>Company</h5>
         <a href="#about">About</a>
+        <a href="#team">Team</a>
         <a href="#process">How we work</a>
         <a href="#contact">Contact</a>
       </div>
