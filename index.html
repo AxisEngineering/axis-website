@@ -790,7 +790,7 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.7);padding:64px 0 30px
       <div class="spec-card">
         <h3>Typical LIM design envelope</h3>
         <div class="spec-row"><span class="k">Topologies</span><span class="v">Single &amp; double-sided</span></div>
-        <div class="spec-row"><span class="k">Synchronous speed</span><span class="v">v<sub>s</sub> = 2·τ·f <small>m/s</small></span></div>
+        <div class="spec-row"><span class="k">Field speed</span><span class="v">Set by supply frequency</span></div>
         <div class="spec-row"><span class="k">Speed range</span><span class="v">0 – 100+ <small>m/s</small></span></div>
         <div class="spec-row"><span class="k">Continuous thrust</span><span class="v">Sized to duty <small>to multi-kN / primary</small></span></div>
         <div class="spec-row"><span class="k">Reaction rail</span><span class="v">Aluminium/copper <small>± steel back-iron</small></span></div>
@@ -821,18 +821,18 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.7);padding:64px 0 30px
           <!-- reaction plate -->
           <rect x="40" y="60" width="440" height="34" rx="6" fill="#E2E9F1" stroke="#C3D3E6"/>
           <rect x="40" y="60" width="440" height="10" rx="5" fill="#F4F7FC"/>
-          <text x="260" y="46" text-anchor="middle" fill="#566678" font-family="Space Grotesk" font-size="12">ALUMINIUM / COPPER REACTION PLATE  +  STEEL BACK-IRON</text>
+          <text x="260" y="46" text-anchor="middle" fill="#566678" font-family="Space Grotesk" font-size="12">Conductive reaction plate</text>
 
           <!-- induced current loops -->
           <g stroke="#2050E8" stroke-width="2" fill="none" opacity=".8">
             <ellipse cx="150" cy="77" rx="22" ry="9"/><path d="M172 77" marker-end="url(#ah)"/>
             <ellipse cx="300" cy="77" rx="22" ry="9"/>
           </g>
-          <text x="225" y="118" text-anchor="middle" fill="#2050E8" font-family="Space Grotesk" font-size="12">induced eddy currents</text>
+          <text x="225" y="118" text-anchor="middle" fill="#2050E8" font-family="Space Grotesk" font-size="12">induced currents</text>
 
           <!-- air gap -->
           <line x1="40" y1="128" x2="480" y2="128" stroke="#C3D3E6" stroke-dasharray="4 4"/>
-          <text x="495" y="120" text-anchor="end" fill="#8294A6" font-family="Space Grotesk" font-size="11">air gap g</text>
+          <text x="495" y="120" text-anchor="end" fill="#8294A6" font-family="Space Grotesk" font-size="11">air gap</text>
 
           <!-- primary core -->
           <rect x="40" y="150" width="440" height="70" rx="8" fill="#012B5C"/>
@@ -853,11 +853,11 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.7);padding:64px 0 30px
             <rect x="444" y="158" width="20" height="40" rx="4" fill="#E5322E"/>
           </g>
           <!-- solid navy band below the slots keeps the label readable -->
-          <text x="260" y="212" text-anchor="middle" fill="#fff" font-family="Space Grotesk" font-size="12.5" font-weight="600" letter-spacing="1.4">PRIMARY · 3-PHASE WINDING (A·B·C)</text>
+          <text x="260" y="212" text-anchor="middle" fill="#fff" font-family="Space Grotesk" font-size="12.5" font-weight="600" letter-spacing="1.4">PRIMARY WINDING</text>
 
           <!-- travelling field arrow -->
           <line x1="70" y1="250" x2="430" y2="250" stroke="#2050E8" stroke-width="3" marker-end="url(#ah)"/>
-          <text x="250" y="242" text-anchor="middle" fill="#012B5C" font-family="Space Grotesk" font-weight="600" font-size="14">Travelling magnetic field — vₛ = 2·τ·f</text>
+          <text x="250" y="242" text-anchor="middle" fill="#012B5C" font-family="Space Grotesk" font-weight="600" font-size="14">Travelling magnetic field</text>
 
           <!-- thrust arrow on plate -->
           <line x1="220" y1="42" x2="330" y2="42" stroke="#0A8A3F" stroke-width="3" marker-end="url(#ah)" opacity="0"/>
@@ -866,13 +866,12 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.7);padding:64px 0 30px
             <line x1="60" y1="300" x2="156" y2="300"/>
             <line x1="60" y1="294" x2="60" y2="306"/><line x1="156" y1="294" x2="156" y2="306"/>
           </g>
-          <text x="108" y="322" text-anchor="middle" fill="#566678" font-family="Space Grotesk" font-size="13">pole pitch τ</text>
+          <text x="108" y="322" text-anchor="middle" fill="#566678" font-family="Space Grotesk" font-size="13">pole spacing</text>
 
           <!-- thrust F -->
           <g transform="translate(360,290)">
             <rect x="0" y="-16" width="118" height="44" rx="9" fill="#0A8A3F" opacity=".1"/>
-            <text x="59" y="2" text-anchor="middle" fill="#0A8A3F" font-family="Space Grotesk" font-weight="700" font-size="15">Thrust F</text>
-            <text x="59" y="20" text-anchor="middle" fill="#0A8A3F" font-family="Space Grotesk" font-size="10">∝ slip · B² → peak</text>
+            <text x="59" y="11" text-anchor="middle" fill="#0A8A3F" font-family="Space Grotesk" font-weight="700" font-size="16">Thrust</text>
           </g>
         </svg>
       </div>
@@ -881,8 +880,7 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.7);padding:64px 0 30px
         <div class="how-steps">
           <div class="how-step">
             <div class="n">1</div>
-            <div><h3>A field that travels</h3><p>Balanced three-phase current in the primary winding produces a magnetic field that sweeps along the motor's length at the synchronous speed.</p>
-            <span class="eq-pill">v<sub>s</sub> = 2 · <i>τ</i> · <i>f</i></span></div>
+            <div><h3>A field that travels</h3><p>Balanced three-phase current in the primary winding produces a magnetic field that sweeps along the motor's length at the synchronous speed.</p></div>
           </div>
           <div class="how-step">
             <div class="n">2</div>
@@ -890,8 +888,7 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.7);padding:64px 0 30px
           </div>
           <div class="how-step">
             <div class="n">3</div>
-            <div><h3>Thrust appears — no contact</h3><p>Those induced currents react against the field to produce a direct linear force. The plate is pushed forward without ever touching the primary.</p>
-            <span class="eq-pill">F ∝ slip · B<sub>gap</sub>² <i>up to its peak</i></span></div>
+            <div><h3>Thrust appears — no contact</h3><p>Those induced currents react against the field to produce a direct linear force. The plate is pushed forward without ever touching the primary.</p></div>
           </div>
           <div class="how-step">
             <div class="n">4</div>
