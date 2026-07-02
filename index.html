@@ -647,7 +647,7 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.7);padding:64px 0 30px
     <div class="hero-copy">
       <div class="hero-badge"><span class="dot"></span>Linear Motor Specialist</div>
       <h1>Driven Without <br><span class="line2">Contact.</span></h1>
-      <p class="lede">Axis Engineering designs, manufactures and validates <strong>Linear Induction Motors</strong> and <strong>Magnetic Braking Solutions</strong> — contactless thrust and braking for transit, launch and industrial systems. No gears. No friction drive. No contact wear.</p>
+      <p class="lede">Axis Engineering designs, manufactures and validates <strong>Linear Induction Motors</strong> and <strong>Magnetic Braking Solutions</strong> — contactless thrust and braking for transit, launch and industrial systems. No gears. No friction drive. No drive-contact wear.</p>
       <div class="hero-actions">
         <a href="#technology" class="btn btn-primary">How it works
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -790,12 +790,12 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.7);padding:64px 0 30px
         <h3>Typical LIM design envelope</h3>
         <div class="spec-row"><span class="k">Topologies</span><span class="v">Single &amp; double-sided</span></div>
         <div class="spec-row"><span class="k">Field speed</span><span class="v">Set by supply frequency</span></div>
-        <div class="spec-row"><span class="k">Speed range</span><span class="v">0 – 100+ <small>m/s</small></span></div>
+        <div class="spec-row"><span class="k">Speed range</span><span class="v">Project duty <small>0 – 100+ m/s</small></span></div>
         <div class="spec-row"><span class="k">Continuous thrust</span><span class="v">Sized to duty <small>to multi-kN / primary</small></span></div>
         <div class="spec-row"><span class="k">Reaction rail</span><span class="v">Aluminium/copper <small>± steel back-iron</small></span></div>
-        <div class="spec-row"><span class="k">Air gap</span><span class="v">2 – 40 <small>mm mechanical</small></span></div>
+        <div class="spec-row"><span class="k">Air gap</span><span class="v">Typical <small>2 – 40 mm mechanical</small></span></div>
         <div class="spec-row"><span class="k">Drive</span><span class="v">VFD <small>or direct-on-line</small></span></div>
-        <div class="spec-row"><span class="k">Thrust control</span><span class="v">via slip &amp; frequency</span></div>
+        <div class="spec-row"><span class="k">Thrust control</span><span class="v">Field speed, current &amp; slip</span></div>
       </div>
     </div>
   </div>
@@ -892,7 +892,7 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.7);padding:64px 0 30px
           </div>
           <div class="how-step">
             <div class="n">4</div>
-            <div><h3>Slip sets the force</h3><p>The plate always runs slower than the field — that gap is the <em>slip</em>, and it's what generates the force. Command slip and frequency on the inverter and you set thrust directly; the speed simply follows, from a standstill launch to cruise.</p></div>
+            <div><h3>Slip sets the force</h3><p>In normal motoring the plate runs a little below the travelling-field speed — that difference is the <em>slip</em>, and it's one of the key variables that set the force. The inverter sets field speed through frequency and the operating point through current and slip, giving direct thrust control within the machine's thermal, gap and saturation limits.</p></div>
           </div>
         </div>
       </div>
@@ -1133,10 +1133,10 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.7);padding:64px 0 30px
         </div>
         <h3>Double-sided</h3>
         <div class="sub">Two primaries · plate only</div>
-        <p>In a double-sided linear induction motor (DSLIM), two primaries drive a bare aluminium or copper fin from both sides. Track width is usually what limits how much motor you can fit — and working the fin from both sides gives roughly twice the thrust of a single-sided motor in the same track width. The attraction on each side cancels in the frame, so the vehicle never carries the normal force.</p>
+        <p>In a double-sided linear induction motor (DSLIM), two primaries drive a bare aluminium or copper fin from both sides. Track width is usually what limits how much motor you can fit — and working the fin from both sides can approach twice the active-face thrust of a single-sided motor for the same track width, under comparable current, gap and thermal limits. In a symmetric arrangement the opposing normal attractions largely cancel through the frame, greatly reducing the net normal load on the vehicle.</p>
         <ul>
-          <li>&#8776;2&#215; the thrust of single-sided in the same track width</li>
-          <li>Normal pull cancels in the frame — the vehicle never feels it</li>
+          <li>Can approach 2&#215; active-face thrust under comparable limits</li>
+          <li>Opposing normal pulls largely cancel in the frame</li>
           <li>Bare aluminium or copper fin, no back-iron</li>
         </ul>
       </div>
@@ -1217,7 +1217,7 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.7);padding:64px 0 30px
     <div class="sec-head center reveal">
       <span class="eyebrow center">Product · braking</span>
       <h2>Permanent-magnet brakes</h2>
-      <p>It's the LIM's principle turned passive. Replace the powered winding with a <strong>fixed permanent-magnet field</strong> and let the relative motion between vehicle and track do the work — the magnets induce eddy currents in a conductive plate, and those currents oppose the motion. The result is a smooth, contactless retarding force with no power, no hydraulics, no contact and no friction pads to wear or fade — and the faster the vehicle travels, the harder it brakes, right up to its design speed.</p>
+      <p>It's the LIM's principle turned passive. Replace the powered winding with a <strong>fixed permanent-magnet field</strong> and let the relative motion between vehicle and track do the work — the magnets induce eddy currents in a conductive plate, and those currents oppose the motion. The result is a smooth, contactless dynamic braking force with no external power, no hydraulics and no friction pads to wear or fade. The force–speed curve is shaped over the working speed range by the magnet geometry, pole pitch, gap and reaction-plate material.</p>
     </div>
 
     <!-- ===== animation: a vehicle's fin enters the fixed PM brake and decelerates ===== -->
@@ -1405,7 +1405,7 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.7);padding:64px 0 30px
     <div class="brake-benefits reveal">
       <div class="bbenefit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Passive — no power or hydraulics</div>
       <div class="bbenefit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Contactless — no pads to wear or fade</div>
-      <div class="bbenefit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Still brakes on power loss</div>
+      <div class="bbenefit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Dynamic braking without external power</div>
       <div class="bbenefit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Smooth &amp; speed-responsive</div>
     </div>
     <p class="brake-note">A dynamic brake — its retarding force comes from motion, so a held standstill is handled by a paired mechanical holding brake.</p>
@@ -1451,7 +1451,7 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.7);padding:64px 0 30px
         <div class="app-content">
           <div class="app-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h3l3-7 4 14 3-7h5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
           <h3>Maglev &amp; high-speed propulsion</h3>
-          <p>When the vehicle leaves the rail entirely, the linear motor is the only thing left to push it — quiet, contactless propulsion at speed.</p>
+          <p>When the vehicle leaves the rail entirely, contactless propulsion becomes the primary thrust path — quiet and continuous at speed.</p>
         </div>
       </div>
 
@@ -1548,7 +1548,7 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.7);padding:64px 0 30px
       <div class="adv-card reveal d2">
         <div class="ac-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 18c4-9 14-9 18 0" stroke-linecap="round"/><path d="M6 18l3-3M18 18l-3-3" stroke-linecap="round"/></svg></div>
         <h3>Grip-independent thrust</h3>
-        <p>Force is set electromagnetically, so steep grades, rain and ice can't make the drive slip.</p>
+        <p>Thrust is not limited by wheel–rail adhesion, so rain, ice and steep gradients don't create the same drive-slip limit as a friction drive.</p>
       </div>
       <div class="adv-card reveal d3">
         <div class="ac-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L4 14h7l-1 8 9-12h-7z" stroke-linejoin="round"/></svg></div>

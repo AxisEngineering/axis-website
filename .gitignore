@@ -1,6 +1,11 @@
 # Private working notes — never publish
 *.docx
 
+# Codex / audit reports & artefacts — internal only, never publish
+Axis_Website_Full_Audit_*.txt
+Axis_Website_Claude_Implementation_Brief_*.txt
+audit-artifacts/
+
 # Build artefacts & OS junk
 *.zip
 .DS_Store
