@@ -182,7 +182,9 @@ header.nav:not(.scrolled) .brand .wm-top{color:#fff}
 header.nav.scrolled .nav-links a{color:var(--slate)}
 header.nav.scrolled .nav-links a:hover{color:var(--navy-800)}
 .nav-cta{display:flex;align-items:center;gap:14px}
-.nav-toggle{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px;padding:8px}
+.nav-toggle{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px;padding:8px;min-width:44px;min-height:44px;align-items:center;justify-content:center}
+.skip-link{position:absolute;left:-9999px;top:0;z-index:1000;background:var(--blue);color:#fff;padding:12px 20px;font-weight:600;text-decoration:none;border-radius:0 0 8px 0}
+.skip-link:focus{left:0}
 .nav-toggle span{width:26px;height:2.5px;background:#fff;border-radius:2px;transition:.3s}
 header.nav.scrolled .nav-toggle span{background:var(--navy-800)}
 
@@ -511,7 +513,7 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.7);padding:64px 0 30px
 .foot-brand .brand .wm-top{color:#fff}
 .foot-brand p{margin-top:18px;font-size:.95rem;max-width:300px;color:rgba(255,255,255,.6)}
 .foot-col h5{font-family:var(--font-display);color:#fff;font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:18px}
-.foot-col a{display:block;font-size:.95rem;margin-bottom:11px;color:rgba(255,255,255,.62);transition:color .2s}
+.foot-col a{display:block;font-size:.95rem;margin-bottom:8px;padding:3px 0;color:rgba(255,255,255,.62);transition:color .2s}
 .foot-col a:hover{color:var(--cyan)}
 .foot-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:24px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:.86rem;color:rgba(255,255,255,.62)}
 .foot-tag{font-family:var(--font-display);letter-spacing:.18em;font-size:.78rem;color:var(--cyan);text-transform:uppercase}
@@ -606,6 +608,7 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.7);padding:64px 0 30px
 </style>
 </head>
 <body>
+<a class="skip-link" href="#top">Skip to main content</a>
 <!-- ====================== NAV ====================== -->
 <header class="nav" id="nav">
   <div class="wrap nav-inner">
