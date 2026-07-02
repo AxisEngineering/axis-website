@@ -834,6 +834,7 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.7);padding:64px 0 30px
         <defs>
           <marker id="ulArrow" markerWidth="9" markerHeight="9" refX="6" refY="4.5" orient="auto"><path d="M0 0L9 4.5L0 9Z" fill="#2E7BD6"/></marker>
           <clipPath id="ulBar"><rect x="126" y="168" width="332" height="30"/></clipPath>
+          <linearGradient id="ulVeh" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0E5BB8"/><stop offset="1" stop-color="#002B5C"/></linearGradient>
         </defs>
         <g opacity="0">
           <animate attributeName="opacity" dur="13s" repeatCount="indefinite" keyTimes="0;0.42;0.52;0.92;1" values="0;0;1;1;0"/>
@@ -878,13 +879,13 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.7);padding:64px 0 30px
           <animate attributeName="opacity" dur="13s" repeatCount="indefinite" keyTimes="0;0.46;0.54;0.92;1" values="0;0;1;1;0"/>
           <g>
             <animateTransform attributeName="transform" type="translate" dur="13s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;0.9;1" keySplines=".45 0 .55 1;.45 0 .55 1;0 0 1 1" values="-230 0;-230 0;330 0;330 0"/>
-            <rect x="176" y="140" width="118" height="28" rx="11" fill="#012B5C"/>
-            <rect x="188" y="143" width="94" height="8" rx="4" fill="#0E5BB8"/>
-            <rect x="196" y="153" width="18" height="10" rx="2" fill="#8FC4FF"/>
-            <rect x="222" y="153" width="18" height="10" rx="2" fill="#8FC4FF"/>
-            <rect x="248" y="153" width="18" height="10" rx="2" fill="#8FC4FF"/>
-            <rect x="182" y="169" width="106" height="7" rx="2" fill="#C6D4E6" stroke="#9DB0C9" stroke-width="1"/>
-            <path d="M300 156 h18 M312 150 l8 6 -8 6" fill="none" stroke="#2E7BD6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <rect x="176" y="130" width="124" height="38" rx="14" fill="url(#ulVeh)" stroke="#2E6FD6" stroke-width="1.5"/>
+            <rect x="187" y="140" width="22" height="17" rx="5" fill="#0A1F3C" opacity=".8"/>
+            <rect x="214" y="140" width="22" height="17" rx="5" fill="#0A1F3C" opacity=".8"/>
+            <rect x="241" y="140" width="22" height="17" rx="5" fill="#0A1F3C" opacity=".8"/>
+            <rect x="268" y="140" width="22" height="17" rx="5" fill="#0A1F3C" opacity=".8"/>
+            <rect x="182" y="169" width="114" height="7" rx="2" fill="#C6D4E6" stroke="#9DB0C9" stroke-width="1"/>
+            <path d="M306 149 h20 M320 143 l8 6 -8 6" fill="none" stroke="#62B4FF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
           </g>
         </g>
         <g opacity="1"><animate attributeName="opacity" dur="13s" repeatCount="indefinite" keyTimes="0;0.26;0.38;0.94;1" values="1;1;0;0;1"/>
