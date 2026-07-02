@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Linear Induction Motor Technical Resources | Axis Engineering</title>
+<meta name="description" content="Technical notes on linear induction motors and eddy-current braking — how LIMs are sized, slip and field speed, SSLIM vs DSLIM, and feasibility inputs.">
+<link rel="canonical" href="https://www.axisengineering.co.uk/technical-resources/">
+<meta name="robots" content="index,follow">
+<link rel="icon" type="image/svg+xml" href="/assets/axis-mark.svg">
+<meta property="og:title" content="Linear Induction Motor Technical Resources | Axis Engineering">
+<meta property="og:description" content="Technical notes on linear induction motors and eddy-current braking — how LIMs are sized, slip and field speed, SSLIM vs DSLIM, and feasibility inputs.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.axisengineering.co.uk/technical-resources/">
+<meta property="og:image" content="https://www.axisengineering.co.uk/assets/og-banner.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site-pages.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="ph">
+  <div class="wrap ph-inner">
+    <a class="brand" href="/" aria-label="Axis Engineering — home">
+      <img src="/assets/axis-symbol.png" width="200" height="140" alt="Axis Engineering">
+      <span class="wm"><b>AXIS</b><span>ENGINEERING</span></span>
+    </a>
+    <nav class="ph-nav" aria-label="Primary">
+      <a href="/">Home</a>
+      <a href="/linear-induction-motors/">Motors</a>
+      <a href="/permanent-magnet-brakes/">Brakes</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+    <a class="btn" href="/#contact">Start a project</a>
+  </div>
+</header>
+<section class="ph-hero"><div class="wrap"><div class="crumb"><a href="/">Home</a> / Technical resources</div><span class="eyebrow">Reference</span><h1>Technical Resources</h1><p class="lede">Plain-English notes on how linear motors are sized and how eddy-current braking behaves — and what a feasibility study needs.</p></div></section>
+<main id="main" class="wrap">
+<p class="lead-in">Reference notes on how we approach linear-motor and eddy-current-brake work: the sizing method, the physics in plain words, the practical trade-offs between machine types, and what a feasibility study needs from you to get started.</p>
+
+<section class="psec"><h2>How LIMs are sized</h2><p>We size a linear induction motor in stages rather than from a single formula. We begin with equivalent-circuit models to set the coarse geometry and operating point, then cross-check the field behaviour with FEA (finite-element analysis) to capture the end and edge effects that the circuit view averages over. From there we run the full duty in route or duty simulation, and check thermal limits at the winding and reaction plate, so the machine is confirmed against the real cycle before any metal is cut.</p><div class="pcards"><div class="pcard"><h3>Equivalent-circuit models</h3><p>Fast first pass on geometry and operating point, used to explore the design envelope early.</p></div><div class="pcard"><h3>FEA cross-check</h3><p>Finite-element analysis to verify the air-gap field and refine the end-effect and edge-effect corrections.</p></div><div class="pcard"><h3>Duty simulation</h3><p>The full route or duty cycle run in simulation, so speeds, thrust demand and dwell times reflect the real job.</p></div><div class="pcard"><h3>Thermal check</h3><p>Thermal modelling of winding and reaction plate against the cycle, so the machine holds within its limits.</p></div></div></section>
+
+<section class="psec"><h2>Slip and field speed in plain words</h2><p>A linear induction motor is a rotary motor unrolled: instead of a field that rotates, a straight primary winding produces a magnetic field that travels along its length and drags a conductive reaction plate with it. The speed of that travelling field is set by the drive frequency and the pole spacing, not by the vehicle. Slip is simply the small difference between the field speed and the plate or vehicle speed, and it is one of the variables that set thrust. Because the drive is adhesion-independent, thrust does not rely on a friction contact, so rain, ice and grades do not create the wheel-rail drive-slip limit of a friction drive.</p></section>
+
+<section class="psec"><h2>SSLIM vs DSLIM at a glance</h2><p>The two common arrangements differ in what the primary faces and in how the normal forces behave. A single-sided machine runs a primary against an aluminium or copper plate over a steel back-iron, which adds a significant normal attraction to the steel. A double-sided machine places two primaries either side of a bare aluminium or copper fin with no back-iron, so the opposing normal pulls largely cancel in the frame.</p><div class="pcards"><div class="pcard"><h3>SSLIM — single-sided</h3><p>One primary, reaction plate over steel back-iron. Simpler track, but with a significant normal attraction to the steel that the structure must carry.</p></div><div class="pcard"><h3>DSLIM — double-sided</h3><p>Two primaries either side of a bare conductive fin, no back-iron. Opposing normal pulls largely cancel, and it can approach twice the active-face thrust for a given track width under comparable current, gap and thermal limits.</p></div></div><div class="callout">Which suits a project depends on track structure, gap control and how the normal force is best managed, not on one type being universally better.</div></section>
+
+<section class="psec"><h2>Eddy-current braking force-speed behaviour</h2><p>A permanent-magnet eddy-current brake uses fixed magnets and relative motion to induce eddy currents in a conductive plate, and those currents oppose the motion. It is smooth and contactless, needs no external power while moving, and has no friction pads to wear or fade. The braking force typically rises with speed and can then taper toward the top of the range, with the shape set over the working range by magnet geometry, pole pitch, gap and reaction-plate material.</p><div class="callout">The force is zero at a standstill, so this is a dynamic brake — pair it with a mechanical holding brake wherever zero-speed restraint is required.</div></section>
+
+<section class="psec"><h2>What a feasibility study needs</h2><p>The more of the following you can supply, the sooner we can put realistic numbers to a concept. Treat these as guidance rather than a fixed form; where data is provisional, say so and we will bound it.</p><ul><li>Duty and route: speeds, distances, grades, stops and cycle timing, or the launch profile for a launch system.</li><li>Payload and mass, including any range or worst case.</li><li>Thrust or acceleration targets, and any brake or hold requirements.</li><li>Available space and structure: gap you can hold, track or guideway type, and mounting constraints.</li><li>Power and drive: supply available, whether variable-frequency inverter or fixed-speed direct-on-line, and any conversion limits.</li><li>Environment and thermal context: ambient, duty density and cooling that is realistic on site.</li><li>Deployment preference, if any: on-board short primary with a reaction rail along the route, or wayside long primary in the track with a short plate on the vehicle.</li></ul><p>Detailed input templates and worked checklists are available on request rather than as public downloads.</p></section>
+
+<section class="psec"><h2>Related</h2><div class="rellinks"><a href="/linear-induction-motor-design/">LIM design services</a> <a href="/linear-induction-motors/">Linear induction motors</a> <a href="/permanent-magnet-brakes/">PM brakes</a></div></section>
+
+<div class="page-cta"><h2>Have a duty cycle you want sized properly?</h2><p>Send us the route or profile and we will model it before any metal is cut.</p><a class="btn" href="/#contact">Start a project</a></div>
+</main>
+<footer class="pf">
+  <div class="wrap">
+    <div class="pf-grid">
+      <div>
+        <h4>Axis Engineering</h4>
+        <p class="pf-about">Design, manufacture and simulation of linear induction motors and permanent-magnet braking solutions. Driven without contact.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <a href="/linear-induction-motors/">Linear induction motors</a>
+        <a href="/permanent-magnet-brakes/">Permanent-magnet brakes</a>
+        <a href="/double-sided-lim-dslim/">Double-sided LIM</a>
+        <a href="/technical-resources/">Technical resources</a>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <a href="/">Home</a>
+        <a href="/#team">Team</a>
+        <a href="/#contact">Contact</a>
+        <a href="/privacy/">Privacy notice</a>
+      </div>
+    </div>
+    <div class="pf-bottom">
+      <span>&copy; 2026 Axis Engineering.</span>
+      <span>Unit 15, Elms Business Park, Swadlincote DE12 7AP</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

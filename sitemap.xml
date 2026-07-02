@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://www.axisengineering.co.uk/</loc>
-    <lastmod>2026-06-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-  </url>
+  <url><loc>https://www.axisengineering.co.uk/</loc><lastmod>2026-07-02</lastmod><changefreq>monthly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://www.axisengineering.co.uk/linear-induction-motors/</loc><lastmod>2026-07-02</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.axisengineering.co.uk/linear-induction-motor-design/</loc><lastmod>2026-07-02</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.axisengineering.co.uk/permanent-magnet-brakes/</loc><lastmod>2026-07-02</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.axisengineering.co.uk/eddy-current-brakes/</loc><lastmod>2026-07-02</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.axisengineering.co.uk/double-sided-lim-dslim/</loc><lastmod>2026-07-02</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.axisengineering.co.uk/applications/people-movers/</loc><lastmod>2026-07-02</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.axisengineering.co.uk/applications/launch-systems/</loc><lastmod>2026-07-02</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.axisengineering.co.uk/applications/maglev-propulsion/</loc><lastmod>2026-07-02</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.axisengineering.co.uk/technical-resources/</loc><lastmod>2026-07-02</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.axisengineering.co.uk/privacy/</loc><lastmod>2026-07-02</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
 </urlset>

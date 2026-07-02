@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Linear Induction Motors | Design, Manufacture and Simulation UK</title>
+<meta name="description" content="Axis Engineering designs, manufactures and validates linear induction motors for transit, launch, maglev and industrial systems, with simulation, FEA and thermal checks.">
+<link rel="canonical" href="https://www.axisengineering.co.uk/linear-induction-motors/">
+<meta name="robots" content="index,follow">
+<link rel="icon" type="image/svg+xml" href="/assets/axis-mark.svg">
+<meta property="og:title" content="Linear Induction Motors | Design, Manufacture and Simulation UK">
+<meta property="og:description" content="Axis Engineering designs, manufactures and validates linear induction motors for transit, launch, maglev and industrial systems, with simulation, FEA and thermal checks.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.axisengineering.co.uk/linear-induction-motors/">
+<meta property="og:image" content="https://www.axisengineering.co.uk/assets/og-banner.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site-pages.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="ph">
+  <div class="wrap ph-inner">
+    <a class="brand" href="/" aria-label="Axis Engineering — home">
+      <img src="/assets/axis-symbol.png" width="200" height="140" alt="Axis Engineering">
+      <span class="wm"><b>AXIS</b><span>ENGINEERING</span></span>
+    </a>
+    <nav class="ph-nav" aria-label="Primary">
+      <a href="/">Home</a>
+      <a href="/linear-induction-motors/">Motors</a>
+      <a href="/permanent-magnet-brakes/">Brakes</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+    <a class="btn" href="/#contact">Start a project</a>
+  </div>
+</header>
+<section class="ph-hero"><div class="wrap"><div class="crumb"><a href="/">Home</a> / Linear induction motors</div><span class="eyebrow">Technology</span><h1>Linear Induction Motors</h1><p class="lede">How a linear induction motor produces contactless thrust — the configurations, the materials, and what Axis designs, manufactures and validates.</p></div></section>
+<main id="main" class="wrap">
+<p class="lead-in">A linear induction motor produces thrust directly along a line of travel, with no gearbox, no wheels driving through friction, and no contact between the moving parts that do the work. This page explains how a LIM works, the main configurations, and what we need from you to design one.</p>
+
+<section class="psec">
+<h2>What a LIM is</h2>
+<p>A linear induction motor is a rotary motor unrolled and laid flat. Instead of a winding that produces a rotating field inside a cylindrical stator, a straight primary winding produces a magnetic field that travels along its length. That travelling field sweeps across a nearby conductive reaction plate, induces currents in it, and drags the plate along with it. One part carries the winding; the other is a passive conductor, so the working force is developed across an air gap without any mechanical contact.</p>
+<div class="callout">Because thrust is developed electromagnetically and does not rely on wheel-to-rail grip, a LIM drive is adhesion-independent: rain, ice and steep grades do not create the drive-slip limit that constrains a friction drive.</div>
+</section>
+
+<section class="psec">
+<h2>How thrust is produced</h2>
+<p>The speed of the travelling field is set by the drive frequency and the pole spacing of the winding. When the reaction plate moves slightly slower than the field, that small difference — the slip — is what allows currents to be induced in the plate, and slip is one of the variables that set thrust. Thrust ultimately comes from the air-gap power delivered to the plate divided by the field speed, refined with corrections for the longitudinal end-effect at the entry and exit of the finite primary and the transverse edge-effect at the sides of the plate. Both corrections matter in a real machine, so we account for them rather than reduce thrust to a single simple product.</p>
+</section>
+
+<section class="psec">
+<h2>SSLIM vs DSLIM</h2>
+<p>The two established layouts differ in how the reaction member is arranged, and the choice drives the whole mechanical design.</p>
+<div class="pcards">
+<div class="pcard">
+<h3>Single-sided (SSLIM)</h3>
+<p>One primary faces an aluminium or copper reaction plate backed by steel. The steel back-iron completes the magnetic circuit, but it also produces a significant normal attraction between the primary and the track that the supporting structure and bearings must carry over the full working range.</p>
+</div>
+<div class="pcard">
+<h3>Double-sided (DSLIM)</h3>
+<p>Two primaries face each other across a bare aluminium or copper fin, with no back-iron. The opposing normal pulls largely cancel within the frame, and for a given track width the layout can approach roughly twice the active-face thrust under comparable current, gap and thermal limits.</p>
+</div>
+</div>
+</section>
+
+<section class="psec">
+<h2>Vehicle-mounted vs track-mounted primary</h2>
+<p>Where you put the active winding is a system-level economic decision as much as an electrical one. There is no single right answer; it depends on how many vehicles run and how much of the route is active at once.</p>
+<ul>
+<li><strong>On-board short primary, reaction rail along the route.</strong> Each vehicle carries a compact primary and picks up power on board, while a passive conductive rail runs the whole length of track. This uses the fewest motors, but you pay for continuous rail.</li>
+<li><strong>Wayside long primary in the track, short plate on the vehicle.</strong> The active winding is built into the guideway and the vehicle carries only a light passive reaction plate. The vehicle stays simple and unpowered, but you fund and energise the whole active length of guideway.</li>
+</ul>
+</section>
+
+<section class="psec">
+<h2>Reaction rail materials</h2>
+<p>The reaction member is chosen to trade conductivity, mechanical robustness and cost. Aluminium is the usual starting point for a good balance of conductivity and weight; copper raises conductivity where the thermal and cost budget allows; and in a single-sided design the steel back-iron behind the conductive sheet completes the magnetic circuit and sets the normal force. Plate thickness, the running gap and the grade of conductor all feed directly into the thrust and losses, so we size them together with the winding rather than fixing the rail in isolation.</p>
+</section>
+
+<section class="psec">
+<h2>Typical design inputs</h2>
+<p>The more of the following you can supply, the tighter and more realistic the first-pass design. Estimates are fine early on; we will iterate as the numbers firm up.</p>
+<ul>
+<li>Duty: required thrust, top speed, acceleration and the mass to be moved.</li>
+<li>Route or motion profile: distances, grades, stops and cycle rate over a representative run.</li>
+<li>Envelope: available space for the primary, the running gap, and the track or guideway width.</li>
+<li>Reaction member: any existing rail or plate you must work with, or a free hand to specify one.</li>
+<li>Supply and drive: available voltage and power, and whether variable-frequency inverter drive or fixed-speed direct-on-line operation is expected.</li>
+<li>Environment and constraints: thermal limits, duty cycle, cooling, and any weight or cost targets.</li>
+</ul>
+</section>
+
+<section class="psec">
+<h2>What Axis delivers</h2>
+<p>We size the machine with equivalent-circuit models, cross-check the design with FEA, run the full duty or route in simulation, and check thermal limits before any metal is cut. The output is a motor specification you can build to and a clear account of how it performs across its working envelope — thrust and normal force against speed, losses and expected temperatures — together with the reasoning behind the configuration and material choices. Where the application calls for it, we can advise on the DSLIM route, the drive, and how the LIM integrates with the wider system.</p>
+</section>
+
+<section class="psec">
+<h2>Related</h2>
+<div class="rellinks"><a href="/linear-induction-motor-design/">LIM design services</a> <a href="/double-sided-lim-dslim/">Double-sided LIM (DSLIM)</a> <a href="/applications/launch-systems/">Launch systems</a> <a href="/permanent-magnet-brakes/">PM brakes</a></div>
+</section>
+
+<div class="page-cta"><h2>Have a thrust, speed and route in mind?</h2><p>Send us your duty and envelope, and we will tell you what a LIM can do for it.</p><a class="btn" href="/#contact">Start a project</a></div>
+</main>
+<footer class="pf">
+  <div class="wrap">
+    <div class="pf-grid">
+      <div>
+        <h4>Axis Engineering</h4>
+        <p class="pf-about">Design, manufacture and simulation of linear induction motors and permanent-magnet braking solutions. Driven without contact.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <a href="/linear-induction-motors/">Linear induction motors</a>
+        <a href="/permanent-magnet-brakes/">Permanent-magnet brakes</a>
+        <a href="/double-sided-lim-dslim/">Double-sided LIM</a>
+        <a href="/technical-resources/">Technical resources</a>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <a href="/">Home</a>
+        <a href="/#team">Team</a>
+        <a href="/#contact">Contact</a>
+        <a href="/privacy/">Privacy notice</a>
+      </div>
+    </div>
+    <div class="pf-bottom">
+      <span>&copy; 2026 Axis Engineering.</span>
+      <span>Unit 15, Elms Business Park, Swadlincote DE12 7AP</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

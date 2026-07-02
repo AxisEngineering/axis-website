@@ -570,6 +570,15 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.7);padding:64px 0 30px
 .ef-status.sending{color:rgba(255,255,255,.72)}
 .ef-status.ok{color:#6FE6A6}
 .ef-status.err{color:#FF9BA6}
+.ef-privacy{font-size:.8rem;line-height:1.5;color:rgba(255,255,255,.5);margin-top:12px}
+.ef-privacy a{color:rgba(255,255,255,.78);text-decoration:underline}
+.brief-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:960px;margin:0 auto}
+.brief-col{background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);box-shadow:var(--shadow-md);padding:32px 30px}
+.brief-col h3{font-size:1.15rem;color:var(--navy-900);margin-bottom:16px}
+.brief-col ul{list-style:none}
+.brief-col li{position:relative;padding-left:26px;margin-bottom:10px;color:var(--slate);font-size:.99rem}
+.brief-col li::before{content:"";position:absolute;left:0;top:.5em;width:9px;height:9px;border-radius:2px;background:var(--blue);transform:rotate(45deg)}
+@media(max-width:760px){.brief-grid{grid-template-columns:1fr}}
 @media (max-width:540px){.enquiry-form .ef-row{grid-template-columns:1fr}}
 
 /* ============================================================
@@ -1639,6 +1648,45 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.7);padding:64px 0 30px
 </section>
 
 <!-- ====================== CTA / CONTACT ====================== -->
+<!-- ====================== WORKING WITH US ====================== -->
+<section class="section" id="working">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow center">Working with us</span>
+      <h2>What we need, and what you get back</h2>
+      <p>A useful feasibility answer starts with a clear duty. Here's what helps us start, and what you'll receive.</p>
+    </div>
+    <div class="brief-grid">
+      <div class="brief-col reveal">
+        <h3>What we need from you</h3>
+        <ul>
+          <li>Vehicle or load mass</li>
+          <li>Target speed profile</li>
+          <li>Available motor / brake length</li>
+          <li>Duty cycle or cycles per hour</li>
+          <li>Gap and packaging limits</li>
+          <li>Reaction rail / fin material, if fixed</li>
+          <li>Environment and temperature</li>
+          <li>Power supply constraints</li>
+          <li>Safety or braking role</li>
+        </ul>
+      </div>
+      <div class="brief-col reveal d2">
+        <h3>What you get back</h3>
+        <ul>
+          <li>A clear feasibility answer</li>
+          <li>Thrust–speed curve</li>
+          <li>Current, kVA and power-factor estimate</li>
+          <li>Thermal estimate over the duty</li>
+          <li>Reaction rail recommendation</li>
+          <li>Concept geometry</li>
+          <li>Key risks and next test steps</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="cta" id="contact">
   <div class="wrap">
     <div class="cta-box reveal">
@@ -1671,6 +1719,7 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.7);padding:64px 0 30px
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </button>
             <p class="ef-status" role="status" aria-live="polite"></p>
+            <p class="ef-privacy">By submitting this form you agree that Axis Engineering may use these details to respond to your enquiry. See our <a href="/privacy/">Privacy Notice</a>.</p>
           </form>
         </div>
         <div class="contact-card">
@@ -1730,14 +1779,17 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.7);padding:64px 0 30px
         <a href="#contact">Contact</a>
       </div>
       <div class="foot-col">
-        <h5>Topologies</h5>
-        <a href="#types">Single-sided · SSLIM</a>
-        <a href="#types">Double-sided · DSLIM</a>
+        <h5>Services</h5>
+        <a href="/linear-induction-motors/">Linear induction motors</a>
+        <a href="/linear-induction-motor-design/">LIM design services</a>
+        <a href="/permanent-magnet-brakes/">Permanent-magnet brakes</a>
+        <a href="/double-sided-lim-dslim/">Double-sided LIM</a>
+        <a href="/technical-resources/">Technical resources</a>
       </div>
     </div>
     <div class="foot-bottom">
       <span>© <span id="year">2026</span> Axis Engineering. All rights reserved.</span>
-      <span class="foot-tag">Driven Without Contact</span>
+      <span class="foot-tag"><a href="/privacy/" style="color:inherit">Privacy notice</a> · Driven Without Contact</span>
     </div>
   </div>
 </footer>
