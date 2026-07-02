@@ -92,6 +92,11 @@ main{padding:20px 0 10px}
 .pf .pf-about{color:rgba(255,255,255,.6);font-size:.92rem;max-width:320px}
 .pf-bottom{border-top:1px solid rgba(255,255,255,.1);margin-top:34px;padding-top:22px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:.86rem;color:rgba(255,255,255,.55)}
 
+.unroll-fig{max-width:700px;margin:30px auto 0;background:var(--line-soft);border:1px solid var(--line);border-radius:18px;padding:24px 20px 16px}
+.unroll-fig .u-kicker{text-align:center;font-size:.8rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#5b7699;margin-bottom:8px}
+.unroll-fig svg{width:100%;height:auto;display:block}
+.unroll-fig .diagram-cap{margin-top:14px;text-align:center;font-size:.92rem;color:var(--slate);font-style:italic;line-height:1.5}
+
 @media (max-width:760px){
   .ph-nav{display:none}
   .pf-grid{grid-template-columns:1fr;gap:26px}
