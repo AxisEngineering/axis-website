@@ -37,6 +37,12 @@
   "description": "Design, manufacture and simulation of linear induction motors (LIMs) and permanent-magnet braking solutions for transit, launch and industrial systems.",
   "url": "https://www.axisengineering.co.uk/",
   "email": "sales@axisengineering.co.uk",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "email": "sales@axisengineering.co.uk",
+    "contactType": "sales enquiries",
+    "areaServed": "GB"
+  },
   "logo": "https://www.axisengineering.co.uk/assets/axis-logo-1600.png",
   "slogan": "Driven Without Contact",
   "founder": {
@@ -411,6 +417,8 @@ header.nav.scrolled .nav-toggle span{background:var(--navy-800)}
 .app-card:hover .app-bg{transform:scale(1.06)}
 .app-card .app-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(0,18,38,.15) 0%,rgba(0,18,38,.55) 55%,rgba(0,18,38,.92) 100%)}
 .app-card .app-content{position:relative;z-index:2}
+.app-link{display:inline-block;margin-top:14px;font-family:var(--font-display);font-weight:600;font-size:.88rem;color:var(--cyan);text-decoration:none;transition:color .2s}
+.app-link:hover{color:#fff}
 .app-card .app-ic{width:46px;height:46px;border-radius:12px;background:rgba(98,180,255,.18);border:1px solid rgba(98,180,255,.4);display:grid;place-items:center;margin-bottom:14px;backdrop-filter:blur(4px)}
 .app-card .app-ic svg{width:24px;height:24px;color:#fff}
 .app-card h3{font-size:1.3rem;margin-bottom:7px}
@@ -617,7 +625,7 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.7);padding:64px 0 30px
 </style>
 </head>
 <body>
-<a class="skip-link" href="#top">Skip to main content</a>
+<a class="skip-link" href="#main">Skip to main content</a>
 <!-- ====================== NAV ====================== -->
 <header class="nav" id="nav">
   <div class="wrap nav-inner">
@@ -651,6 +659,8 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.7);padding:64px 0 30px
     </div>
   </div>
 </header>
+
+<main id="main" tabindex="-1">
 
 <!-- ====================== HERO ====================== -->
 <section class="hero" id="top">
@@ -1442,6 +1452,7 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.7);padding:64px 0 30px
           <div class="app-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="3" width="16" height="14" rx="2"/><path d="M4 11h16M8 21l2-3M16 21l-2-3" stroke-linecap="round"/></svg></div>
           <h3>Automated transit &amp; people movers</h3>
           <p>Driverless metros and airport shuttles that climb steep grades and brake in the wet — because thrust never depends on wheel grip.</p>
+          <a class="app-link" href="/applications/people-movers/">People movers &rarr;</a>
         </div>
       </div>
 
@@ -1453,6 +1464,7 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.7);padding:64px 0 30px
           <div class="app-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 18V6l7 5 8-8v15" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
           <h3>Coaster &amp; sled launch</h3>
           <p>0-to-launch in seconds. Linear motors accelerate coaster trains and test sleds with smooth, repeatable launch profiles that hit the same speed every cycle.</p>
+          <a class="app-link" href="/applications/launch-systems/">Launch systems &rarr;</a>
         </div>
       </div>
 
@@ -1464,6 +1476,7 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.7);padding:64px 0 30px
           <div class="app-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h3l3-7 4 14 3-7h5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
           <h3>Maglev &amp; high-speed propulsion</h3>
           <p>When the vehicle leaves the rail entirely, contactless propulsion becomes the primary thrust path — quiet and continuous at speed.</p>
+          <a class="app-link" href="/applications/maglev-propulsion/">Maglev propulsion &rarr;</a>
         </div>
       </div>
 
@@ -1751,6 +1764,8 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.7);padding:64px 0 30px
     <span class="bb-rule" aria-hidden="true"></span>
   </div>
 </section>
+
+</main>
 
 <!-- ====================== FOOTER ====================== -->
 <footer>
