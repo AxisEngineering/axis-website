@@ -1,0 +1,406 @@
+AXIS WEBSITE - DEEP RESEARCH CLAIMS VERIFICATION
+Date checked: 2026-07-02
+Live site: https://www.axisengineering.co.uk/
+Report focus: technical claim verification, public credibility, SEO/compliance
+status, and remaining risk.
+
+OVERALL VERDICT
+The updated Axis website is now technically credible. I found no major false
+technical claim in the current live copy.
+
+The revised wording is much safer than the earlier version. It now uses the
+right caveats around slip, thermal/gap/saturation limits, double-sided LIM
+normal-force cancellation, permanent-magnet eddy-current brake force-speed
+behaviour, and zero-speed holding limitations.
+
+The main remaining risks are not the physics. They are:
+- Some company capability claims are not publicly evidenced yet.
+- The homepage contact form still lacks visible labels.
+- The homepage still lacks a proper <main> element.
+- Organization schema is still basic and lacks contactPoint.
+- The privacy page links to the wrong Web3Forms privacy URL.
+- The homepage does not appear to link directly to every new application SEO
+  page, which weakens internal SEO.
+
+
+LIVE SITE STATUS
+
+Sitemap now includes the planned pages:
+- /
+- /linear-induction-motors/
+- /linear-induction-motor-design/
+- /permanent-magnet-brakes/
+- /eddy-current-brakes/
+- /double-sided-lim-dslim/
+- /applications/people-movers/
+- /applications/launch-systems/
+- /applications/maglev-propulsion/
+- /technical-resources/
+- /privacy/
+
+All sitemap URLs returned HTTP 200.
+
+Each page checked had:
+- Unique title
+- Unique meta description
+- Canonical URL
+- One H1
+- HTTP 200 response
+
+The new sitemap was live and dated 2026-07-02.
+
+
+CLAIM VERIFICATION SUMMARY
+
+1. Claim: a LIM is effectively a rotary induction motor "unrolled"
+Status: Supported.
+
+The Federal Railroad Administration technical background report includes the
+classic explanation that a linear induction machine can be introduced by
+imagining a conventional rotary stator cut and unrolled. The site wording is a
+plain-English version of accepted LIM theory.
+
+Risk level: Low.
+Recommendation: Keep.
+
+
+2. Claim: three-phase primary windings create a travelling magnetic field that
+induces currents in a conductive reaction plate
+Status: Supported.
+
+The FRA report describes propulsion in a linear motor as a reaction between
+currents induced in a conducting plate and a travelling magnetic field produced
+by a distributed polyphase winding.
+
+The site wording is accurate.
+
+Risk level: Low.
+Recommendation: Keep.
+
+
+3. Claim: field speed is set by drive frequency and pole spacing; slip is one
+of the variables setting thrust
+Status: Supported.
+
+This is standard LIM/induction-machine theory. The site now avoids saying the
+plate "always" runs slower, and limits the statement to normal motoring. That
+is the right caveat because braking, plugging, rollback and control limits can
+change the operating case.
+
+Risk level: Low.
+Recommendation: Keep current cautious wording.
+
+
+4. Claim: thrust comes from air-gap power and is refined by end-effect and
+edge-effect corrections
+Status: Supported in principle.
+
+The literature supports use of equivalent-circuit methods, FEA cross-checks and
+explicit treatment of longitudinal end effects and transverse edge effects.
+The FRA report highlights end/edge effects as a key difference from rotary
+machines, and later LIM papers use analytical and finite-element modelling to
+account for them.
+
+Risk level: Low.
+Recommendation: Keep.
+
+
+5. Claim: LIM propulsion is adhesion-independent
+Status: Supported, with correct boundary.
+
+Bombardier's urban transit paper states that LIM propulsion transmits
+acceleration and braking forces independently of wheel-rail adhesion, and
+documents ART/SkyTrain/JFK style systems using this principle.
+
+The site wording is now good because it says the propulsion/braking thrust is
+not limited by wheel-rail grip. It does not claim the whole vehicle has no
+wheel contact or no guidance/friction anywhere.
+
+Risk level: Low.
+Recommendation: Keep. If extra precision is wanted, add "for propulsion" or
+"for the drive force" when discussing adhesion independence.
+
+
+6. Claim: people movers and transit systems can use LIM propulsion for wet,
+icy or steep conditions
+Status: Supported.
+
+The Bombardier paper specifically discusses all-weather operation, snow/ice,
+precision stopping, high-grade capability and existing ART systems using LIM
+propulsion.
+
+Risk level: Low.
+Recommendation: Keep.
+
+
+7. Claim: SSLIM has significant normal attraction toward steel backing
+Status: Supported.
+
+The literature supports that single-sided LIMs produce normal forces in
+addition to longitudinal thrust, and that these forces can be structurally
+important. Bombardier's transit paper notes vertical force can be equal to or
+higher than thrust in a single-sided topology.
+
+Risk level: Low.
+Recommendation: Keep.
+
+
+8. Claim: DSLIM can approach twice the active-face thrust under comparable
+current, gap and thermal limits
+Status: Supported as a bounded engineering statement.
+
+A double-sided LIM uses two active faces working on the same conductive fin.
+Research literature describes double-sided LIMs as attractive for high force
+density and simple passive tracks. The site's "can approach" and "under
+comparable limits" wording is important and should stay.
+
+Risk level: Medium if the caveats are removed. Low with the current wording.
+Recommendation: Keep "can approach" and "under comparable current, gap and
+thermal limits." Do not shorten this back to "gives 2x thrust."
+
+
+9. Claim: opposing normal pulls in a DSLIM largely cancel in the frame
+Status: Supported with caveats.
+
+The principle is sound for symmetric double-sided arrangements. Real machines
+can still see residual normal/side forces from air-gap imbalance, tolerances,
+saturation and alignment errors. The current wording says "largely cancel",
+which is good.
+
+Risk level: Low with current wording.
+Recommendation: Keep "largely". Avoid "fully cancel", "zero normal force", or
+"the vehicle never feels it."
+
+
+10. Claim: permanent-magnet eddy-current brakes are contactless and need no
+external power while moving
+Status: Supported.
+
+Permanent-magnet eddy-current brake suppliers describe these as power-free
+deceleration systems requiring relative motion between magnet assembly and
+conductive plate. Research papers also support the contactless eddy-current
+mechanism.
+
+Risk level: Low.
+Recommendation: Keep.
+
+
+11. Claim: PM eddy-current brake force rises from standstill, reaches a broad
+peak, and can taper at higher speeds
+Status: Supported.
+
+The MDPI high-speed maglev eddy-current braking paper describes peak braking
+force and critical speed, and notes that braking force decreases once speed is
+beyond the critical speed. It also analyses how air gap, pole pitch, plate
+thickness and conductivity affect the curve.
+
+The site wording is technically sound.
+
+Risk level: Low.
+Recommendation: Keep.
+
+
+12. Claim: PM eddy-current brakes do not hold at standstill
+Status: Supported.
+
+This is an important caveat. A permanent-magnet eddy-current brake needs
+relative motion to generate eddy currents. H2W's product documentation states
+that with no relative velocity, no braking occurs. The current site correctly
+says a held standstill needs a paired mechanical holding brake.
+
+Risk level: Low.
+Recommendation: Keep this caveat visible on every PM brake page.
+
+
+13. Claim: launch systems and roller-coaster acceleration can use linear
+motor technology
+Status: Supported as a general application claim.
+
+Linear motor launch systems are well established, especially LSM launch systems
+in modern coasters. LIM launch systems also exist historically. The Axis page
+is safe because it refers to launch duties generally rather than claiming Axis
+has supplied a specific ride.
+
+Risk level: Low.
+Recommendation: Keep, but do not imply Axis has delivered named ride systems
+unless you can publish evidence.
+
+
+14. Claim: maglev propulsion commonly uses linear motor thrust
+Status: Supported.
+
+FTA/Sandia material compares LIM and LSM propulsion options for urban and
+suburban maglev systems and describes practical maglev/linear-metro use cases.
+The site also correctly separates propulsion from levitation and guidance.
+
+Risk level: Low.
+Recommendation: Keep.
+
+
+15. Claim: Axis uses equivalent-circuit models, FEA, route simulation and
+thermal modelling
+Status: Internally supported, not publicly proven.
+
+Local Axis files support this claim. Evidence found in the Axis folder includes:
+- OPT 33 VBA modules: Calc_L.bas, Calc_A.bas, Calc_B.bas, Track_Sim.bas,
+  Thermal_Dissipation.bas, FEA_Launch.bas and related solver/output modules.
+- GetDP/Elmer FEA coverage folder with scripts, CSV sweeps, validation reports
+  and coverage-factor findings.
+- Validation reports discussing FEA coverage factors, current limiting,
+  thermal and brake solver verification.
+
+This makes the site claim credible from the local evidence available to me.
+However, a public visitor cannot independently see the proof.
+
+Risk level: Medium for trust/conversion, not for physics.
+Recommendation: Add at least one public "sample output" or "what you receive"
+section: example thrust-speed curve, thermal duty plot, route simulation output,
+or anonymised analysis report excerpt.
+
+
+16. Claim: "2x independent solver methods"
+Status: Plausible from local evidence, but not externally verifiable.
+
+The local engineering folder contains analytical/VBA modelling and GetDP/Elmer
+FEA workflows, so the claim appears fair. Public trust would be stronger if
+the site showed a sample comparison plot or a short explanation of the two
+solver routes.
+
+Risk level: Medium for proof.
+Recommendation: Add a small "model cross-check" graphic or sample report image.
+
+
+17. Claim: "0 powertrain contact points"
+Status: Mostly fair, but depends on interpretation.
+
+For LIM thrust and eddy-current braking, the working force is developed across
+an air gap, so the drive/brake interface has no frictional contact. However,
+vehicles may still have wheels, guide rollers, bearings or mechanical support
+interfaces.
+
+The word "powertrain" keeps the claim defensible.
+
+Risk level: Low to medium.
+Recommendation: Keep "powertrain contact points"; do not shorten it to "zero
+contact points" or "no contact wear" across the whole vehicle.
+
+
+AI-SLOP / WORDING CHECK
+
+The current site does not read like obvious AI slop. It is specific to LIMs,
+DSLIMs, PM eddy-current brakes, air gaps, slip, reaction plates, FEA and
+thermal duty. The copy uses engineering caveats and avoids many generic claims.
+
+The strongest remaining marketing phrases are acceptable, but proof would help:
+- "Every number traceable to a validated method"
+- "2x independent solver methods"
+- "100% of the route simulated"
+- "We build what we design"
+
+These are not technically wrong, but they would be stronger with screenshots,
+sample plots, a short case-study style note, or an anonymised deliverable.
+
+
+SEO / STRUCTURE STATUS
+
+What is now good:
+- New SEO pages are live.
+- Sitemap is updated.
+- Unique titles and meta descriptions are present.
+- Canonicals are present.
+- Privacy page exists.
+- Technical-resource page exists.
+- Internal links mostly resolve correctly.
+
+Remaining SEO opportunities:
+- Add direct homepage links to the three application SEO pages:
+  /applications/people-movers/
+  /applications/launch-systems/
+  /applications/maglev-propulsion/
+- Add ContactPoint to JSON-LD.
+- Consider FAQPage schema for /technical-resources/ if the content is reshaped
+  as clear questions/answers.
+- Add public proof assets: sample analysis report, plots, build photos, test
+  images, or anonymised project outputs.
+
+
+ACCESSIBILITY / COMPLIANCE STATUS
+
+Fixed:
+- Privacy page exists.
+- Sitemap pages mostly use <main>.
+- Page titles/H1s are sensible.
+- Internal links work.
+
+Still needs fixing:
+- Homepage does not contain a proper <main> element.
+- Homepage skip link still points to #top rather than #main.
+- Contact form still has no visible labels.
+- Label count on checked pages was 0.
+- Organization JSON-LD lacks contactPoint.
+
+Privacy issue found:
+- The Axis privacy page links to https://web3forms.com/privacy-policy
+- That URL returned 403 in checks and Web3Forms search results show the current
+  privacy page as https://web3forms.com/privacy
+
+Recommendation:
+- Change the Web3Forms privacy link to https://web3forms.com/privacy
+
+
+BROKEN LINK CHECK
+
+Internal links checked from sitemap pages resolved with HTTP 200.
+
+External issue:
+- https://web3forms.com/privacy-policy returned 403.
+- Recommended replacement: https://web3forms.com/privacy
+
+
+SOURCE LIST USED
+
+1. Federal Railroad Administration / U.S. Department of Transportation
+Technical Background on Linear Induction Motors in Transportation, June 1970.
+https://railroads.dot.gov/sites/fra.dot.gov/files/fra_net/14683/Technical%20Background%20on%20Linear%20Induction%20Motors%20In%20Transportation%20Jun%201970.pdf
+
+2. Bombardier Transportation conference paper
+Linear Motor Propulsion for Urban Transit, Maglev 2002.
+https://www.maglev.ir/eng/documents/papers/conferences/maglev2002/topic7/IMT_CP_M2002_T7_S2_1.pdf
+
+3. FTA / Sandia National Laboratories
+Comparison of Linear Synchronous and Induction Motors, 2004.
+https://rosap.ntl.bts.gov/view/dot/16110/dot_16110_DS1.pdf
+
+4. Palka and Woronowicz
+Linear Induction Motors in Transportation Systems, Energies, 2021.
+https://doi.org/10.3390/en14092549
+
+5. MDPI Energies
+Characteristic Analysis of the Peak Braking Force and the Critical Speed of
+Eddy Current Braking in a High-Speed Maglev, 2019.
+https://www.mdpi.com/1996-1073/12/13/2622
+
+6. AIP Journal of Applied Physics
+Design of permanent magnet eddy current brake for a small scaled
+electromagnetic launch model, 2012.
+https://pubs.aip.org/aip/jap/article/111/7/07A738/387259/Design-of-permanent-magnet-eddy-current-brake-for
+
+7. H2W Technologies
+Linear Magnetic Brakes - permanent magnet eddy-current brake product notes.
+https://www.h2wtech.com/page/linear-magnetic-brakes
+
+8. Web3Forms privacy search result / current page
+https://web3forms.com/privacy
+
+
+FINAL RECOMMENDATION
+The updated site is now technically sound enough to publish confidently. I would
+not roll back the wording. The next priority is proof and polish:
+
+1. Fix the Web3Forms privacy URL.
+2. Add visible form labels.
+3. Add <main id="main"> to the homepage and point the skip link to #main.
+4. Add contactPoint to JSON-LD.
+5. Link the homepage application cards to the new application pages.
+6. Add one public sample output or anonymised mini case study to prove the
+   solver/validation claims.
