@@ -801,12 +801,12 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.7);padding:64px 0 30px
     <div class="intro-copy reveal">
       <span class="eyebrow">Who we are</span>
       <h2>A specialist house for linear motor design &amp; manufacture.</h2>
-      <p>The linear induction motor is a rotary motor "unrolled" — the stator becomes a straight <strong>primary</strong>, the rotor becomes a flat <strong>reaction plate</strong>, and rotation becomes travel. It sounds simple. Getting the electromagnetics, the end-effects and the thermal limits right is anything but.</p>
-      <p>Axis Engineering lives in that detail. Every design is sized with equivalent-circuit models, cross-checked against FEA, then run over the full route in simulation — so by the time we cut metal, the thrust, efficiency and temperature numbers are already proven.</p>
+      <p>A linear induction motor is a rotary motor "unrolled": a straight <strong>primary</strong> drives a flat <strong>reaction plate</strong> instead of spinning a rotor. Simple in principle — but the electromagnetics, end-effects and thermal limits are anything but.</p>
+      <p>Axis lives in that detail. Every design is sized with equivalent-circuit models, cross-checked against FEA, then simulated over the full route — so the thrust, efficiency and temperature numbers are proven before we cut metal.</p>
       <ul class="intro-points">
-        <li><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><b>Sized from first principles</b><span>Analytical equivalent-circuit models, finite-element analysis and the end-effect and edge corrections that simple models miss — implemented and cross-checked in-house.</span></div></li>
+        <li><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><b>Sized from first principles</b><span>We build the end-effect and edge corrections that simpler models miss into our own equivalent-circuit and finite-element analysis — implemented in-house.</span></div></li>
         <li><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><b>Whole-system thinking</b><span>From magnetic saturation and fin penetration to the duty-cycle plate temperature over a complete route profile.</span></div></li>
-        <li><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><b>Clear, documented results</b><span>You get the sized design, drive requirements and a transparent analysis report — every number traceable to a validated method.</span></div></li>
+        <li><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><b>Clear, documented results</b><span>The sized design, drive requirements and an analysis report — every number traceable to a validated method.</span></div></li>
       </ul>
     </div>
 
@@ -905,7 +905,7 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.7);padding:64px 0 30px
     <div class="sec-head reveal">
       <span class="eyebrow">The principle</span>
       <h2>How a linear induction motor works</h2>
-      <p>Three-phase current in the primary winding sets up a magnetic field that <em>travels</em> along the motor instead of rotating. That moving field drags the conductive reaction plate along with it — directly producing linear thrust.</p>
+      <p>Three-phase current in the primary winding sets up a magnetic field that <em>travels</em> along the motor instead of rotating. That moving field drags the conductive reaction plate with it, directly producing linear thrust.</p>
     </div>
 
     <div class="how-grid">
@@ -978,19 +978,19 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.7);padding:64px 0 30px
         <div class="how-steps">
           <div class="how-step">
             <div class="n">1</div>
-            <div><h3>A field that travels</h3><p>Balanced three-phase current in the primary winding produces a magnetic field that sweeps along the motor's length at the synchronous speed.</p></div>
+            <div><h3>A field that travels</h3><p>Balanced three-phase current in the primary winding sets up a magnetic field that sweeps along the motor at the synchronous speed.</p></div>
           </div>
           <div class="how-step">
             <div class="n">2</div>
-            <div><h3>Currents are induced</h3><p>The moving field cuts the aluminium or copper reaction plate and induces eddy currents in it — exactly as a transformer's secondary is energised, but spread along a line.</p></div>
+            <div><h3>Currents are induced</h3><p>The moving field cuts the aluminium or copper reaction plate and induces eddy currents in it — like a transformer's secondary, but spread along a line.</p></div>
           </div>
           <div class="how-step">
             <div class="n">3</div>
-            <div><h3>Thrust appears — no contact</h3><p>Those induced currents react against the field to produce a direct linear force. The plate is pushed forward without ever touching the primary.</p></div>
+            <div><h3>Thrust appears — no contact</h3><p>Those induced currents react against the field to produce a direct linear force, pushing the plate forward without ever touching the primary.</p></div>
           </div>
           <div class="how-step">
             <div class="n">4</div>
-            <div><h3>Slip sets the force</h3><p>In normal motoring the plate runs a little below the travelling-field speed — that difference is the <em>slip</em>, and it's one of the key variables that set the force. The inverter sets field speed through frequency and the operating point through current and slip, giving direct thrust control within the machine's thermal, gap and saturation limits.</p></div>
+            <div><h3>Slip sets the force</h3><p>In normal motoring the plate runs a little below the travelling-field speed — that difference is the <em>slip</em>, a key variable behind the force. The inverter sets field speed through frequency and the operating point through current and slip, giving direct thrust control within thermal, gap and saturation limits.</p></div>
           </div>
         </div>
       </div>
@@ -1004,7 +1004,7 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.7);padding:64px 0 30px
     <div class="sec-head center reveal">
       <span class="eyebrow center">Topologies</span>
       <h2>Two ways to build the thrust</h2>
-      <p>Every application has a different answer to the trade between thrust density, normal force, efficiency and rail cost. We design and optimise both.</p>
+      <p>Every application answers the trade between thrust density, normal force, efficiency and rail cost differently. We design and optimise both.</p>
     </div>
 
     <!-- ===== build-up animation: one primary -> SSLIM -> DSLIM -> framed motor ===== -->
@@ -1201,7 +1201,7 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.7);padding:64px 0 30px
         </div>
         <h3>Single-sided</h3>
         <div class="sub">One primary · steel-backed rail</div>
-        <p>In a single-sided linear induction motor (SSLIM), one primary acts against an aluminium or copper plate over a steel return path. The simplest, most economical track — the workhorse of transit.</p>
+        <p>One primary acts against an aluminium or copper plate over a steel return path. The simplest, most economical track — the workhorse of transit.</p>
         <ul>
           <li>Lowest reaction-rail cost</li>
           <li>Significant normal attraction to the steel backing</li>
@@ -1231,7 +1231,7 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.7);padding:64px 0 30px
         </div>
         <h3>Double-sided</h3>
         <div class="sub">Two primaries · plate only</div>
-        <p>In a double-sided linear induction motor (DSLIM), two primaries drive a bare aluminium or copper fin from both sides. Track width is usually what limits how much motor you can fit — and working the fin from both sides can approach twice the active-face thrust of a single-sided motor for the same track width, under comparable current, gap and thermal limits. In a symmetric arrangement the opposing normal attractions largely cancel through the frame, greatly reducing the net normal load on the vehicle.</p>
+        <p>Two primaries drive a bare aluminium or copper fin from both sides. Track width usually limits how much motor you can fit, so working the fin from both faces can approach twice the active-face thrust of a single-sided motor for the same track width, under comparable current, gap and thermal limits. Symmetric primaries make the opposing normal pulls largely cancel through the frame, so little net normal load reaches the vehicle.</p>
         <ul>
           <li>Can approach 2&#215; active-face thrust under comparable limits</li>
           <li>Opposing normal pulls largely cancel in the frame</li>
@@ -1245,7 +1245,7 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.7);padding:64px 0 30px
       <div class="sec-head center reveal">
         <span class="eyebrow center">Configuration</span>
         <h2>Where the primary lives</h2>
-        <p>The same motor can be deployed two ways — and the choice flips the cost between the motor and the track.</p>
+        <p>The same motor deploys two ways — and the choice flips cost between motor and track.</p>
       </div>
       <div class="types-grid">
         <!-- Vehicle-mounted / short primary -->
@@ -1269,7 +1269,7 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.7);padding:64px 0 30px
           </div>
           <h3>Vehicle-mounted</h3>
           <div class="sub">Short primary · on the vehicle</div>
-          <p>One primary set rides on each vehicle; the reaction rail runs the length of the guideway. The fewest motors to build — you pay instead for continuous rail.</p>
+          <p>One primary set rides on each vehicle; the reaction rail runs the whole guideway. Fewest motors to build — you pay instead for continuous rail.</p>
           <div class="cost-mirror">
             <div class="cost-row"><span class="cost-k">LIM (primary) cost</span><span class="bars lvl1"><i></i><i></i><i></i></span><span class="lvl low">Lowest</span></div>
             <div class="cost-row"><span class="cost-k">Reaction-rail cost</span><span class="bars lvl3"><i></i><i></i><i></i></span><span class="lvl high">Highest</span></div>
@@ -1297,7 +1297,7 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.7);padding:64px 0 30px
           </div>
           <h3>Track-mounted</h3>
           <div class="sub">Long primary · along the track</div>
-          <p>The primary winding is built into the track; the vehicle carries only a short reaction plate. The vehicle stays light and passive — but you wind the whole active length.</p>
+          <p>The primary winding is built into the track; the vehicle carries only a short reaction plate, staying light and passive — but you wind the whole active length.</p>
           <div class="cost-mirror">
             <div class="cost-row"><span class="cost-k">LIM (primary) cost</span><span class="bars lvl3"><i></i><i></i><i></i></span><span class="lvl high">Highest</span></div>
             <div class="cost-row"><span class="cost-k">Reaction-rail cost</span><span class="bars lvl1"><i></i><i></i><i></i></span><span class="lvl low">Lowest</span></div>
@@ -1315,7 +1315,7 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.7);padding:64px 0 30px
     <div class="sec-head center reveal">
       <span class="eyebrow center">Product · braking</span>
       <h2>Permanent-magnet brakes</h2>
-      <p>It's the LIM's principle turned passive. Replace the powered winding with a <strong>fixed permanent-magnet field</strong> and let the relative motion between vehicle and track do the work — the magnets induce eddy currents in a conductive plate, and those currents oppose the motion. The result is a smooth, contactless dynamic braking force with no external power, no hydraulics and no friction pads to wear or fade. The force–speed curve is shaped over the working speed range by the magnet geometry, pole pitch, gap and reaction-plate material.</p>
+      <p>The LIM's principle turned passive. Replace the powered winding with a <strong>fixed permanent-magnet field</strong>, and motion alone induces eddy currents in a conductive plate — currents that oppose that motion. The result is smooth, contactless dynamic braking with no external power, no hydraulics and nothing to wear or fade. The force–speed curve is shaped over the working speed range by the magnet geometry, pole pitch, gap and reaction-plate material.</p>
     </div>
 
     <!-- ===== animation: a vehicle's fin enters the fixed PM brake and decelerates ===== -->
@@ -1437,7 +1437,7 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.7);padding:64px 0 30px
         </div>
         <h3>Single-sided · track</h3>
         <div class="sub">Magnets fixed to the track</div>
-        <p>A magnet array sits on the track; the vehicle's conductive fin sweeps through its field. The classic stop-section and coaster fin brake.</p>
+        <p>A magnet array sits on the track; the vehicle's conductive fin sweeps through its field — the classic stop-section and coaster fin brake.</p>
       </div>
 
       <!-- Single-sided, vehicle-mounted -->
@@ -1462,7 +1462,7 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.7);padding:64px 0 30px
         </div>
         <h3>Single-sided · vehicle</h3>
         <div class="sub">Magnets carried on the vehicle</div>
-        <p>The magnet array rides on the vehicle and a conductive reaction rail runs the route — so braking is available anywhere along the track.</p>
+        <p>The magnet array rides on the vehicle, sweeping a conductive reaction rail that runs the whole route — so braking is available anywhere.</p>
       </div>
 
       <!-- Double-sided -->
@@ -1496,7 +1496,7 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.7);padding:64px 0 30px
         </div>
         <h3>Double-sided</h3>
         <div class="sub">Fin between two arrays</div>
-        <p>Two magnet arrays grip a conductive fin between them — the strongest, most balanced braking, with the magnet pulls reacted in the caliper frame.</p>
+        <p>Two magnet arrays grip a conductive fin between them — the strongest, most balanced braking, with the magnet pulls reacted in the frame.</p>
       </div>
     </div>
 
@@ -1516,7 +1516,7 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.7);padding:64px 0 30px
     <div class="sec-head center reveal">
       <span class="eyebrow center">Where they run</span>
       <h2>From the platform edge to the launch track</h2>
-      <p>Wherever motion has to be precise, repeatable and unbothered by weather or grip, a linear motor earns its place.</p>
+      <p>Where motion must be precise, repeatable and unbothered by weather or grip, a linear motor earns its place.</p>
     </div>
 
     <div class="apps-grid">
@@ -1527,7 +1527,7 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.7);padding:64px 0 30px
         <div class="app-content">
           <div class="app-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="3" width="16" height="14" rx="2"/><path d="M4 11h16M8 21l2-3M16 21l-2-3" stroke-linecap="round"/></svg></div>
           <h3>Automated transit &amp; people movers</h3>
-          <p>Driverless metros and airport shuttles that climb steep grades and brake in the wet — because thrust never depends on wheel grip.</p>
+          <p>Driverless metros and airport shuttles that climb steep grades and brake in the wet — thrust never depends on wheel grip.</p>
           <a class="app-link" href="/applications/people-movers/">People movers &rarr;</a>
         </div>
       </div>
@@ -1539,7 +1539,7 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.7);padding:64px 0 30px
         <div class="app-content">
           <div class="app-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 18V6l7 5 8-8v15" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
           <h3>Coaster &amp; sled launch</h3>
-          <p>0-to-launch in seconds. Linear motors accelerate coaster trains and test sleds with smooth, repeatable launch profiles that hit the same speed every cycle.</p>
+          <p>0-to-launch in seconds — coaster trains and test sleds accelerated on smooth, repeatable profiles that hit the same speed every cycle.</p>
           <a class="app-link" href="/applications/launch-systems/">Launch systems &rarr;</a>
         </div>
       </div>
@@ -1563,7 +1563,7 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.7);padding:64px 0 30px
         <div class="app-content">
           <div class="app-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="8" width="18" height="10" rx="1"/><path d="M7 8V5h10v3" stroke-linecap="round"/></svg></div>
           <h3>Material handling &amp; conveyance</h3>
-          <p>Baggage, pallets and parcels moved by the track itself — independent carriers, no chains or belts to wear, sorted at electronic speed.</p>
+          <p>Baggage, pallets and parcels moved by the track itself — independent carriers, no chains or belts to wear.</p>
         </div>
       </div>
     </div>
@@ -1571,7 +1571,7 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.7);padding:64px 0 30px
     <div class="midcta reveal">
       <div>
         <h3>Have a duty cycle in mind?</h3>
-        <p>Tell us the speed, payload, gap and supply — we'll tell you which topology fits and whether a linear motor is the right call for it.</p>
+        <p>Tell us the speed, payload, gap and supply — we'll tell you which topology fits, or whether a linear motor is even the right call.</p>
       </div>
       <a href="#contact" class="btn btn-primary">Start a project
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -1586,45 +1586,45 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.7);padding:64px 0 30px
     <div class="sec-head reveal">
       <span class="eyebrow">What we do</span>
       <h2>Engineering capability, end to end</h2>
-      <p>We take a linear motor from a line on a requirements sheet to a validated, manufactured machine — with the analysis to back every number. We work from early feasibility studies through to delivered single motors and small batches.</p>
+      <p>We take a linear motor from a line on a requirements sheet to a validated, manufactured machine, with the analysis to back every number — from early feasibility through to delivered single motors and small batches.</p>
     </div>
 
     <div class="cap-grid">
       <div class="cap-card reveal">
         <div class="cap-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M3 3v18h18" stroke-linecap="round"/><path d="M7 14l3-4 3 3 5-7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <div><h3>Electromagnetic design</h3><p>Air-gap flux density, winding factors, equivalent-circuit impedances and thrust–speed curves — the core sizing of the machine, done rigorously.</p></div>
+        <div><h3>Electromagnetic design</h3><p>Air-gap flux density, winding factors, equivalent-circuit impedances and thrust–speed curves — the core sizing of the machine.</p></div>
       </div>
       <div class="cap-card reveal d2">
         <div class="cap-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M9 9v12" stroke-linecap="round"/></svg></div>
-        <div><h3>Multi-model validation</h3><p>Independent equivalent-circuit models cross-checked against finite-element analysis (FEA) — so a result is never trusted on one method alone.</p></div>
+        <div><h3>Multi-model validation</h3><p>Independent equivalent-circuit models cross-checked against finite-element analysis (FEA) — no result trusted on a single method.</p></div>
       </div>
       <div class="cap-card reveal">
         <div class="cap-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M4 19V5M4 19h16M8 15l4-6 3 3 5-8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <div><h3>Full route simulation</h3><p>We time-step a vehicle along your real profile — grades, curves, station stops — to predict thrust, energy draw and acceleration at every point of the journey.</p></div>
+        <div><h3>Full route simulation</h3><p>We time-step a vehicle along your real profile — grades, curves, station stops — predicting thrust, energy draw and acceleration at every point.</p></div>
       </div>
       <div class="cap-card reveal d2">
         <div class="cap-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M12 3v6m0 0a4 4 0 1 0 0 8 4 4 0 0 0 0-8zM12 17v4" stroke-linecap="round"/><path d="M5 7l2 2M19 7l-2 2" stroke-linecap="round"/></svg></div>
-        <div><h3>Thermal modelling</h3><p>Reaction-plate and winding temperature over a full duty cycle, including fin-enhanced cooling — so the design survives the worst-case run, not just the brochure point.</p></div>
+        <div><h3>Thermal modelling</h3><p>Reaction-plate and winding temperature across a full duty cycle, with fin-enhanced cooling — sized for the worst-case run, not the brochure point.</p></div>
       </div>
       <div class="cap-card reveal">
         <div class="cap-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2" stroke-linecap="round"/></svg></div>
-        <div><h3>End-effect &amp; edge corrections</h3><p>Longitudinal entry/exit end-effects and transverse edge effects are where simple models fail. We correct for both — and, just as important, we know exactly where each correction stops being valid.</p></div>
+        <div><h3>End-effect &amp; edge corrections</h3><p>Longitudinal entry/exit end-effects and transverse edge effects are where simple models fail. We correct for both — and know exactly where each correction stops being valid.</p></div>
       </div>
       <div class="cap-card reveal d2">
         <div class="cap-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M4 7h16M4 12h16M4 17h10" stroke-linecap="round"/><circle cx="19" cy="17" r="2"/></svg></div>
-        <div><h3>Parameter sweeps &amp; optimisation</h3><p>Family-of-curves studies across pole count, slot fill, frequency and gap — finding the design that meets thrust and temperature with margin to spare.</p></div>
+        <div><h3>Parameter sweeps &amp; optimisation</h3><p>Family-of-curves studies across pole count, slot fill, frequency and gap — finding the design that meets thrust and temperature with margin.</p></div>
       </div>
       <div class="cap-card reveal">
         <div class="cap-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3" stroke-linecap="round"/></svg></div>
-        <div><h3>Feasibility &amp; concept studies</h3><p>Early trade studies that tell you whether a linear motor fits your duty, envelope and budget — and which topology to back — before detailed design begins.</p></div>
+        <div><h3>Feasibility &amp; concept studies</h3><p>Early trade studies on whether a linear motor fits your duty, envelope and budget — and which topology to back — before detailed design.</p></div>
       </div>
       <div class="cap-card reveal d2">
         <div class="cap-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M9 18V5l12-2v13" stroke-linecap="round" stroke-linejoin="round"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></div>
-        <div><h3>Drive &amp; supply sizing</h3><p>Inverter or direct-on-line rating, line current, kVA and energy-per-cycle sizing tied directly to the duty cycle — the electrical system specified alongside the motor, not after it.</p></div>
+        <div><h3>Drive &amp; supply sizing</h3><p>Inverter or direct-on-line rating, line current, kVA and energy-per-cycle, tied to the duty cycle — the electrical system specified alongside the motor, not after.</p></div>
       </div>
       <div class="cap-card reveal">
         <div class="cap-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <div><h3>Manufacture &amp; supply</h3><p>We build what we design — motors manufactured to the approved drawings and supplied ready to install, so the electromagnetic intent survives into the hardware.</p></div>
+        <div><h3>Manufacture &amp; supply</h3><p>We build what we design — motors made to the approved drawings and supplied ready to install, so the electromagnetic intent survives into the hardware.</p></div>
       </div>
     </div>
   </div>
@@ -1637,7 +1637,7 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.7);padding:64px 0 30px
     <div class="sec-head center reveal">
       <span class="eyebrow center">Why linear</span>
       <h2>What you gain by losing the contact</h2>
-      <p>Take the gearbox, the friction drive and the adhesion limit out of the system, and a lot of hard problems simply disappear.</p>
+      <p>Take the gearbox, the friction drive and the adhesion limit out of the system, and a lot of hard problems disappear with them.</p>
     </div>
 
     <div class="adv-grid">
@@ -1649,12 +1649,12 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.7);padding:64px 0 30px
       <div class="adv-card reveal d2">
         <div class="ac-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 18c4-9 14-9 18 0" stroke-linecap="round"/><path d="M6 18l3-3M18 18l-3-3" stroke-linecap="round"/></svg></div>
         <h3>Grip-independent thrust</h3>
-        <p>Thrust is not limited by wheel–rail adhesion, so rain, ice and steep gradients don't create the same drive-slip limit as a friction drive.</p>
+        <p>Thrust isn't limited by wheel–rail adhesion, so rain, ice and steep gradients don't cause the drive-slip that stops a friction drive.</p>
       </div>
       <div class="adv-card reveal d3">
         <div class="ac-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L4 14h7l-1 8 9-12h-7z" stroke-linejoin="round"/></svg></div>
         <h3>Fast, simple control</h3>
-        <p>Thrust responds as fast as the inverter — smooth, repeatable launches, with no feedback loop to tune for most duties. Where an application needs tighter speed control, the loop can be closed.</p>
+        <p>Thrust responds as fast as the inverter, for smooth, repeatable launches with no feedback loop to tune on most duties — and where tighter speed control is needed, the loop can be closed.</p>
       </div>
       <div class="adv-card reveal d4">
         <div class="ac-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 14a8 8 0 0 1 16 0" stroke-linecap="round"/><path d="M9 19h6M12 14v5" stroke-linecap="round"/></svg></div>
@@ -1682,9 +1682,9 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.7);padding:64px 0 30px
       <h2>From requirement to validated design</h2>
     </div>
     <div class="proc">
-      <div class="proc-step reveal"><div class="pn">01</div><h3>Define</h3><p>We pin down the duty: speed profile, payload, gap, supply and the environment it has to survive.</p></div>
-      <div class="proc-step reveal d2"><div class="pn">02</div><h3>Model</h3><p>The machine is sized with our equivalent-circuit models and FEA, then swept for the best topology, pole count and geometry.</p></div>
-      <div class="proc-step reveal d3"><div class="pn">03</div><h3>Validate</h3><p>Full route and thermal simulation confirms it holds up over the worst-case journey, with margin checked.</p></div>
+      <div class="proc-step reveal"><div class="pn">01</div><h3>Define</h3><p>We pin down the duty: speed profile, payload, gap, supply and operating environment.</p></div>
+      <div class="proc-step reveal d2"><div class="pn">02</div><h3>Model</h3><p>We size the machine with equivalent-circuit models and FEA, then sweep for the best topology, pole count and geometry.</p></div>
+      <div class="proc-step reveal d3"><div class="pn">03</div><h3>Validate</h3><p>Full route and thermal simulation confirms it holds up, with margin, over the worst-case journey.</p></div>
       <div class="proc-step reveal d4"><div class="pn">04</div><h3>Build &amp; deliver</h3><p>We manufacture the motor to the signed-off design and supply it with its drive requirements and a clear analysis report.</p></div>
     </div>
   </div>
@@ -1696,7 +1696,7 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.7);padding:64px 0 30px
     <div class="sec-head center reveal">
       <span class="eyebrow center">The team</span>
       <h2>The engineers behind every motor.</h2>
-      <p>Axis pairs first-principles electrical design with hands-on manufacturing experience — the people who design your motor are the people who build it.</p>
+      <p>Axis pairs first-principles electrical design with hands-on manufacturing — the people who design your motor are the ones who build it.</p>
     </div>
     <div class="team-grid">
       <div class="team-card reveal">
@@ -1743,7 +1743,7 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.7);padding:64px 0 30px
     <div class="sec-head center reveal">
       <span class="eyebrow center">Working with us</span>
       <h2>What we need, and what you get back</h2>
-      <p>A useful feasibility answer starts with a clear duty. Here's what helps us start, and what you'll receive.</p>
+      <p>A useful feasibility answer starts with a clear duty — here's what helps us begin, and what you'll get back.</p>
     </div>
     <div class="brief-grid">
       <div class="brief-col reveal">
