@@ -2,8 +2,8 @@
 *.docx
 
 # Codex / audit reports & artefacts — internal only, never publish
-Axis_Website_Full_Audit_*.txt
-Axis_Website_Claude_Implementation_Brief_*.txt
+# Broad pattern: NO internal Axis_Website_*.txt report should ever be committed
+Axis_Website_*.txt
 audit-artifacts/
 
 # Build artefacts & OS junk
