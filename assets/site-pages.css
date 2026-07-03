@@ -103,3 +103,65 @@ main{padding:20px 0 10px}
   .page-cta{padding:38px 24px}
   .ph-hero{padding:58px 0 50px}
 }
+
+/* ===== animations moved from the homepage (motors build-up, launch, brakes) ===== */
+.build-anim{background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);padding:18px 18px 4px;box-shadow:var(--shadow-sm);margin:0 auto 44px;max-width:860px}
+.build-anim svg{display:block;width:100%}
+.ba-p1{animation:baP1 14s ease-in-out infinite}
+.ba-plate{animation:baPlate 14s ease-in-out infinite}
+.ba-bi{animation:baBi 14s ease-in-out infinite}
+.ba-p2{animation:baP2 14s ease-in-out infinite}
+.ba-frame{animation:baFrame 14s ease-in-out infinite}
+.ba-bolts{animation:baBolts 14s ease-in-out infinite}
+.ba-arrows{animation:baArrows 14s ease-in-out infinite}
+.ba-ssarrows{animation:baSSArrows 14s ease-in-out infinite}
+.ba-c1{animation:baC1 14s linear infinite}
+.ba-c2{animation:baC2 14s linear infinite}
+.ba-c3{animation:baC3 14s linear infinite}
+.ba-c4{animation:baC4 14s linear infinite}
+.ba-b1{animation:baB1 14s linear infinite}
+.ba-b2{animation:baB2 14s linear infinite}
+@keyframes baP1{0%{opacity:0;transform:translateY(36px)}5%,100%{opacity:1;transform:translateY(0)}}
+@keyframes baPlate{0%,21%{opacity:0;transform:translateY(-24px)}26%,94%{opacity:1;transform:translateY(0)}98%,100%{opacity:0;transform:translateY(0)}}
+@keyframes baBi{0%,21%{opacity:0}26%,42%{opacity:1}46%,100%{opacity:0}}
+@keyframes baP2{0%,45%{opacity:0;transform:translateY(-52px)}51%,94%{opacity:1;transform:translateY(0)}98%,100%{opacity:0;transform:translateY(0)}}
+@keyframes baFrame{0%,64%{opacity:0;stroke-dashoffset:1200}67%{opacity:1;stroke-dashoffset:900}74%,94%{opacity:1;stroke-dashoffset:0}98%,100%{opacity:0;stroke-dashoffset:0}}
+@keyframes baBolts{0%,72%{opacity:0}76%,94%{opacity:1}98%,100%{opacity:0}}
+@keyframes baArrows{0%,74%{opacity:0}78%,92%{opacity:1}96%,100%{opacity:0}}
+@keyframes baSSArrows{0%,26%{opacity:0}30%,42%{opacity:1}45%,100%{opacity:0}}
+@keyframes baC1{0%{opacity:0}3%,18%{opacity:1}22%,100%{opacity:0}}
+@keyframes baC2{0%,23%{opacity:0}27%,40%{opacity:1}44%,100%{opacity:0}}
+@keyframes baC3{0%,47%{opacity:0}51%,61%{opacity:1}65%,100%{opacity:0}}
+@keyframes baC4{0%,68%{opacity:0}72%,92%{opacity:1}96%,100%{opacity:0}}
+@keyframes baB1{0%,23%{opacity:0}27%,42%{opacity:1}46%,100%{opacity:0}}
+@keyframes baB2{0%,47%{opacity:0}51%,92%{opacity:1}96%,100%{opacity:0}}
+.brake-anim{background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);padding:18px 18px 6px;box-shadow:var(--shadow-sm);margin:0 auto 44px;max-width:880px}
+.brake-anim svg{display:block;width:100%}
+.bk-veh{animation:bkVeh 6.5s linear infinite}
+.bk-speed{animation:bkSpeed 6.5s ease-in-out infinite}
+.bk-force{animation:bkForce 6.5s ease-in-out infinite}
+.bk-capA{animation:bkCapA 6.5s ease-in-out infinite}
+.bk-capB{animation:bkCapB 6.5s ease-in-out infinite}
+@keyframes bkVeh{0%{transform:translateX(-210px);opacity:0}4%{opacity:1}27%{transform:translateX(-40px)}50%{transform:translateX(130px)}62%{transform:translateX(220px)}72%{transform:translateX(270px)}82%{transform:translateX(295px)}90%{transform:translateX(305px)}96%{transform:translateX(310px);opacity:1}100%{transform:translateX(310px);opacity:0}}
+@keyframes bkSpeed{0%,4%{opacity:0}10%{opacity:.9}46%{opacity:.5}56%,100%{opacity:0}}
+@keyframes bkForce{0%,50%{opacity:0}58%{opacity:1}80%{opacity:.85}88%,100%{opacity:0}}
+@keyframes bkCapA{0%,4%{opacity:0}12%,46%{opacity:1}54%,100%{opacity:0}}
+@keyframes bkCapB{0%,56%{opacity:0}64%,92%{opacity:1}97%,100%{opacity:0}}
+/* ---- launch-motor animation: a travelling field accelerates the vehicle ---- */
+.lm-veh{animation:lmVeh 7s linear infinite}
+.lm-wave{animation:lmWave 1.6s linear infinite}
+.lm-thrust{animation:lmThrust 7s ease-in-out infinite}
+.lm-speed{animation:lmSpeed 7s ease-in-out infinite}
+.lm-capA{animation:lmCapA 7s ease-in-out infinite}
+.lm-capB{animation:lmCapB 7s ease-in-out infinite}
+@keyframes lmVeh{0%{transform:translateX(-120px);opacity:0}5%{opacity:1}22%{transform:translateX(-92px)}38%{transform:translateX(-44px)}52%{transform:translateX(34px)}64%{transform:translateX(140px)}74%{transform:translateX(270px)}83%{transform:translateX(410px)}90%{transform:translateX(530px);opacity:1}95%{transform:translateX(600px);opacity:1}100%{transform:translateX(650px);opacity:0}}
+@keyframes lmWave{to{transform:translateX(72px)}}
+@keyframes lmThrust{0%,28%{opacity:0}40%,85%{opacity:1}92%,100%{opacity:0}}
+@keyframes lmSpeed{0%,30%{opacity:0}55%{opacity:.5}80%{opacity:.95}92%,100%{opacity:0}}
+@keyframes lmCapA{0%,5%{opacity:0}12%,46%{opacity:1}54%,100%{opacity:0}}
+@keyframes lmCapB{0%,56%{opacity:0}64%,92%{opacity:1}97%,100%{opacity:0}}
+@media (max-width:760px){
+  .build-anim,.brake-anim{overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .build-anim svg,.brake-anim svg{min-width:600px}
+}
+@media (prefers-reduced-motion:reduce){ *{animation:none!important} }

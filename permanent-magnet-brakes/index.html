@@ -64,6 +64,103 @@
 </section>
 
 <section class="psec">
+<h2>See it in motion</h2>
+<p>A vehicle running into a permanent-magnet brake &mdash; the eddy currents do the retarding, with no contact.</p>
+    <div class="brake-anim">
+      <svg viewBox="0 0 760 250" fill="none" role="img" aria-label="Animation: a vehicle with a conductive fin runs into a permanent-magnet brake fixed to the track; the fin cuts the magnets' field, inducing eddy currents that brake the vehicle with no contact">
+        <defs>
+          <linearGradient id="bkcab" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0E5BB8"/><stop offset="1" stop-color="#012B5C"/></linearGradient>
+          <linearGradient id="bkfin" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E8C68A"/><stop offset="1" stop-color="#C9974B"/></linearGradient>
+          <marker id="bkArrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#CE1A2B"/></marker>
+        </defs>
+
+        <!-- config badge -->
+        <g><rect x="612" y="50" width="120" height="24" rx="8" fill="#E9F1FA" stroke="#DCE6F1"/><text x="672" y="66" text-anchor="middle" font-family="Space Grotesk" font-size="11" font-weight="700" fill="#2050E8" letter-spacing="1">SS &#183; TRACK</text></g>
+
+        <!-- fixed track / guideway -->
+        <rect x="0" y="192" width="760" height="9" fill="#C9D7E8"/>
+        <rect x="0" y="201" width="760" height="3" fill="#E3EBF5"/>
+        <g stroke="#B9CAE0" stroke-width="2" opacity=".5">
+          <line x1="60" y1="205" x2="52" y2="214"/><line x1="150" y1="205" x2="142" y2="214"/><line x1="240" y1="205" x2="232" y2="214"/><line x1="610" y1="205" x2="602" y2="214"/><line x1="700" y1="205" x2="692" y2="214"/>
+        </g>
+
+        <!-- permanent-magnet brake, fixed on the track -->
+        <g>
+          <rect x="322" y="170" width="32" height="22" rx="3" fill="#E5322E"/><rect x="356" y="170" width="32" height="22" rx="3" fill="#2050E8"/><rect x="390" y="170" width="32" height="22" rx="3" fill="#E5322E"/><rect x="424" y="170" width="32" height="22" rx="3" fill="#2050E8"/><rect x="458" y="170" width="32" height="22" rx="3" fill="#E5322E"/><rect x="492" y="170" width="32" height="22" rx="3" fill="#2050E8"/><rect x="526" y="170" width="32" height="22" rx="3" fill="#E5322E"/>
+        </g>
+        <text x="441" y="232" text-anchor="middle" fill="#8294A6" font-family="Space Grotesk" font-size="10.5" letter-spacing="1">PERMANENT-MAGNET BRAKE &#183; FIXED TO TRACK</text>
+
+        <!-- vehicle: cab + wheels + conductive fin (runs in, decelerates) -->
+        <g class="bk-veh">
+          <g class="bk-speed" stroke="#8294A6" stroke-width="2.6" stroke-linecap="round" style="opacity:0">
+            <line x1="36" y1="120" x2="2" y2="120"/><line x1="36" y1="132" x2="-12" y2="132"/><line x1="36" y1="144" x2="2" y2="144"/>
+          </g>
+          <rect x="100" y="156" width="60" height="14" rx="2" fill="#C6D4E6" stroke="#9DB0C9" stroke-width="1"/>
+          <rect x="44" y="106" width="150" height="50" rx="13" fill="url(#bkcab)" stroke="#2E6FD6" stroke-width="1.2"/>
+          <rect x="58" y="116" width="26" height="20" rx="4" fill="#0A1F3C" opacity=".72"/><rect x="92" y="116" width="26" height="20" rx="4" fill="#0A1F3C" opacity=".72"/><rect x="126" y="116" width="26" height="20" rx="4" fill="#0A1F3C" opacity=".72"/><rect x="160" y="116" width="22" height="20" rx="4" fill="#0A1F3C" opacity=".72"/>
+          <rect x="52" y="146" width="134" height="5" rx="2.5" fill="#C6D4E6"/>
+          <circle cx="74" cy="190" r="11" fill="#16243E"/><circle cx="74" cy="190" r="4" fill="#7FA8D8"/>
+          <circle cx="164" cy="190" r="11" fill="#16243E"/><circle cx="164" cy="190" r="4" fill="#7FA8D8"/>
+          <g class="bk-force" style="opacity:0">
+            <line x1="150" y1="88" x2="76" y2="88" stroke="#CE1A2B" stroke-width="4.5" marker-end="url(#bkArrow)"/>
+            <text x="113" y="62" text-anchor="middle" fill="#CE1A2B" font-family="Space Grotesk" font-size="11" font-weight="600">braking force on vehicle</text>
+          </g>
+        </g>
+
+        <!-- captions -->
+        <text class="bk-capA" x="380" y="30" text-anchor="middle" font-family="Space Grotesk" font-size="14.5" font-weight="500" fill="#44546A" style="opacity:0">The vehicle reaches the fixed magnet brake at speed.</text>
+        <text class="bk-capB" x="380" y="30" text-anchor="middle" font-family="Space Grotesk" font-size="14.5" font-weight="500" fill="#44546A" style="opacity:0">Its fin cuts the field &#8212; eddy currents brake the vehicle, with no contact.</text>
+      </svg>
+    </div>
+    <div class="brake-anim">
+      <svg viewBox="0 0 760 250" fill="none" role="img" aria-label="Animation: a vehicle carrying permanent magnets runs along a conductive reaction rail that is fixed to the track; the moving magnets induce eddy currents in the rail, braking the vehicle with no contact">
+        <defs>
+          <linearGradient id="bkcab2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0E5BB8"/><stop offset="1" stop-color="#012B5C"/></linearGradient>
+          <linearGradient id="bkrail" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E8C68A"/><stop offset="1" stop-color="#C9974B"/></linearGradient>
+          <marker id="bkArrow2" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#CE1A2B"/></marker>
+        </defs>
+
+        <!-- config badge -->
+        <g><rect x="604" y="50" width="128" height="24" rx="8" fill="#E9F1FA" stroke="#DCE6F1"/><text x="668" y="66" text-anchor="middle" font-family="Space Grotesk" font-size="11" font-weight="700" fill="#2050E8" letter-spacing="1">SS &#183; VEHICLE</text></g>
+
+        <!-- fixed track + continuous conductive reaction rail -->
+        <rect x="0" y="192" width="760" height="9" fill="#C9D7E8"/>
+        <rect x="0" y="201" width="760" height="3" fill="#E3EBF5"/>
+        <g stroke="#B9CAE0" stroke-width="2" opacity=".5">
+          <line x1="60" y1="205" x2="52" y2="214"/><line x1="170" y1="205" x2="162" y2="214"/><line x1="300" y1="205" x2="292" y2="214"/><line x1="470" y1="205" x2="462" y2="214"/><line x1="600" y1="205" x2="592" y2="214"/><line x1="710" y1="205" x2="702" y2="214"/>
+        </g>
+        <g>
+          <rect x="322" y="170" width="32" height="22" rx="3" fill="url(#bkrail)" stroke="#A9874F" stroke-width="1"/><rect x="356" y="170" width="32" height="22" rx="3" fill="url(#bkrail)" stroke="#A9874F" stroke-width="1"/><rect x="390" y="170" width="32" height="22" rx="3" fill="url(#bkrail)" stroke="#A9874F" stroke-width="1"/><rect x="424" y="170" width="32" height="22" rx="3" fill="url(#bkrail)" stroke="#A9874F" stroke-width="1"/><rect x="458" y="170" width="32" height="22" rx="3" fill="url(#bkrail)" stroke="#A9874F" stroke-width="1"/><rect x="492" y="170" width="32" height="22" rx="3" fill="url(#bkrail)" stroke="#A9874F" stroke-width="1"/><rect x="526" y="170" width="32" height="22" rx="3" fill="url(#bkrail)" stroke="#A9874F" stroke-width="1"/>
+        </g>
+        <text x="441" y="232" text-anchor="middle" fill="#8294A6" font-family="Space Grotesk" font-size="10.5" letter-spacing="1">CONDUCTIVE REACTION PLATES &#183; FIXED TO TRACK</text>
+
+        <!-- vehicle: cab + wheels + onboard magnet array -->
+        <g class="bk-veh">
+          <g class="bk-speed" stroke="#8294A6" stroke-width="2.6" stroke-linecap="round" style="opacity:0">
+            <line x1="36" y1="120" x2="2" y2="120"/><line x1="36" y1="132" x2="-12" y2="132"/><line x1="36" y1="144" x2="2" y2="144"/>
+          </g>
+          <g>
+            <rect x="100" y="156" width="12" height="13" rx="2" fill="#E5322E"/><rect x="112" y="156" width="12" height="13" rx="2" fill="#2050E8"/><rect x="124" y="156" width="12" height="13" rx="2" fill="#E5322E"/><rect x="136" y="156" width="12" height="13" rx="2" fill="#2050E8"/><rect x="148" y="156" width="12" height="13" rx="2" fill="#E5322E"/>
+          </g>
+          <rect x="44" y="106" width="150" height="50" rx="13" fill="url(#bkcab2)" stroke="#2E6FD6" stroke-width="1.2"/>
+          <rect x="58" y="116" width="26" height="20" rx="4" fill="#0A1F3C" opacity=".72"/><rect x="92" y="116" width="26" height="20" rx="4" fill="#0A1F3C" opacity=".72"/><rect x="126" y="116" width="26" height="20" rx="4" fill="#0A1F3C" opacity=".72"/><rect x="160" y="116" width="22" height="20" rx="4" fill="#0A1F3C" opacity=".72"/>
+          <rect x="52" y="146" width="134" height="5" rx="2.5" fill="#C6D4E6"/>
+          <circle cx="74" cy="190" r="11" fill="#16243E"/><circle cx="74" cy="190" r="4" fill="#7FA8D8"/>
+          <circle cx="164" cy="190" r="11" fill="#16243E"/><circle cx="164" cy="190" r="4" fill="#7FA8D8"/>
+          <g class="bk-force" style="opacity:0">
+            <line x1="150" y1="88" x2="76" y2="88" stroke="#CE1A2B" stroke-width="4.5" marker-end="url(#bkArrow2)"/>
+            <text x="113" y="62" text-anchor="middle" fill="#CE1A2B" font-family="Space Grotesk" font-size="11" font-weight="600">braking force on vehicle</text>
+          </g>
+        </g>
+
+        <!-- captions -->
+        <text class="bk-capA" x="380" y="30" text-anchor="middle" font-family="Space Grotesk" font-size="14.5" font-weight="500" fill="#44546A" style="opacity:0">Now the magnets ride on the vehicle, sweeping conductive fins set along the track.</text>
+        <text class="bk-capB" x="380" y="30" text-anchor="middle" font-family="Space Grotesk" font-size="14.5" font-weight="500" fill="#44546A" style="opacity:0">The moving magnets induce eddy currents in the fins &#8212; braking the vehicle, no contact.</text>
+      </svg>
+    </div>
+</section>
+
+<section class="psec">
 <h2>Double-sided caliper arrangements</h2>
 <p>Placing magnets on both sides of the reaction plate, in a caliper arrangement, works the plate from each face and lets the two normal attractions largely cancel in the supporting frame. Under comparable gap, plate and thermal limits this can approach roughly twice the retarding force of a single active face for a given plate width, while keeping the structure that holds the magnets in a manageable state of balance. It is the natural layout where high, compact braking force is wanted without a heavy back-structure to react a one-sided magnetic pull.</p>
 </section>
