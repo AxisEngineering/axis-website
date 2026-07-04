@@ -18,6 +18,26 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/site-pages.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.axisengineering.co.uk/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "LIM design services",
+      "item": "https://www.axisengineering.co.uk/linear-induction-motor-design/"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to main content</a>
@@ -42,23 +62,21 @@
 </header>
 <section class="ph-hero"><div class="wrap"><div class="crumb"><a href="/">Home</a> / LIM design services</div><span class="eyebrow">Services</span><h1>Linear Induction Motor Design Services</h1><p class="lede">From a duty to a validated design — electromagnetic sizing, FEA cross-checks, route and thermal simulation, and drive sizing.</p></div></section>
 <main id="main" class="wrap">
-<p class="lead-in">Linear induction motors reward careful sizing. We take a duty from first principles to a validated design, sizing with equivalent-circuit models, cross-checking with FEA, running the full route in simulation and confirming thermal limits before any metal is cut.</p>
+<p class="lead-in">A linear induction motor produces straight-line thrust with no gears, no contact and no wheels to grip. We take your requirement, turn it into a working design, and prove it with modelling, FEA and route simulation before any metal is cut.</p>
 
-<section class="psec"><h2>Requirement capture</h2><p>Good motors start from an honest brief. We work through the loads, speeds, gaps and duty that actually define the problem: the mass to be moved, the target speed profile and acceleration, the available packaging and running gap, the track or fin length, and the supply you can realistically provide. We also fix the topology early, because a single-sided motor (primary over a plate on steel back-iron, with a significant normal pull toward the steel) and a double-sided motor (two primaries either side of a bare fin, with the normal pulls largely cancelling in the frame) lead to very different structural and thermal designs.</p></section>
+<section class="psec"><h2>Understanding the requirement</h2><p>Every design starts from a clear brief. We work through what the motor actually has to do:</p><ul><li>the mass to be moved and how fast it needs to go;</li><li>the acceleration and running distance;</li><li>the space available and the power supply on hand.</li></ul><p>We also choose the layout early. A single-sided motor runs along a steel track, and a double-sided motor grips a thin plate between two halves. Each suits different jobs, so we settle this at the start.</p></section>
 
-<section class="psec"><h2>Electromagnetic sizing</h2><p>With the requirement fixed, we size the electromagnetics using equivalent-circuit models. A linear induction motor is a rotary motor unrolled: a straight primary winding creates a magnetic field that travels along the track instead of rotating, dragging a conductive reaction plate with it. The field speed is set by the drive frequency and the pole spacing, and the slip is the small difference between field speed and vehicle speed that helps set the thrust. Thrust ultimately comes from the air-gap power divided by the field speed, so we trade winding layout, pole pitch, gap and current density to land the thrust and efficiency you need within the packaging and supply envelope.</p></section>
+<section class="psec"><h2>How it works</h2><p>Think of an ordinary electric motor unrolled and laid out flat. Instead of spinning, its magnetic field sweeps along the track in a straight line and pulls the moving part with it. There are no wheels driving the load and nothing to wear against a surface.</p><p>We size the motor to deliver the thrust and efficiency you need within the space and power you have available.</p></section>
 
-<section class="psec"><h2>End-effect and edge-effect corrections</h2><p>A short, open-ended motor does not behave like an ideal infinite machine, so the first-pass sizing is refined with two corrections. The longitudinal end-effect accounts for the field building up and decaying at the entry and exit of a finite primary, which typically erodes thrust and efficiency, more so at higher speeds. The transverse edge-effect accounts for reaction-plate current spreading beyond the active width. We carry both corrections through the sizing so the predicted thrust reflects a real finite motor rather than an idealised one.</p></section>
+<section class="psec"><h2>Proving the design</h2><p>Before we commit to a design, we check it with detailed simulation (FEA). This confirms the thrust and forces the motor will actually produce across its working range, so the numbers you receive are ones we have tested rather than simply assumed.</p></section>
 
-<section class="psec"><h2>FEA validation</h2><p>Equivalent-circuit models are fast and honest for exploring the design space, but they are lumped. We cross-check the chosen design with finite-element analysis (FEA), resolving the field in the primary, gap and reaction plate to confirm the thrust and normal-force predictions, check for local saturation, and look at how the design behaves across the working slip and speed range. Where the two methods disagree, that disagreement is information: we reconcile it before committing to the geometry.</p></section>
+<section class="psec"><h2>Simulating the real journey</h2><p>A motor that copes with a single peak can still struggle over a full journey. We simulate the whole route, including speeds, gradients and repeated cycles, so we know the design holds up in real use and not just on paper. Because the drive works without gripping a surface, its pulling power is unaffected by rain, ice or steep gradients.</p></section>
 
-<section class="psec"><h2>Route/duty simulation</h2><p>A motor sized for a peak point can still fall short over a real journey, so we run the full duty in route simulation. The velocity profile, grades, dwell times and repeat cycles drive a time-domain run that tells us the real force demand, the energy drawn and the losses accumulated across a representative cycle rather than a single worst-case instant. Because the drive is adhesion-independent, thrust does not rely on wheel-rail grip, so rain, ice and grades change the load but not the drive-slip limit that constrains a friction drive.</p></section>
+<section class="psec"><h2>Keeping it cool</h2><p>Heat, more than anything else, sets the true limit on what a linear motor can deliver. We check that the design stays within safe temperatures for both continuous running and short bursts of extra effort. If it runs too hot, we adjust the design rather than hope for the best.</p></section>
 
-<section class="psec"><h2>Thermal limits</h2><p>Losses set the real limit on a linear motor far more often than magnetics do. We feed the duty-cycle losses into thermal modelling of the primary winding and the reaction plate to check that temperatures stay within the insulation class and material limits under the specified cooling, typically for the continuous duty as well as the short overload bursts. If the thermal picture is tight, we loop back to the sizing rather than quietly relying on optimistic assumptions.</p></section>
+<section class="psec"><h2>Matching the drive and power supply</h2><p>The motor and the electronics that run it are one system, so we design them together. We make sure the drive and your available power supply can deliver the performance the motor is designed for, right across its speed range.</p></section>
 
-<section class="psec"><h2>Drive and supply sizing</h2><p>The motor and its drive are one system, so we size them together. Most applications use an inverter or variable-frequency drive, which sets the field speed by varying frequency across the speed range; for niche fixed-speed duty a direct-on-line arrangement can suit. We match the voltage, current and frequency range to the winding, and we check that the current, gap and thermal limits are consistent with the supply you can provide, so the delivered thrust curve is one the drive and supply can actually sustain.</p></section>
-
-<section class="psec"><h2>Deliverables — what you get back</h2><p>You get an engineering package you can build to and defend, not a headline number.</p><div class="pcards"><div class="pcard"><h3>Sized design</h3><p>The chosen topology and winding, pole pitch, gap and current density, with the predicted thrust, normal force and efficiency across the working range.</p></div><div class="pcard"><h3>Validation record</h3><p>Equivalent-circuit results cross-checked against FEA, with the end-effect and edge-effect corrections applied and any discrepancies reconciled.</p></div><div class="pcard"><h3>Duty and thermal results</h3><p>Route/duty simulation over a representative cycle and thermal modelling against insulation and material limits under the specified cooling.</p></div><div class="pcard"><h3>Drive and supply spec</h3><p>The drive type and the voltage, current and frequency range needed, checked for consistency with your available supply.</p></div></div><div class="callout">Every figure is bounded by the current, gap and thermal limits it was derived under — no value is presented as holding unconditionally.</div></section>
+<section class="psec"><h2>Deliverables — what you get back</h2><p>You get an engineering package you can build to and defend, not a headline number.</p><div class="pcards"><div class="pcard"><h3>The design</h3><p>The chosen layout and the expected thrust, forces and efficiency across the working range.</p></div><div class="pcard"><h3>Validation record</h3><p>The results of our modelling and FEA, showing how the design was checked and confirmed.</p></div><div class="pcard"><h3>Journey and heat results</h3><p>Route simulation over a typical cycle and a check that the design stays within safe temperatures.</p></div><div class="pcard"><h3>Drive and supply spec</h3><p>The drive type and the voltage, current and frequency range needed, checked for consistency with your available supply.</p></div></div><div class="callout">Every figure is bounded by the current, gap and thermal limits it was derived under — no value is presented as holding unconditionally.</div></section>
 
 <section class="psec"><h2>Related</h2><div class="rellinks"><a href="/linear-induction-motors/">Linear induction motors</a> <a href="/technical-resources/">Technical resources</a> <a href="/double-sided-lim-dslim/">DSLIM</a> <a href="/applications/people-movers/">People movers</a></div></section>
 

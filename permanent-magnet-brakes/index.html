@@ -18,6 +18,26 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/site-pages.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.axisengineering.co.uk/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Permanent-magnet brakes",
+      "item": "https://www.axisengineering.co.uk/permanent-magnet-brakes/"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to main content</a>
@@ -42,22 +62,22 @@
 </header>
 <section class="ph-hero"><div class="wrap"><div class="crumb"><a href="/">Home</a> / Permanent-magnet brakes</div><span class="eyebrow">Product · braking</span><h1>Permanent-Magnet Eddy-Current Brakes</h1><p class="lede">Contactless, passive dynamic braking — how permanent-magnet eddy-current brakes work, and where they fit.</p></div></section>
 <main id="main" class="wrap">
-<p class="lead-in">A permanent-magnet eddy-current brake slows a moving mass with magnetic drag alone — no pads, no external power, no contact. It is one of the cleanest ways to shed kinetic energy, and one that rewards careful sizing against the real duty.</p>
+<p class="lead-in">A permanent-magnet eddy-current brake slows a moving mass with magnetic drag alone — no pads, no external power, no contact. It is one of the cleanest ways to shed speed.</p>
 
 <section class="psec">
 <h2>How PM eddy-current brakes work</h2>
-<p>Fixed permanent magnets and a conductive reaction plate move relative to one another. That relative motion sets up eddy currents in the plate, and those currents produce a field that opposes the motion — so the brake resists whatever is trying to move past it. Nothing touches, nothing rubs, and no drive current is supplied: the braking force is drawn straight from the kinetic energy of the moving body and dissipated as heat in the reaction plate.</p>
+<p>Permanent magnets and a conductive plate move past one another. That motion sets up small electrical currents — eddy currents — in the plate, and those currents create a magnetic field that pushes back against the motion. So the brake resists whatever is moving past it. Nothing touches and nothing rubs. The braking force comes straight from the moving body's own energy, which turns into heat in the plate.</p>
 <div class="callout">Contactless by design: the retarding force comes from induced currents in the plate, not from friction between two surfaces.</div>
 </section>
 
 <section class="psec">
-<h2>The force-speed curve</h2>
-<p>The retarding force is not flat across speed. From a standstill it rises with increasing relative speed, reaches a broad peak, and can then taper off at higher speeds as the induced currents begin to shield the plate. The shape and position of that curve are set by the magnet geometry, pole pitch, air gap and the reaction-plate material and thickness, so the brake can be tuned to put its strongest retardation where the duty needs it. Predicting where the peak falls and how the force behaves either side of it is a design exercise, typically bounded by the achievable gap and the plate's thermal limit rather than by any single figure.</p>
+<h2>How the braking force behaves</h2>
+<p>The braking force changes with speed. It is strongest through the working speed range and can ease off at very high speeds. We tune the design so the strongest braking lands where your duty needs it.</p>
 </section>
 
 <section class="psec">
 <h2>Track-mounted vs vehicle-mounted magnets</h2>
-<p>Which part carries the magnets is a system decision, and it trades cost against vehicle mass much as it does for a linear motor. Mounting magnets along the track keeps each vehicle light and passive but means paying for magnet material over the whole braked length; carrying the magnets on the vehicle needs only a plain conductive rail on the route but adds mass and magnet cost to every unit.</p>
+<p>Deciding which part carries the magnets is a trade-off between track cost and vehicle weight. Putting the magnets on the track keeps each vehicle light, but you pay for magnets along the whole braking zone. Putting the magnets on the vehicle needs only a plain conductive rail on the route, but adds weight and magnet cost to every vehicle.</p>
 <div class="pcards">
 <div class="pcard"><h3>Magnets on the track</h3><p>Conductive plate rides on the vehicle; magnets line the braking zone. Light passive vehicle, but you fit magnets over the full active length — often the better fit where braking is needed only in defined zones.</p></div>
 <div class="pcard"><h3>Magnets on the vehicle</h3><p>Vehicle carries the magnet assembly and passes over a continuous conductive rail. Cheaper, simpler track, but every vehicle carries the magnet mass and cost.</p></div>
@@ -163,23 +183,23 @@
 
 <section class="psec">
 <h2>Double-sided caliper arrangements</h2>
-<p>Placing magnets on both sides of the reaction plate, in a caliper arrangement, works the plate from each face and lets the two normal attractions largely cancel in the supporting frame. Under comparable gap, plate and thermal limits this can approach roughly twice the retarding force of a single active face for a given plate width, while keeping the structure that holds the magnets in a manageable state of balance. It is the natural layout where high, compact braking force is wanted without a heavy back-structure to react a one-sided magnetic pull.</p>
+<p>Placing magnets on both sides of the plate — a caliper arrangement — brakes it from each face and lets the pull from each side largely balance out. For a given size, this gives markedly more braking force than a single side. It is the natural choice where you need strong, compact braking without a heavy supporting frame.</p>
 </section>
 
 <section class="psec">
 <h2>No-power dynamic braking</h2>
-<p>Because the force comes from motion through a fixed magnetic field, the brake needs no electrical supply while it is working — an appealing property for fail-safe and emergency duty, since there is nothing to power up before it acts. There are no friction pads to wear, glaze or fade, so repeated or sustained braking does not degrade the retarding surfaces the way it does on a mechanical brake. The energy still has to go somewhere, though: it becomes heat in the reaction plate, which is why the thermal path is part of the design rather than an afterthought.</p>
+<p>The brake needs no power while it works, which makes it well suited to fail-safe and emergency duty — there is nothing to switch on before it acts. There are no friction pads to wear out or fade, so repeated braking does not wear the braking surfaces the way a mechanical brake does. The energy has to go somewhere, though: it becomes heat in the plate, so we plan the cooling as part of the design.</p>
 </section>
 
 <section class="psec">
 <h2>Zero-speed holding caveat</h2>
-<p>The one behaviour to design around is that the force is zero at a standstill — with no relative motion there are no eddy currents, and therefore no braking. A PM eddy-current brake is a dynamic brake: it is excellent at shedding speed but cannot hold a load stationary. Where zero-speed restraint is required — parking on a grade, holding at a station, securing a launch sled — it should be paired with a mechanical holding brake that takes over once the vehicle is slow or stopped.</p>
+<p>One thing to plan for: the brake gives no force at a standstill. With nothing moving there are no eddy currents, so there is no braking. It is excellent at shedding speed but cannot hold a load still. Where you need to hold at rest — parking on a slope, waiting at a station, holding a launch sled — pair it with a mechanical holding brake that takes over once the vehicle has slowed or stopped.</p>
 <div class="callout">Dynamic, not static: pair with a mechanical holding brake wherever the load must be held at rest.</div>
 </section>
 
 <section class="psec">
-<h2>Thermal and demagnetisation checks</h2>
-<p>All the braked energy ends up as heat in the reaction plate, so we run the full duty cycle in simulation and check the plate against its thermal limits before committing to a design — peak temperature under a worst-case stop, and steady temperature under repeated duty. Because permanent magnets can lose strength if driven too hot, we also check that the magnets stay comfortably within their safe temperature and operating range across the envelope. We size the brake with equivalent-circuit models, cross-check the force and the fields with FEA, and confirm the thermal and demagnetisation margins in simulation before cutting metal.</p>
+<h2>How we prove a design</h2>
+<p>Because the braking energy turns into heat, we check that both the plate and the magnets stay safely within their temperature limits for your duty. We size the brake with proven engineering models, confirm the force and heat with detailed simulation, and check it against your route before we build anything.</p>
 </section>
 
 <section class="psec">

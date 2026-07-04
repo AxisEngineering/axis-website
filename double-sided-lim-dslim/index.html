@@ -18,6 +18,26 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/site-pages.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.axisengineering.co.uk/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Double-sided LIM (DSLIM)",
+      "item": "https://www.axisengineering.co.uk/double-sided-lim-dslim/"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to main content</a>
@@ -42,21 +62,21 @@
 </header>
 <section class="ph-hero"><div class="wrap"><div class="crumb"><a href="/">Home</a> / Double-sided LIM (DSLIM)</div><span class="eyebrow">Topology</span><h1>Double-Sided Linear Induction Motors (DSLIM)</h1><p class="lede">Two primaries, a bare fin, and normal forces balanced in the frame — why double-sided LIMs suit width-limited, high-thrust duties.</p></div></section>
 <main id="main" class="wrap">
-<p class="lead-in">A double-sided linear induction motor drives a bare conductive fin from both faces at once. It is the configuration to reach for when you want high thrust density from a light, passive track member and you want the strong sideways pull on the steel that a single-sided motor produces to largely disappear.</p>
+<p class="lead-in">A double-sided linear induction motor drives a bare conductive fin from both sides at once. It is the configuration to reach for when you want high thrust from a light, passive track, without the strong one-sided pull that a single-sided motor produces.</p>
 
-<section class="psec"><h2>Why double-sided</h2><p>A DSLIM places two primary windings, one either side of a thin aluminium or copper reaction fin, and energises them so their travelling fields work the plate together. Because both active faces push the same fin, a DSLIM can approach twice the thrust of a single active face for a given track width, under comparable current, air-gap and thermal limits. That makes it a natural choice where thrust per unit of track width matters and where the reaction member needs to stay light and simple.</p></section>
+<section class="psec"><h2>Why double-sided</h2><p>A double-sided motor places one primary either side of a thin aluminium or copper fin, so both faces drive the same fin together. Working the fin from both sides can give close to twice the thrust of a single-sided motor for the same track width. That makes it a natural choice where you need a lot of thrust from a narrow, light track.</p></section>
 
-<section class="psec"><h2>Normal-force cancellation in the frame</h2><p>A single-sided motor pulls hard toward the steel back-iron behind its reaction plate, and that normal attraction is often larger than the useful thrust. In a double-sided motor the two primaries sit on opposite faces of the fin, so their normal pulls act against each other and largely cancel within the motor frame. The result is that the mounting and bearings see mostly the useful thrust rather than a large one-sided attraction, which typically simplifies the mechanical support and the guidance system.</p><div class="callout">The two opposing magnetic pulls cancel in the frame, so the structure carries thrust, not a heavy one-sided attraction.</div></section>
+<section class="psec"><h2>Balanced magnetic pull</h2><p>A single-sided motor pulls hard toward the steel behind its reaction plate, and that sideways pull is often bigger than the useful thrust. In a double-sided motor the two halves sit on opposite sides of the fin, so their pulls act against each other and cancel out. The mounting and bearings then carry mostly the useful thrust, which keeps the support and guidance simpler.</p><div class="callout">The two opposing magnetic pulls cancel out, so the structure carries thrust, not a heavy one-sided pull.</div></section>
 
-<section class="psec"><h2>Thrust density and active-face area</h2><p>With two working faces sharing one fin, a DSLIM concentrates more thrust into a given track length and width than a comparable single-sided layout. Thrust still comes from air-gap power divided by the field speed, refined for the longitudinal end-effect and transverse edge-effect that every finite linear motor carries, so the design work is in getting real usable force from that doubled active area rather than assuming it arrives for free. We size the geometry, winding and drive to hold that thrust across the required speed range and duty, then confirm it in simulation.</p></section>
+<section class="psec"><h2>High thrust in a small space</h2><p>With two sides sharing one fin, a double-sided motor packs more thrust into a given length and width of track than a single-sided one. We size the motor and its drive to hold that thrust across the speeds and duty you need, then confirm it in simulation before anything is built.</p></section>
 
-<section class="psec"><h2>Gap tolerance and packaging</h2><p>A double-sided motor splits its total working gap across two faces, and the fin has to run between the two primaries, so the mechanical alignment and the available packaging space drive the design as much as the electromagnetics do. Tighter gaps generally lift performance but demand more of the guidance and tolerances, so the sensible envelope is set by how accurately the fin can be held centred over the full route. We treat gap, alignment and packaging together, and check the chosen envelope against the thermal and structural limits before committing to metal.</p></section>
+<section class="psec"><h2>Alignment and fit</h2><p>The fin runs in the gap between the two halves of the motor, so keeping it centred matters. A smaller gap lifts performance but asks more of the guidance, so we set the gap to suit how accurately the fin can be held over the whole route, and check it fits the space and stays within safe temperatures before building.</p></section>
 
-<section class="psec"><h2>The bare aluminium or copper fin (no back-iron)</h2><p>Because the field is supplied from both sides, a DSLIM needs no steel back-iron behind the reaction member; the track member can be a plain aluminium or copper fin. That makes the passive part light, low-cost and simple to install over long distances, which is attractive where the whole active length has to be built into the route. The trade-offs, principally the fin material and thickness, the two-sided alignment and the added track structure, are ones we weigh explicitly against a single-sided arrangement for each application.</p>
-<div class="pcards"><div class="pcard"><h3>DSLIM fin</h3><p>Bare aluminium or copper, no back-iron, driven from both faces, with opposing normal pulls that largely cancel in the frame.</p></div><div class="pcard"><h3>SSLIM plate</h3><p>Conductive plate over a steel back-iron, driven from one face, with a significant normal attraction toward the steel to be carried by the structure.</p></div></div></section>
+<section class="psec"><h2>A simple, light track</h2><p>Because the motor drives from both sides, the track can be a plain aluminium or copper fin with no steel behind it. That makes the passive track light, low-cost and easy to install over long distances. For each project we weigh this against a single-sided design and recommend whichever suits the job.</p>
+<div class="pcards"><div class="pcard"><h3>Double-sided fin</h3><p>Bare aluminium or copper, no steel behind it, driven from both sides, with the magnetic pulls cancelling out.</p></div><div class="pcard"><h3>Single-sided plate</h3><p>Conductive plate on a steel backing, driven from one side, with a strong one-sided pull the structure has to carry.</p></div></div></section>
 
-<section class="psec"><h2>Applications</h2><p>The double-sided configuration suits duties that want high thrust density along a light, continuous track, and where adhesion-independent drive matters because rain, ice or gradients would otherwise limit a friction drive. Typical fits include people-movers and transit, launch systems such as roller-coasters and test sleds, maglev propulsion, and industrial and material-handling lines. We size each one with equivalent-circuit models, cross-check with FEA, run the full route and duty in simulation, and confirm the thermal limits before any metal is cut.</p>
-<ul><li>People-movers and transit where thrust per unit track width and a light passive rail both matter.</li><li>Launch systems, including coaster and test-sled propulsion, needing repeatable high thrust.</li><li>Maglev propulsion, drawing on the same travelling-field principle.</li><li>Industrial and material handling over long, continuous active lengths.</li></ul></section>
+<section class="psec"><h2>Where it is used</h2><p>The double-sided motor suits jobs that want high thrust from a light, continuous track, and where the drive must not rely on grip, so rain, ice or slopes make no difference. We prove each design with circuit models and detailed simulation, run the full route and duty, and confirm it stays within safe temperatures before any metal is cut.</p>
+<ul><li>People-movers and transit where a light track and high thrust both matter.</li><li>Launch systems, such as roller-coasters and test sleds, needing repeatable high thrust.</li><li>Maglev propulsion, using the same principle.</li><li>Industrial and material handling over long distances.</li></ul></section>
 
 <section class="psec"><h2>Related</h2><div class="rellinks"><a href="/linear-induction-motors/">Linear induction motors</a> <a href="/linear-induction-motor-design/">LIM design services</a> <a href="/applications/maglev-propulsion/">Maglev propulsion</a></div></section>
 

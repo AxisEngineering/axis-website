@@ -32,7 +32,7 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Organization",
+  "@type": ["Organization", "ProfessionalService"],
   "name": "Axis Engineering",
   "description": "Design, manufacture and simulation of linear induction motors (LIMs) and permanent-magnet braking solutions for transit, launch and industrial systems.",
   "url": "https://www.axisengineering.co.uk/",
@@ -62,7 +62,13 @@
     "postalCode": "DE12 7AP",
     "addressCountry": "GB"
   },
-  "knowsAbout": ["Linear induction motors", "SSLIM", "DSLIM", "Permanent-magnet eddy-current brakes", "Maglev propulsion", "Finite element analysis", "Route simulation"]
+  "knowsAbout": ["Linear induction motors", "SSLIM", "DSLIM", "Permanent-magnet eddy-current brakes", "Maglev propulsion", "Finite element analysis", "Route simulation"],
+  "image": "https://www.axisengineering.co.uk/assets/og-banner.png",
+  "areaServed": ["United Kingdom", "Europe"],
+  "makesOffer": [
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Linear induction motor design and manufacture", "serviceType": "Linear induction motor design" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Permanent-magnet eddy-current brake design", "serviceType": "Magnetic braking" } }
+  ]
 }
 </script>
 

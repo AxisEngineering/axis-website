@@ -18,6 +18,26 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/site-pages.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.axisengineering.co.uk/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Maglev propulsion",
+      "item": "https://www.axisengineering.co.uk/applications/maglev-propulsion/"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to main content</a>
@@ -42,17 +62,17 @@
 </header>
 <section class="ph-hero"><div class="wrap"><div class="crumb"><a href="/">Home</a> / Maglev propulsion</div><span class="eyebrow">Application</span><h1>Linear Motor Propulsion for Maglev Systems</h1><p class="lede">The contactless thrust path for levitated vehicles — high-speed linear-motor propulsion, sized and simulated at system level.</p></div></section>
 <main id="main" class="wrap">
-<p class="lead-in">Maglev removes the wheel from the equation, and the linear motor is what moves the vehicle once it is off the rail. Here we deal only with propulsion — the travelling-field thrust that accelerates and holds speed — as a system distinct from the levitation and guidance that carry and steer the vehicle.</p>
+<p class="lead-in">Maglev takes the wheel out of the equation, and the linear motor is what moves the vehicle once it is off the rail. This page looks at propulsion — the thrust that gets the vehicle moving and holds it at speed — which is a separate job from the levitation and guidance that carry and steer it.</p>
 
-<section class="psec"><h2>The contactless thrust path</h2><p>A linear induction motor is a rotary machine unrolled: a straight primary winding produces a magnetic field that travels along its length instead of rotating, and that travelling field drags a conductive reaction plate along with it. Because the force is transmitted through the air gap rather than through a wheel, propulsion is adhesion-independent — the drive does not rely on friction between vehicle and track, so it is not limited by the wheel-rail slip that constrains a conventional friction drive on grades or in the wet. That same property is what makes the motor a natural fit for a levitated vehicle, where there is no wheel contact to drive against in the first place.</p><div class="callout">Propulsion and levitation are separate jobs. The linear motor supplies thrust through the air gap; the suspension system carries and guides the vehicle. Sizing each to its own duty keeps both honest.</div></section>
+<section class="psec"><h2>The contactless thrust path</h2><p>A linear motor is a normal rotary motor unrolled flat. Instead of spinning, it produces a magnetic field that travels along its length, and that travelling field pulls a metal reaction plate along with it. The force passes across a small air gap rather than through a wheel, so the drive does not depend on grip between vehicle and track. That makes it a natural fit for a levitated vehicle, where there is no wheel contact to push against in the first place — and it means the motor is not held back by wheel slip on steep grades or in the wet.</p><div class="callout">Propulsion and levitation are separate jobs. The linear motor supplies thrust across the air gap; the suspension carries and guides the vehicle. Sizing each to its own duty keeps both honest.</div></section>
 
-<section class="psec"><h2>High-speed propulsion</h2><p>The field speed is set by the drive frequency and the pole spacing, and slip — the small difference between field speed and vehicle speed — is one of the variables that set thrust. Thrust ultimately comes from air-gap power divided by field speed, then refined with longitudinal end-effect and transverse edge-effect corrections that become more significant as speed rises and as the primary enters and leaves the reaction plate. An inverter or variable-frequency drive raises the field speed with the vehicle across the working range, so the motor can hold useful thrust from launch to line speed within its current, gap and thermal limits rather than at a single fixed operating point.</p></section>
+<section class="psec"><h2>High-speed propulsion</h2><p>A variable-speed drive raises the speed of the travelling field to keep pace with the vehicle. That lets the motor hold useful thrust all the way from a standing start to line speed, rather than working well at only one fixed speed. The motor is sized so it stays within its electrical, air-gap and temperature limits right across that range.</p></section>
 
-<section class="psec"><h2>Primary placement options</h2><p>Where the powered part sits shapes the whole system, and there are two established arrangements. Each trades vehicle simplicity against how much active hardware the route has to carry, and the right choice depends on route length, service pattern and how the vehicles are maintained.</p><div class="pcards"><div class="pcard"><h3>On-board primary</h3><p>The short powered primary travels on the vehicle and works against a passive reaction rail running the length of the route. This needs the fewest motors, but you pay for continuous rail along every metre of track.</p></div><div class="pcard"><h3>Wayside primary</h3><p>The long primary is built into the track and the vehicle carries only a short reaction plate. The vehicle stays light and passive, but you power and control the whole active length of guideway, energising sections as the vehicle passes.</p></div></div></section>
+<section class="psec"><h2>Where the powered part sits</h2><p>There are two main ways to arrange the system. The choice comes down to route length, service pattern and how the vehicles are maintained.</p><div class="pcards"><div class="pcard"><h3>Powered part on the vehicle</h3><p>The powered part travels on the vehicle and works against a plain reaction rail that runs the length of the route. This needs the fewest motors, but you pay for continuous rail along the whole track.</p></div><div class="pcard"><h3>Powered part in the track</h3><p>The powered part is built into the track and the vehicle carries only a short reaction plate. The vehicle stays light and simple, but the track has to be powered and controlled section by section as the vehicle passes.</p></div></div></section>
 
-<section class="psec"><h2>Reaction rail and secondary constraints</h2><p>Whichever primary placement you choose, the passive secondary sets much of what the motor can deliver. Its conductivity, thickness, back-iron arrangement and — critically — the running air gap all feed directly into the achievable thrust and the losses dissipated in the plate. On a levitated vehicle the gap is held by the suspension rather than by a wheel, so the propulsion design and the suspension design have to be reconciled together: the gap the motor is sized for must be the gap the vehicle actually flies at, across its speed range and load cases, or the thrust prediction will not hold in service.</p><ul><li>Reaction-plate material and thickness, and how they trade conductivity against mechanical robustness and thermal capacity.</li><li>The running air gap and how tightly the suspension holds it under load, speed and disturbance.</li><li>Back-iron arrangement and the normal forces it introduces between primary and secondary, which the structure must carry.</li><li>End and edge geometry, which govern how severe the end-effect and edge-effect corrections become at speed.</li></ul></section>
+<section class="psec"><h2>The reaction rail and the air gap</h2><p>The plain reaction rail the motor works against has a big say in how much thrust you get. On a levitated vehicle the air gap is held by the suspension rather than by a wheel, so the propulsion and the suspension have to be designed together. The gap the motor is sized for has to be the gap the vehicle actually runs at, right across its speed range and loads, or the thrust figures will not hold up in service.</p></section>
 
-<section class="psec"><h2>System-level duty simulation</h2><p>A maglev propulsion system is only as good as its behaviour over a real journey, not at a single design point. We size the motor with equivalent-circuit models, cross-check the field and force predictions with FEA, then run the full route in duty simulation — the grades, station stops, headways and speed profile — and check the thermal limits the winding and reaction plate will actually see before any metal is cut. That route/duty and thermal loop is where the placement choice, gap budget and drive strategy are proven together, so the numbers quoted are ones the system can hold within its design envelope.</p></section>
+<section class="psec"><h2>Proven over the whole journey</h2><p>A propulsion system has to work over a real journey, not just at a single design point. We size the motor, model it in detail and simulate the full route — the gradients, station stops and speed profile — and check the temperatures the motor and reaction rail will really see before anything is built. That is where the layout, air-gap budget and drive strategy are proven together, so the figures we quote are ones the system can actually hold in service.</p></section>
 
 <section class="psec"><h2>Related</h2><div class="rellinks"><a href="/linear-induction-motors/">Linear induction motors</a> <a href="/double-sided-lim-dslim/">DSLIM</a> <a href="/applications/people-movers/">People movers</a></div></section>
 
