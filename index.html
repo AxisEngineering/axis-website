@@ -569,6 +569,8 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.7);padding:64px 0 30px
 /* ============ ENQUIRY FORM ============ */
 .enquiry-form{display:flex;flex-direction:column;gap:12px;margin-top:4px}
 .enquiry-form .ef-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.enquiry-form .ef-field{display:flex;flex-direction:column;gap:5px;min-width:0}
+.enquiry-form label{font-family:var(--font-display);font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.72)}
 .enquiry-form input,.enquiry-form select,.enquiry-form textarea{width:100%;font-family:var(--font-body);font-size:.95rem;color:var(--ink);background:#fff;border:1.5px solid transparent;border-radius:10px;padding:12px 14px;transition:border-color .2s,box-shadow .2s}
 .enquiry-form input::placeholder,.enquiry-form textarea::placeholder{color:var(--slate)}
 .enquiry-form select{cursor:pointer;color:var(--ink);appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' stroke='%238294A6' stroke-width='2'%3E%3Cpath d='M4 6l4 4 4-4'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:38px}
@@ -1300,11 +1302,12 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.7);padding:64px 0 30px
             <input type="hidden" name="from_name" value="Axis Engineering website">
             <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
             <div class="ef-row">
-              <input type="text" name="name" placeholder="Your name" autocomplete="name" aria-label="Your name" required>
-              <input type="text" name="company" placeholder="Company" autocomplete="organization" aria-label="Company">
+              <div class="ef-field"><label for="ef-name">Name</label><input id="ef-name" type="text" name="name" placeholder="Your name" autocomplete="name" required></div>
+              <div class="ef-field"><label for="ef-company">Company</label><input id="ef-company" type="text" name="company" placeholder="Company" autocomplete="organization"></div>
             </div>
-            <input type="email" name="email" placeholder="Email address" autocomplete="email" aria-label="Email address" required>
-            <select name="application" required aria-label="Application type">
+            <div class="ef-field"><label for="ef-email">Email</label><input id="ef-email" type="email" name="email" placeholder="Email address" autocomplete="email" required></div>
+            <div class="ef-field"><label for="ef-application">Application</label>
+            <select id="ef-application" name="application" required>
               <option value="" disabled selected>Application type…</option>
               <option>Linear motor — transit / people mover</option>
               <option>Linear motor — launch / acceleration</option>
@@ -1312,8 +1315,8 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.7);padding:64px 0 30px
               <option>Permanent-magnet brake</option>
               <option>Feasibility / consultation</option>
               <option>Other</option>
-            </select>
-            <textarea name="duty" rows="3" placeholder="One line on the duty — speed, mass, force, environment…" aria-label="One line on the duty — speed, mass, force, environment" required></textarea>
+            </select></div>
+            <div class="ef-field"><label for="ef-duty">Duty</label><textarea id="ef-duty" name="duty" rows="3" placeholder="One line on the duty — speed, mass, force, environment…" required></textarea></div>
             <button type="submit" class="btn btn-primary ef-submit">Send enquiry
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </button>
