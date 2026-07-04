@@ -97,8 +97,17 @@ main{padding:20px 0 10px}
 .unroll-fig svg{width:100%;height:auto;display:block}
 .unroll-fig .diagram-cap{margin-top:14px;text-align:center;font-size:.92rem;color:var(--slate);font-style:italic;line-height:1.5}
 
-@media (max-width:760px){
+/* ---- mobile nav (hamburger) ---- */
+.nav-toggle{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px;padding:8px;min-width:44px;min-height:44px;align-items:center;justify-content:center}
+.nav-toggle span{width:26px;height:2.5px;background:var(--navy-800);border-radius:2px;transition:.3s}
+@media (max-width:1000px){
   .ph-nav{display:none}
+  .nav-toggle{display:flex}
+  .ph .btn{display:none}
+  .ph-nav.open{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:#fff;padding:20px 24px;gap:14px;box-shadow:var(--shadow-md);border-top:1px solid var(--line)}
+  .ph-nav.open a{color:var(--navy-800);font-size:1rem}
+}
+@media (max-width:760px){
   .pf-grid{grid-template-columns:1fr;gap:26px}
   .page-cta{padding:38px 24px}
   .ph-hero{padding:58px 0 50px}
