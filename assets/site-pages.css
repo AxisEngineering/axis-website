@@ -5,7 +5,7 @@
 :root{
   --navy-900:#001B3A; --navy-800:#002B5C; --navy-700:#013A78;
   --blue:#2050E8; --blue-bright:#3D74FF; --cyan:#62B4FF;
-  --ink:#0A1A2C; --slate:#566678; --slate-light:#8294A6;
+  --ink:#0A1A2C; --slate:#566678; --slate-light:#566678;
   --bg:#fff; --bg-soft:#F3F7FC; --bg-mid:#E9F1FA;
   --line:#DCE6F1; --line-soft:#EAF1F8;
   --radius:16px; --radius-lg:24px;

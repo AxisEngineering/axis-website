@@ -61,12 +61,12 @@
   </div>
 </header>
 <section class="ph-hero"><div class="wrap"><div class="crumb"><a href="/">Home</a> / Linear induction motors</div><span class="eyebrow">Technology</span><h1>Linear Induction Motors</h1><p class="lede">How a linear induction motor produces contactless thrust — the configurations, the materials, and what Axis designs, manufactures and validates.</p></div></section>
-<main id="main" class="wrap">
+<main id="main" class="wrap" tabindex="-1">
 <p class="lead-in">A linear induction motor produces thrust straight along a line of travel, with no gearbox, no driven wheels and no contact between the working parts. This page covers what a LIM is, how it works, the main configurations, and how Axis designs, builds and proves one.</p>
 
 <section class="psec">
 <h2>What a LIM is</h2>
-<p>A linear induction motor is simply a rotary motor unrolled and laid out flat. Rather than spinning a field inside a round stator, a straight primary — the powered winding — sets up a magnetic field that travels along its length. That travelling field passes over a nearby conductive plate, the reaction plate, and drags it along. One part carries the primary; the other is just a passive conductor. The force is produced across an air gap, so nothing needs to touch.</p>
+<p>A linear induction motor is simply a rotary motor unrolled and laid out flat. Rather than spinning a field inside a round stator, a straight primary — the powered part — sets up a magnetic field that travels along its length. That travelling field passes over a nearby conductive plate, the reaction plate, and drags it along. One part carries the primary; the other is just a passive conductor. The force is produced across an air gap, so nothing needs to touch.</p>
 <div class="callout">Because the thrust is produced magnetically and does not rely on wheel-to-rail grip, a LIM keeps pulling in the wet, in ice and on steep grades — conditions that would make an ordinary friction drive slip.</div>
 <figure class="unroll-fig">
   <div class="u-kicker">A linear motor is a rotary motor, unrolled</div>
@@ -142,7 +142,7 @@
 
 <section class="psec">
 <h2>How thrust is produced</h2>
-<p>The travelling field always runs a little faster than the reaction plate. That small difference in speed is what induces currents in the plate, and those currents are what create the thrust that pushes it along. In practice the running gap, the plate material and the speed all affect how much thrust you get, which is why we model each design properly rather than rely on a single rule of thumb.</p>
+<p>In normal motoring, the travelling field runs a little faster than the reaction plate. That small difference in speed is what induces currents in the plate, and those currents are what create the thrust that pushes it along. In practice the running gap, the plate material and the speed all affect how much thrust you get, which is why we model each design properly rather than rely on a single rule of thumb.</p>
 </section>
 
 <section class="psec">
@@ -240,7 +240,7 @@
 
         <!-- config badge -->
         <g><rect x="666" y="214" width="66" height="24" rx="8" fill="#E9F1FA" stroke="#DCE6F1"/><text x="699" y="230" text-anchor="middle" font-family="Space Grotesk" font-size="11" font-weight="700" fill="#2050E8" letter-spacing="1">SSLIM</text></g>
-        <g><rect x="28" y="214" width="104" height="24" rx="8" fill="#F4F8FC" stroke="#DCE6F1"/><text x="80" y="230" text-anchor="middle" font-family="Space Grotesk" font-size="10.5" font-weight="600" fill="#8294A6" letter-spacing="1.5">SIDE VIEW</text></g>
+        <g><rect x="28" y="214" width="104" height="24" rx="8" fill="#F4F8FC" stroke="#DCE6F1"/><text x="80" y="230" text-anchor="middle" font-family="Space Grotesk" font-size="10.5" font-weight="600" fill="#566678" letter-spacing="1.5">SIDE VIEW</text></g>
 
         <!-- fixed track / guideway -->
         <rect x="0" y="192" width="760" height="9" fill="#C9D7E8"/>
@@ -252,7 +252,7 @@
         <!-- primary (3-phase stator) fixed on the track -->
         <rect x="280" y="174" width="320" height="18" rx="3" fill="#012B5C"/>
         <g fill="#2050E8"><rect x="288" y="178" width="14" height="10" rx="1"/><rect x="306" y="178" width="14" height="10" rx="1"/><rect x="324" y="178" width="14" height="10" rx="1"/><rect x="342" y="178" width="14" height="10" rx="1"/><rect x="360" y="178" width="14" height="10" rx="1"/><rect x="378" y="178" width="14" height="10" rx="1"/><rect x="396" y="178" width="14" height="10" rx="1"/><rect x="414" y="178" width="14" height="10" rx="1"/><rect x="432" y="178" width="14" height="10" rx="1"/><rect x="450" y="178" width="14" height="10" rx="1"/><rect x="468" y="178" width="14" height="10" rx="1"/><rect x="486" y="178" width="14" height="10" rx="1"/><rect x="504" y="178" width="14" height="10" rx="1"/><rect x="522" y="178" width="14" height="10" rx="1"/><rect x="540" y="178" width="14" height="10" rx="1"/><rect x="558" y="178" width="14" height="10" rx="1"/></g>
-        <text x="440" y="232" text-anchor="middle" fill="#8294A6" font-family="Space Grotesk" font-size="10.5" letter-spacing="1">PRIMARY &#183; TRAVELLING FIELD &#8594;</text>
+        <text x="440" y="232" text-anchor="middle" fill="#566678" font-family="Space Grotesk" font-size="10.5" letter-spacing="1">PRIMARY &#183; TRAVELLING FIELD &#8594;</text>
 
         <!-- travelling magnetic field (sine wave), clipped to the primary -->
         <g clip-path="url(#lmwclip)">
@@ -264,7 +264,7 @@
 
         <!-- vehicle: cab + wheels + conductive reaction plate (accelerates away) -->
         <g class="lm-veh">
-          <g class="lm-speed" stroke="#8294A6" stroke-width="2.6" stroke-linecap="round" style="opacity:0">
+          <g class="lm-speed" stroke="#566678" stroke-width="2.6" stroke-linecap="round" style="opacity:0">
             <line x1="36" y1="116" x2="-6" y2="116"/><line x1="36" y1="125" x2="-18" y2="125"/><line x1="36" y1="134" x2="-6" y2="134"/>
           </g>
           <rect x="100" y="150" width="64" height="11" rx="2" fill="#C6D4E6" stroke="#9DB0C9" stroke-width="1"/>
@@ -292,7 +292,7 @@
         </defs>
 
         <!-- view label + config badge -->
-        <g><rect x="28" y="214" width="104" height="24" rx="8" fill="#F4F8FC" stroke="#DCE6F1"/><text x="80" y="230" text-anchor="middle" font-family="Space Grotesk" font-size="10.5" font-weight="600" fill="#8294A6" letter-spacing="1.5">PLAN VIEW</text></g>
+        <g><rect x="28" y="214" width="104" height="24" rx="8" fill="#F4F8FC" stroke="#DCE6F1"/><text x="80" y="230" text-anchor="middle" font-family="Space Grotesk" font-size="10.5" font-weight="600" fill="#566678" letter-spacing="1.5">PLAN VIEW</text></g>
         <g><rect x="666" y="214" width="66" height="24" rx="8" fill="#E9F1FA" stroke="#DCE6F1"/><text x="699" y="230" text-anchor="middle" font-family="Space Grotesk" font-size="11" font-weight="700" fill="#2050E8" letter-spacing="1">DSLIM</text></g>
 
         <!-- guideway seen from above -->
@@ -305,7 +305,7 @@
         <g fill="#2050E8"><rect x="288" y="108" width="14" height="6" rx="1"/><rect x="306" y="108" width="14" height="6" rx="1"/><rect x="324" y="108" width="14" height="6" rx="1"/><rect x="342" y="108" width="14" height="6" rx="1"/><rect x="360" y="108" width="14" height="6" rx="1"/><rect x="378" y="108" width="14" height="6" rx="1"/><rect x="396" y="108" width="14" height="6" rx="1"/><rect x="414" y="108" width="14" height="6" rx="1"/><rect x="432" y="108" width="14" height="6" rx="1"/><rect x="450" y="108" width="14" height="6" rx="1"/><rect x="468" y="108" width="14" height="6" rx="1"/><rect x="486" y="108" width="14" height="6" rx="1"/><rect x="504" y="108" width="14" height="6" rx="1"/><rect x="522" y="108" width="14" height="6" rx="1"/></g>
         <rect x="280" y="146" width="320" height="14" rx="2" fill="#012B5C"/>
         <g fill="#2050E8"><rect x="288" y="146" width="14" height="6" rx="1"/><rect x="306" y="146" width="14" height="6" rx="1"/><rect x="324" y="146" width="14" height="6" rx="1"/><rect x="342" y="146" width="14" height="6" rx="1"/><rect x="360" y="146" width="14" height="6" rx="1"/><rect x="378" y="146" width="14" height="6" rx="1"/><rect x="396" y="146" width="14" height="6" rx="1"/><rect x="414" y="146" width="14" height="6" rx="1"/><rect x="432" y="146" width="14" height="6" rx="1"/><rect x="450" y="146" width="14" height="6" rx="1"/><rect x="468" y="146" width="14" height="6" rx="1"/><rect x="486" y="146" width="14" height="6" rx="1"/><rect x="504" y="146" width="14" height="6" rx="1"/><rect x="522" y="146" width="14" height="6" rx="1"/></g>
-        <text x="440" y="196" text-anchor="middle" fill="#8294A6" font-family="Space Grotesk" font-size="10.5" letter-spacing="1">TWO PRIMARIES &#183; TRAVELLING FIELDS &#8594;</text>
+        <text x="440" y="196" text-anchor="middle" fill="#566678" font-family="Space Grotesk" font-size="10.5" letter-spacing="1">TWO PRIMARIES &#183; TRAVELLING FIELDS &#8594;</text>
 
         <!-- travelling fields in the slot (both sweep the same way) -->
         <g clip-path="url(#lmwclipP)"><g class="lm-wave"><path d="M210 119 q18 -4 36 0 t36 0 t36 0 t36 0 t36 0 t36 0 t36 0 t36 0 t36 0 t36 0 t36 0 t36 0 t36 0 t36 0" stroke="#62B4FF" stroke-width="2.2" fill="none" opacity=".8"/></g></g>
@@ -313,7 +313,7 @@
 
         <!-- the vehicle (plan) + its reaction plate, drawn dotted because it is hidden beneath -->
         <g class="lm-veh">
-          <g class="lm-speed" stroke="#8294A6" stroke-width="2.6" stroke-linecap="round" style="opacity:0">
+          <g class="lm-speed" stroke="#566678" stroke-width="2.6" stroke-linecap="round" style="opacity:0">
             <line x1="34" y1="118" x2="-8" y2="118"/><line x1="34" y1="130" x2="-22" y2="130"/><line x1="34" y1="142" x2="-8" y2="142"/>
           </g>
           <rect x="100" y="124" width="92" height="12" rx="2" fill="#E8C68A" fill-opacity=".32" stroke="#C9974B" stroke-width="1.5" stroke-dasharray="4 3"/>
@@ -334,7 +334,7 @@
 
 <section class="psec">
 <h2>Primary on the vehicle or on the track</h2>
-<p>The powered primary can sit on the vehicle or be built into the track. Which works out best is mostly a question of cost — how many vehicles run and how much of the route is in use at once.</p>
+<p>The powered primary can sit on the vehicle or be built into the track. Which works out best comes down to how many vehicles run and how much of the route is active at once.</p>
 <ul>
 <li><strong>Primary on the vehicle.</strong> Each vehicle carries its own primary and a passive conductive rail runs the length of the track. This needs the fewest primaries, but you pay for rail all the way along.</li>
 <li><strong>Primary in the track.</strong> The primary is built into the track and the vehicle carries only a light passive plate. The vehicles stay simple and unpowered, but the whole active length of track has to be built and powered.</li>
