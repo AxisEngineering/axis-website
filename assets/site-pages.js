@@ -1,4 +1,4 @@
-/* Inner-page navigation and user-controlled technical illustrations. */
+/* Inner-page navigation and automatically animated technical illustrations. */
 (() => {
   'use strict';
   const toggle=document.getElementById('navToggle'), nav=document.getElementById('siteNav');
@@ -12,35 +12,27 @@
   }
   const year=document.getElementById('year');if(year)year.textContent=new Date().getFullYear();
   const reduce=window.matchMedia('(prefers-reduced-motion:reduce)');
-  const diagrams=[...document.querySelectorAll('.diagram-disclosure')];
-  const controllers=[];
-  diagrams.forEach(details=>{
-    const content=details.querySelector('.diagram-content'),button=details.querySelector('.animation-toggle'),svgs=[...content.querySelectorAll('svg')];
-    const setPlaying=playing=>{
-      playing=playing&&details.open&&!reduce.matches;
+  const diagrams=[...document.querySelectorAll('.diagram-content')];
+  let printing=false;
+  const updateMotion=()=>{
+    const playing=!reduce.matches&&!document.hidden&&!printing;
+    diagrams.forEach(content=>{
       content.dataset.playing=String(playing);
-      button.setAttribute('aria-pressed',String(playing));
-      button.textContent=reduce.matches?'Reduced motion: paused':playing?'Pause animation':'Play animation';
-      button.disabled=reduce.matches;
-      if(content.getAnimations)content.getAnimations({subtree:true}).forEach(a=>playing?a.play():a.pause());
-      svgs.forEach(svg=>{if(typeof svg.pauseAnimations==='function'){if(playing)svg.unpauseAnimations();else svg.pauseAnimations();}});
-    };
-    button.style.display='inline-flex';
-    svgs.forEach(svg=>{if(typeof svg.setCurrentTime==='function'){svg.setCurrentTime(8.2);svg.pauseAnimations();}});
-    setPlaying(false);
-    button.addEventListener('click',()=>setPlaying(content.dataset.playing!=='true'));
-    details.addEventListener('toggle',()=>{if(!details.open)setPlaying(false);});
-    controllers.push(()=>setPlaying(false));
-  });
-  reduce.addEventListener('change',()=>controllers.forEach(pause=>pause()));
-  document.addEventListener('visibilitychange',()=>{if(document.hidden)controllers.forEach(pause=>pause());});
-  const revealAnchor=()=>{
-    let id;try{id=decodeURIComponent(location.hash.slice(1));}catch{return;}
-    const element=document.getElementById(id),details=element&&element.closest('.diagram-disclosure');
-    if(details){details.open=true;requestAnimationFrame(()=>element.scrollIntoView());}
+      content.querySelectorAll('svg').forEach(svg=>{
+        if(typeof svg.pauseAnimations!=='function')return;
+        if(playing)svg.unpauseAnimations();
+        else{
+          svg.pauseAnimations();
+          // Keep the rotary-to-linear illustration legible in static views.
+          if(reduce.matches||printing)svg.setCurrentTime(8.2);
+        }
+      });
+    });
   };
-  revealAnchor();window.addEventListener('hashchange',revealAnchor);
-  let closedForPrint=[];
-  window.addEventListener('beforeprint',()=>{closedForPrint=diagrams.filter(d=>!d.open);diagrams.forEach(d=>d.open=true);controllers.forEach(pause=>pause());});
-  window.addEventListener('afterprint',()=>{closedForPrint.forEach(d=>d.open=false);closedForPrint=[];});
+  updateMotion();
+  reduce.addEventListener('change',updateMotion);
+  document.addEventListener('visibilitychange',updateMotion);
+  window.addEventListener('pageshow',updateMotion);
+  window.addEventListener('beforeprint',()=>{printing=true;updateMotion();});
+  window.addEventListener('afterprint',()=>{printing=false;updateMotion();});
 })();

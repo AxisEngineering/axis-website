@@ -19,9 +19,9 @@ Existing homepage fragment links remain supported.
 
 Keep inner pages concise: a short overview, four focused sections, comparison
 tables/checklists and links to related technical detail. Important operating
-limits stay visible. The six original vector illustrations remain in labelled
-native disclosures, paused by default, with Play/Pause and reduced-motion
-support. Mobile tables show their column labels; diagrams can pan inside their
+limits stay visible. The six original vector illustrations are shown inline
+and animate automatically, with no dropdowns or playback buttons. Reduced-motion
+and print views remain static. Mobile tables show their column labels; diagrams can pan inside their
 own panels. Privacy-policy wording is not part of routine copy shortening.
 
 The enquiry form uses the existing Web3Forms endpoint. Test success/failure with
