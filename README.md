@@ -5,8 +5,8 @@ induction motors (LIMs) and permanent-magnet (magnetic) braking solutions.
 
 A static multi-page site: a short homepage, product/application pages and a
 dedicated `contact/` page. Homepage/contact styles and behaviour live in
-`assets/home.css` and `assets/home.js`; technical pages retain their shared
-`assets/site-pages.css` and `assets/site-pages.js`.
+`assets/home.css` and `assets/home.js`; inner pages use the shared brand styles
+in `assets/home.css` plus `assets/site-pages.css` and `assets/site-pages.js`.
 No build step and no dependencies.
 
 **Hosting:** GitHub Pages — served from the `main` branch (root) at
@@ -16,6 +16,13 @@ Verify the deployment and the custom domain before describing a change as live.
 Keep the homepage a signpost, not a technical brochure. Detailed engineering
 explanations belong on the existing product, application and resources pages.
 Existing homepage fragment links remain supported.
+
+Keep inner pages concise: a short overview, four focused sections, comparison
+tables/checklists and links to related technical detail. Important operating
+limits stay visible. The six original vector illustrations remain in labelled
+native disclosures, paused by default, with Play/Pause and reduced-motion
+support. Mobile tables show their column labels; diagrams can pan inside their
+own panels. Privacy-policy wording is not part of routine copy shortening.
 
 The enquiry form uses the existing Web3Forms endpoint. Test success/failure with
 a mocked request; do not send test enquiries to the real sales inbox. A client

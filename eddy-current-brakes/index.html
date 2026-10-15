@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Eddy-Current Brakes for Contactless Dynamic Braking | Axis Engineering</title>
-<meta name="description" content="Eddy-current braking explained — contactless dynamic retarding force for transit, launch and industrial systems, and how permanent-magnet brakes deliver it.">
+<meta name="description" content="Magnetic drag slows a moving conductor without contact. This guide explains the principle, field-source options and limits.">
 <link rel="canonical" href="https://www.axisengineering.co.uk/eddy-current-brakes/">
 <meta name="robots" content="index,follow">
 <link rel="icon" type="image/svg+xml" href="/assets/axis-mark.svg">
 <meta property="og:title" content="Eddy-Current Brakes for Contactless Dynamic Braking | Axis Engineering">
-<meta property="og:description" content="Eddy-current braking explained — contactless dynamic retarding force for transit, launch and industrial systems, and how permanent-magnet brakes deliver it.">
+<meta property="og:description" content="Magnetic drag slows a moving conductor without contact. This guide explains the principle, field-source options and limits.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.axisengineering.co.uk/eddy-current-brakes/">
 <meta property="og:image" content="https://www.axisengineering.co.uk/assets/og-banner.png">
@@ -17,7 +17,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site-pages.css">
+<link rel="stylesheet" href="/assets/home.css">
+<link rel="stylesheet" href="/assets/site-pages.css?v=20261015-inner1">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -40,72 +41,43 @@
 </script>
 </head>
 <body>
+<noscript><style>@media(max-width:940px){.header-inner{flex-wrap:wrap;padding-block:12px}.nav-toggle{display:none}.site-nav{display:flex;position:static;order:3;flex-direction:row;flex-wrap:wrap;gap:8px 20px;width:100%;padding:0;box-shadow:none;border:0}.site-nav a{font-size:.875rem}}</style></noscript>
 <a class="skip-link" href="#main">Skip to main content</a>
-<header class="ph">
-  <div class="wrap ph-inner">
-    <a class="brand" href="/" aria-label="Axis Engineering — home">
-      <img src="/assets/axis-symbol.png" width="200" height="140" alt="Axis Engineering">
-      <span class="wm"><b>AXIS</b><span>ENGINEERING</span></span>
-    </a>
-    <nav class="ph-nav" id="phNav" aria-label="Primary">
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/" aria-label="Axis Engineering — home"><img src="/assets/axis-symbol.png" width="200" height="140" alt=""><span class="wm"><b>AXIS</b><span>ENGINEERING</span></span></a>
+    <nav id="siteNav" class="site-nav" aria-label="Primary">
       <a href="/linear-induction-motors/">Motors</a>
       <a href="/permanent-magnet-brakes/">Brakes</a>
       <a href="/linear-induction-motor-design/">Design</a>
       <a href="/technical-resources/">Resources</a>
       <a href="/#applications">Applications</a>
-      
-      <a href="/contact/">Contact</a>
+      <a href="/contact/" class="mobile-contact">Contact</a>
     </nav>
-    <a class="btn" href="/contact/">Start a project</a>
-    <button class="nav-toggle" id="phNavToggle" aria-label="Menu" aria-expanded="false" aria-controls="phNav"><span></span><span></span><span></span></button>
+    <a class="btn header-contact" href="/contact/">Start a project <span aria-hidden="true">↗</span></a>
+    <button id="navToggle" class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="siteNav"><span></span><span></span><span></span></button>
   </div>
 </header>
-<section class="ph-hero"><div class="wrap"><div class="crumb"><a href="/">Home</a> / Eddy-current brakes</div><span class="eyebrow">Braking</span><h1>Eddy-Current Brakes</h1><p class="lede">The contactless braking principle, where it is used, and how a passive permanent-magnet brake applies it.</p></div></section>
-<main id="main" class="wrap" tabindex="-1">
-<p class="lead-in">Eddy-current braking turns unwanted movement into heat with no contact and no wear. It is one of the cleanest ways to slow a fast-moving load smoothly and repeatably.</p>
-
-<section class="psec"><h2>How it works</h2><p>When metal moves past a magnetic field, small circulating currents — eddy currents — form inside the metal. These currents create a field of their own that pushes back against the movement, giving a braking force that only acts while things are moving. The force works across a small air gap, so nothing rubs and nothing wears, and the braking energy simply leaves as heat.</p><div class="callout">The braking force depends on speed: strong while you are moving, fading as you slow, and gone at a standstill.</div></section>
-
-<section class="psec"><h2>Where eddy-current brakes are used</h2><p>They suit fast, repeated stops where friction pads would overheat, fade or wear out — from transit and launch systems to industrial handling. They also pair naturally with linear-motor propulsion, which is contactless in the same way.</p><div class="pcards"><div class="pcard"><h3>Transit and people-movers</h3><p>Smooth, quiet retardation that supplements or backs up the primary brake, with no pad dust and no fade on repeated service stops.</p></div><div class="pcard"><h3>Launch and test systems</h3><p>Roller-coasters, test sleds and catapult-style launchers, where a passive, contactless stop absorbs high energy reliably run after run.</p></div><div class="pcard"><h3>Industrial and material handling</h3><p>Controlled deceleration of moving carriages and conveyors, where wear-free operation and low maintenance matter more than holding torque.</p></div></div></section>
-
-<section class="psec"><h2>Permanent-magnet vs powered</h2><p>An eddy-current brake needs a magnetic field, and there are two ways to make it. A powered version uses electric coils, so the braking force can be switched on and off, but it needs a power supply and control. A permanent-magnet version uses fixed magnets and needs no power to brake, which makes it simpler and fail-safe if the supply is lost. Our product line is built around this approach.</p><ul><li><strong>Permanent-magnet:</strong> no power needed to brake and fewer things to go wrong — best where you want dependable, always-on braking.</li><li><strong>Powered:</strong> braking you can switch on and off, at the cost of a power supply and control electronics — best where the brake must be commanded.</li></ul><p>See our <a href="/permanent-magnet-brakes/">permanent-magnet brakes</a> for the passive, no-power product.</p></section>
-
-<section class="psec"><h2>Stopping vs holding</h2><p>An eddy-current brake slows a moving load, but its force fades to zero as the load stops, so it cannot hold a vehicle still or on a slope by itself. Where something must be held in place, we add a mechanical brake that takes over once motion has stopped.</p><div class="callout">Use the eddy-current brake to stop the motion; use a mechanical brake to keep it stopped.</div></section>
-
-<section class="psec"><h2>Why contactless matters</h2><p>With no physical contact, there are no pads to wear out or fade, and performance stays consistent in rain, ice or on a slope. Maintenance is minimal, and the brake behaves the same way on its thousandth stop as on its first. Every brake is matched to its job and proven on computer models and full-duty simulation before anything is built, so we know it will perform — and stay within its temperature limits — from day one.</p></section>
-
-<section class="psec"><h2>Related</h2><div class="rellinks"><a href="/permanent-magnet-brakes/">Permanent-magnet brakes</a> <a href="/applications/people-movers/">People movers</a> <a href="/linear-induction-motors/">Linear induction motors</a></div></section>
-
-<div class="page-cta"><h2>Need a brake with no pads to fade?</h2><p>Tell us the load, speed and stop rate, and we will size a contactless brake to suit.</p><a class="btn" href="/contact/">Start a project</a></div>
-</main>
-<footer class="pf">
-  <div class="wrap">
-    <div class="pf-grid">
-      <div>
-        <h4>Axis Engineering</h4>
-        <p class="pf-about">Design, manufacture and simulation of linear induction motors and permanent-magnet braking solutions. Driven without contact.</p>
-      </div>
-      <div>
-        <h4>Explore</h4>
-        <a href="/linear-induction-motors/">Linear induction motors</a>
-        <a href="/permanent-magnet-brakes/">Permanent-magnet brakes</a>
-        <a href="/double-sided-lim-dslim/">Double-sided LIM</a>
-        <a href="/technical-resources/">Technical resources</a>
-      </div>
-      <div>
-        <h4>Company</h4>
-        <a href="/">Home</a>
-        
-        <a href="/contact/">Contact</a>
-        <a href="/privacy/">Privacy notice</a>
-      </div>
-    </div>
-    <div class="pf-bottom">
-      <span>&copy; 2026 Axis Engineering.</span>
-      <span>Unit 15, Elms Business Park, Swadlincote DE12 7AP</span>
-    </div>
+<main id="main" class="content-page" tabindex="-1">
+  <section class="ph-hero"><div class="wrap"><div class="crumb"><a href="/">Home</a> / Eddy-current brakes</div><p class="eyebrow">Braking</p><h1>How eddy-current braking works</h1><p class="lede">Magnetic drag slows a moving conductor without contact. This guide explains the principle, field-source options and limits.</p></div></section>
+  <div class="wrap technical-content">
+    <nav class="page-index" aria-label="On this page"><span>On this page</span><a href="#principle">Motion becomes heat</a><a href="#field-source">Permanent magnets or powered coils?</a><a href="#applications">Where it fits</a><a href="#limits">What sets the rating?</a></nav>
+<section class="psec" id="principle"><h2>Motion becomes heat</h2><div class="section-body"><p>A conductor moving through a magnetic field develops circulating currents. Their magnetic field opposes the motion, producing a braking force across an air gap. The absorbed energy becomes heat.</p>
+<p>Force depends on speed and the magnetic and conducting geometry. It falls to zero at standstill and need not keep increasing at high speed.</p><p class="callout"><strong>Slowing is not holding.</strong> An eddy-current brake cannot hold a stationary load. The system must provide separate low-speed stopping and holding arrangements where required.</p></div></section>
+<section class="psec" id="field-source"><h2>Permanent magnets or powered coils?</h2><div class="section-body"><div class="table-scroll" tabindex="0" role="region" aria-label="Two ways to create the field"><table><caption>Two ways to create the field</caption><thead><tr><th scope="col">Design choice</th><th scope="col">Permanent magnets</th><th scope="col">Powered coils</th></tr></thead><tbody><tr><th scope="row">Supply</th><td data-label="Permanent magnets">No electrical supply needed for the magnetic field.</td><td data-label="Powered coils">Electrical supply and control required.</td></tr><tr><th scope="row">Control</th><td data-label="Permanent magnets">Field remains present while the magnet and conductor are engaged.</td><td data-label="Powered coils">Excitation can be controlled or switched.</td></tr><tr><th scope="row">Typical fit</th><td data-label="Permanent magnets">Passive braking, including duties where loss of supply must not remove the field.</td><td data-label="Powered coils">Applications requiring commanded excitation.</td></tr></tbody></table></div><p>Axis supplies the <a href="/permanent-magnet-brakes/">permanent-magnet option</a>. A passive field is useful during power loss; the complete braking and holding system still needs its own safety assessment.</p></div></section>
+<section class="psec" id="applications"><h2>Where it fits</h2><div class="section-body"><ul><li><strong>Transit:</strong> supplementary dynamic braking for repeated service stops.</li><li><strong>Launch and test systems:</strong> high-energy deceleration of rides and sleds.</li><li><strong>Industrial handling:</strong> controlled slowing of carriages and conveyors.</li></ul></div></section>
+<section class="psec" id="limits"><h2>What sets the rating?</h2><div class="section-body"><p>There are no friction pads to wear, but the energy still has to be dissipated. Plate and magnet temperatures, cooling between stops, gap and alignment determine usable performance.</p>
+<p>Specify the load mass, speed range, braking distance, repetition rate and holding duty. Model the complete cycle rather than assuming that contactless means maintenance-free or unaffected by heat.</p></div></section>
+    <nav class="related-links" aria-label="Related pages"><span>Related</span><a href="/permanent-magnet-brakes/">Permanent-magnet brakes</a> <a href="/applications/people-movers/">People movers</a> <a href="/linear-induction-motors/">Linear induction motors</a></nav>
+    <section class="page-cta" aria-labelledby="enquiry-heading"><div><h2 id="enquiry-heading">Discuss a braking duty</h2><p>Send the load, speed range and repetition rate.</p></div><a class="btn" href="/contact/">Start a project <span aria-hidden="true">↗</span></a></section>
   </div>
+</main>
+<footer class="site-footer">
+  <div class="wrap footer-top"><div><strong>Axis Engineering</strong><p>Driven without contact. Designed and built in the UK.</p></div>
+    <nav aria-label="Footer"><a href="/technical-resources/">Technical resources</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy</a></nav>
+  </div>
+  <div class="wrap footer-bottom"><span>© <span id="year">2026</span> Axis Engineering</span><span>Swadlincote, Derbyshire · United Kingdom</span></div>
 </footer>
-<script src="/assets/site-pages.js" defer></script>
+<script src="/assets/site-pages.js?v=20261015-inner1" defer></script>
 </body>
 </html>

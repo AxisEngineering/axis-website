@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Permanent-Magnet Eddy-Current Brakes | Axis Engineering</title>
-<meta name="description" content="Permanent-magnet eddy-current brake design for contactless dynamic braking in transit, launch and industrial systems. No external power while moving.">
+<meta name="description" content="Passive, contactless braking for moving loads. No electrical supply is needed to generate the braking force; stopping and holding requirements are assessed separately.">
 <link rel="canonical" href="https://www.axisengineering.co.uk/permanent-magnet-brakes/">
 <meta name="robots" content="index,follow">
 <link rel="icon" type="image/svg+xml" href="/assets/axis-mark.svg">
 <meta property="og:title" content="Permanent-Magnet Eddy-Current Brakes | Axis Engineering">
-<meta property="og:description" content="Permanent-magnet eddy-current brake design for contactless dynamic braking in transit, launch and industrial systems. No external power while moving.">
+<meta property="og:description" content="Passive, contactless braking for moving loads. No electrical supply is needed to generate the braking force; stopping and holding requirements are assessed separately.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.axisengineering.co.uk/permanent-magnet-brakes/">
 <meta property="og:image" content="https://www.axisengineering.co.uk/assets/og-banner.png">
@@ -17,7 +17,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site-pages.css">
+<link rel="stylesheet" href="/assets/home.css">
+<link rel="stylesheet" href="/assets/site-pages.css?v=20261015-inner1">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -40,54 +41,30 @@
 </script>
 </head>
 <body>
+<noscript><style>@media(max-width:940px){.header-inner{flex-wrap:wrap;padding-block:12px}.nav-toggle{display:none}.site-nav{display:flex;position:static;order:3;flex-direction:row;flex-wrap:wrap;gap:8px 20px;width:100%;padding:0;box-shadow:none;border:0}.site-nav a{font-size:.875rem}}</style></noscript>
 <a class="skip-link" href="#main">Skip to main content</a>
-<header class="ph">
-  <div class="wrap ph-inner">
-    <a class="brand" href="/" aria-label="Axis Engineering — home">
-      <img src="/assets/axis-symbol.png" width="200" height="140" alt="Axis Engineering">
-      <span class="wm"><b>AXIS</b><span>ENGINEERING</span></span>
-    </a>
-    <nav class="ph-nav" id="phNav" aria-label="Primary">
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/" aria-label="Axis Engineering — home"><img src="/assets/axis-symbol.png" width="200" height="140" alt=""><span class="wm"><b>AXIS</b><span>ENGINEERING</span></span></a>
+    <nav id="siteNav" class="site-nav" aria-label="Primary">
       <a href="/linear-induction-motors/">Motors</a>
-      <a href="/permanent-magnet-brakes/">Brakes</a>
+      <a href="/permanent-magnet-brakes/" aria-current="page">Brakes</a>
       <a href="/linear-induction-motor-design/">Design</a>
       <a href="/technical-resources/">Resources</a>
       <a href="/#applications">Applications</a>
-      
-      <a href="/contact/">Contact</a>
+      <a href="/contact/" class="mobile-contact">Contact</a>
     </nav>
-    <a class="btn" href="/contact/">Start a project</a>
-    <button class="nav-toggle" id="phNavToggle" aria-label="Menu" aria-expanded="false" aria-controls="phNav"><span></span><span></span><span></span></button>
+    <a class="btn header-contact" href="/contact/">Start a project <span aria-hidden="true">↗</span></a>
+    <button id="navToggle" class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="siteNav"><span></span><span></span><span></span></button>
   </div>
 </header>
-<section class="ph-hero"><div class="wrap"><div class="crumb"><a href="/">Home</a> / Permanent-magnet brakes</div><span class="eyebrow">Product · braking</span><h1>Permanent-Magnet Eddy-Current Brakes</h1><p class="lede">Contactless, passive dynamic braking — how permanent-magnet eddy-current brakes work, and where they fit.</p></div></section>
-<main id="main" class="wrap" tabindex="-1">
-<p class="lead-in">A permanent-magnet eddy-current brake slows a moving mass with magnetic drag alone — no pads, no external power, no contact. It is one of the cleanest ways to shed speed.</p>
-
-<section class="psec">
-<h2>How PM eddy-current brakes work</h2>
-<p>Permanent magnets and a conductive plate move past one another. That motion sets up small electrical currents — eddy currents — in the plate, and those currents create a magnetic field that pushes back against the motion. So the brake resists whatever is moving past it. Nothing touches and nothing rubs. The braking force comes straight from the moving body's own energy, which turns into heat in the plate.</p>
-<div class="callout">Contactless by design: the retarding force comes from induced currents in the plate, not from friction between two surfaces.</div>
-</section>
-
-<section class="psec">
-<h2>How the braking force behaves</h2>
-<p>The braking force changes with speed. It is strongest through the working speed range and can ease off at very high speeds. We tune the design so the strongest braking lands where your duty needs it.</p>
-</section>
-
-<section class="psec">
-<h2>Track-mounted vs vehicle-mounted magnets</h2>
-<p>Deciding which part carries the magnets is a trade-off between how much of the track carries magnets and how much weight each vehicle has to carry. Putting the magnets on the track keeps each vehicle light, but the magnets have to run along the whole braking zone. Putting the magnets on the vehicle needs only a plain conductive rail on the route, but every vehicle then carries the added magnet weight.</p>
-<div class="pcards">
-<div class="pcard"><h3>Magnets on the track</h3><p>Conductive plate rides on the vehicle; magnets line the braking zone. Light passive vehicle, but you fit magnets over the full active length — often the better fit where braking is needed only in defined zones.</p></div>
-<div class="pcard"><h3>Magnets on the vehicle</h3><p>Vehicle carries the magnet assembly and passes over a continuous conductive rail. Simpler track, but every vehicle carries the magnet mass.</p></div>
-</div>
-</section>
-
-<section class="psec">
-<h2>See it in motion</h2>
-<p>A vehicle running into a permanent-magnet brake &mdash; the eddy currents do the retarding, with no contact.</p>
-    <div class="brake-anim">
+<main id="main" class="content-page" tabindex="-1">
+  <section class="ph-hero"><div class="wrap"><div class="crumb"><a href="/">Home</a> / Permanent-magnet brakes</div><p class="eyebrow">Product · braking</p><h1>Permanent-magnet eddy-current brakes</h1><p class="lede">Passive, contactless braking for moving loads. No electrical supply is needed to generate the braking force; stopping and holding requirements are assessed separately.</p></div></section>
+  <div class="wrap technical-content">
+    <nav class="page-index" aria-label="On this page"><span>On this page</span><a href="#force-and-speed">Braking force and speed</a><a href="#arrangements">Where the magnets sit</a><a href="#caliper">Single- or double-sided?</a><a href="#thermal-and-safety">Duty, heat and system safety</a></nav>
+<section class="psec" id="force-and-speed"><h2>Braking force and speed</h2><div class="section-body"><p>Relative motion between permanent magnets and a conductive plate induces eddy currents. These oppose motion and turn kinetic energy into heat in the plate. There are no contacting brake pads.</p>
+<p>Force varies with speed, gap, plate properties and magnet arrangement. It can peak and then fall at high speed, so the full force–speed curve must match the duty.</p><p class="callout"><strong>No zero-speed holding force.</strong> Eddy-current force falls to zero at standstill. Where a vehicle must be held at a station or on a slope, the system needs a separate holding brake.</p></div></section>
+<section class="psec" id="arrangements"><h2>Where the magnets sit</h2><div class="section-body"><div class="table-scroll" tabindex="0" role="region" aria-label="Mounting options"><table><caption>Mounting options</caption><thead><tr><th scope="col">Design choice</th><th scope="col">Track-mounted magnets</th><th scope="col">Vehicle-mounted magnets</th></tr></thead><tbody><tr><th scope="row">Vehicle carries</th><td data-label="Track-mounted magnets">A passive conductive plate or fin.</td><td data-label="Vehicle-mounted magnets">The magnet assembly.</td></tr><tr><th scope="row">Track carries</th><td data-label="Track-mounted magnets">Magnets throughout the braking zone.</td><td data-label="Vehicle-mounted magnets">A passive conductive rail.</td></tr><tr><th scope="row">Trade-off</th><td data-label="Track-mounted magnets">Light vehicles; magnet cost follows braking-zone length.</td><td data-label="Vehicle-mounted magnets">More moving mass; simpler passive track.</td></tr></tbody></table></div><details class="diagram-disclosure" id="diagram-brake1"><summary>Diagram: track-mounted magnets</summary><div class="diagram-content"><div class="diagram-toolbar"><button class="animation-toggle" type="button" aria-pressed="false">Play animation</button><span class="diagram-hint">Illustration · not to scale. Scroll sideways if needed.</span></div><div class="brake-anim">
       <svg viewBox="0 0 760 250" fill="none" role="img" aria-label="Animation: a vehicle with a conductive fin runs into a permanent-magnet brake fixed to the track; the fin cuts the magnets' field, inducing eddy currents that brake the vehicle with no contact">
         <defs>
           <linearGradient id="bkcab" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0E5BB8"/><stop offset="1" stop-color="#012B5C"/></linearGradient>
@@ -132,8 +109,7 @@
         <text class="bk-capA" x="380" y="30" text-anchor="middle" font-family="Space Grotesk" font-size="14.5" font-weight="500" fill="#44546A" style="opacity:0">The vehicle reaches the fixed magnet brake at speed.</text>
         <text class="bk-capB" x="380" y="30" text-anchor="middle" font-family="Space Grotesk" font-size="14.5" font-weight="500" fill="#44546A" style="opacity:0">Its fin cuts the field &#8212; eddy currents brake the vehicle, with no contact.</text>
       </svg>
-    </div>
-    <div class="brake-anim">
+    </div><p class="diagram-note">The vehicle carries the conductor; the magnets remain in the braking zone.</p></div></details><details class="diagram-disclosure" id="diagram-brake2"><summary>Diagram: vehicle-mounted magnets</summary><div class="diagram-content"><div class="diagram-toolbar"><button class="animation-toggle" type="button" aria-pressed="false">Play animation</button><span class="diagram-hint">Illustration · not to scale. Scroll sideways if needed.</span></div><div class="brake-anim">
       <svg viewBox="0 0 760 250" fill="none" role="img" aria-label="Animation: a vehicle carrying permanent magnets runs along a conductive reaction rail that is fixed to the track; the moving magnets induce eddy currents in the rail, braking the vehicle with no contact">
         <defs>
           <linearGradient id="bkcab2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0E5BB8"/><stop offset="1" stop-color="#012B5C"/></linearGradient>
@@ -178,65 +154,20 @@
         <text class="bk-capA" x="380" y="30" text-anchor="middle" font-family="Space Grotesk" font-size="14.5" font-weight="500" fill="#44546A" style="opacity:0">Now the magnets ride on the vehicle, sweeping conductive fins set along the track.</text>
         <text class="bk-capB" x="380" y="30" text-anchor="middle" font-family="Space Grotesk" font-size="14.5" font-weight="500" fill="#44546A" style="opacity:0">The moving magnets induce eddy currents in the fins &#8212; braking the vehicle, no contact.</text>
       </svg>
-    </div>
-</section>
-
-<section class="psec">
-<h2>Double-sided caliper arrangements</h2>
-<p>Placing magnets on both sides of the plate — a caliper arrangement — brakes it from each face and lets the pull from each side largely balance out. For a given size, this gives markedly more braking force than a single side. It is the natural choice where you need strong, compact braking without a heavy supporting frame.</p>
-</section>
-
-<section class="psec">
-<h2>No-power dynamic braking</h2>
-<p>The brake needs no power while it works, which makes it well suited to fail-safe and emergency duty — there is nothing to switch on before it acts. There are no friction pads to wear out or fade, so repeated braking does not wear the braking surfaces the way a mechanical brake does. The energy has to go somewhere, though: it becomes heat in the plate, so we plan the cooling as part of the design.</p>
-</section>
-
-<section class="psec">
-<h2>Zero-speed holding caveat</h2>
-<p>One thing to plan for: the brake gives no force at a standstill. With nothing moving there are no eddy currents, so there is no braking. It is excellent at shedding speed but cannot hold a load still. Where you need to hold at rest — parking on a slope, waiting at a station, holding a launch sled — pair it with a mechanical holding brake that takes over once the vehicle has slowed or stopped.</p>
-<div class="callout">Dynamic, not static: pair with a mechanical holding brake wherever the load must be held at rest.</div>
-</section>
-
-<section class="psec">
-<h2>How we prove a design</h2>
-<p>Because the braking energy turns into heat, we check that both the plate and the magnets stay safely within their temperature limits for your duty. We size the brake with proven engineering models, confirm the force and heat with detailed simulation, and check it against your route before we build anything.</p>
-</section>
-
-<section class="psec">
-<h2>Related</h2>
-<div class="rellinks"><a href="/eddy-current-brakes/">Eddy-current brakes</a> <a href="/linear-induction-motors/">Linear induction motors</a> <a href="/applications/launch-systems/">Launch systems</a></div>
-</section>
-
-<div class="page-cta"><h2>Need contactless braking sized to your duty?</h2><p>Tell us the mass, speeds and stops, and we will model the force, the thermal path and the holding strategy.</p><a class="btn" href="/contact/">Start a project</a></div>
-</main>
-<footer class="pf">
-  <div class="wrap">
-    <div class="pf-grid">
-      <div>
-        <h4>Axis Engineering</h4>
-        <p class="pf-about">Design, manufacture and simulation of linear induction motors and permanent-magnet braking solutions. Driven without contact.</p>
-      </div>
-      <div>
-        <h4>Explore</h4>
-        <a href="/linear-induction-motors/">Linear induction motors</a>
-        <a href="/permanent-magnet-brakes/">Permanent-magnet brakes</a>
-        <a href="/double-sided-lim-dslim/">Double-sided LIM</a>
-        <a href="/technical-resources/">Technical resources</a>
-      </div>
-      <div>
-        <h4>Company</h4>
-        <a href="/">Home</a>
-        
-        <a href="/contact/">Contact</a>
-        <a href="/privacy/">Privacy notice</a>
-      </div>
-    </div>
-    <div class="pf-bottom">
-      <span>&copy; 2026 Axis Engineering.</span>
-      <span>Unit 15, Elms Business Park, Swadlincote DE12 7AP</span>
-    </div>
+    </div><p class="diagram-note">The vehicle carries the magnets; the conducting rail remains in the track.</p></div></details></div></section>
+<section class="psec" id="caliper"><h2>Single- or double-sided?</h2><div class="section-body"><p>A double-sided caliper places magnets on both sides of the fin. Both faces contribute braking, and a symmetric layout can balance forces on the fin. The frame must still carry the internal magnetic loads.</p>
+<p>We compare force, space, clearance and support requirements against a single-sided arrangement.</p></div></section>
+<section class="psec" id="thermal-and-safety"><h2>Duty, heat and system safety</h2><div class="section-body"><ul><li><strong>Thermal:</strong> the plate absorbs braking energy. Check its cooling and both plate and magnet temperature limits over repeated stops.</li><li><strong>Power loss:</strong> permanent magnets remain active without an electrical supply. This can support an emergency-braking design, but does not establish whole-system safety.</li><li><strong>Wear:</strong> no pad contact removes that wear mechanism; temperature, clearance and inspection requirements remain.</li><li><strong>Assessment:</strong> model the force–speed curve, braking distance and thermal duty, with the holding strategy defined separately.</li></ul></div></section>
+    <nav class="related-links" aria-label="Related pages"><span>Related</span><a href="/eddy-current-brakes/">Eddy-current brakes</a> <a href="/linear-induction-motors/">Linear induction motors</a> <a href="/applications/launch-systems/">Launch systems</a></nav>
+    <section class="page-cta" aria-labelledby="enquiry-heading"><div><h2 id="enquiry-heading">Size a brake to your duty</h2><p>Tell us the mass, speed range, braking distance and stop rate.</p></div><a class="btn" href="/contact/">Start a project <span aria-hidden="true">↗</span></a></section>
   </div>
+</main>
+<footer class="site-footer">
+  <div class="wrap footer-top"><div><strong>Axis Engineering</strong><p>Driven without contact. Designed and built in the UK.</p></div>
+    <nav aria-label="Footer"><a href="/technical-resources/">Technical resources</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy</a></nav>
+  </div>
+  <div class="wrap footer-bottom"><span>© <span id="year">2026</span> Axis Engineering</span><span>Swadlincote, Derbyshire · United Kingdom</span></div>
 </footer>
-<script src="/assets/site-pages.js" defer></script>
+<script src="/assets/site-pages.js?v=20261015-inner1" defer></script>
 </body>
 </html>

@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Linear Motor Propulsion for Maglev Systems | Axis Engineering</title>
-<meta name="description" content="Linear motor propulsion for maglev systems — the contactless thrust path for high-speed vehicles, sized and simulated at system level.">
+<meta name="description" content="Contactless thrust for levitated vehicles. Motor performance is assessed alongside the suspension’s working gap and the route duty.">
 <link rel="canonical" href="https://www.axisengineering.co.uk/applications/maglev-propulsion/">
 <meta name="robots" content="index,follow">
 <link rel="icon" type="image/svg+xml" href="/assets/axis-mark.svg">
 <meta property="og:title" content="Linear Motor Propulsion for Maglev Systems | Axis Engineering">
-<meta property="og:description" content="Linear motor propulsion for maglev systems — the contactless thrust path for high-speed vehicles, sized and simulated at system level.">
+<meta property="og:description" content="Contactless thrust for levitated vehicles. Motor performance is assessed alongside the suspension’s working gap and the route duty.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.axisengineering.co.uk/applications/maglev-propulsion/">
 <meta property="og:image" content="https://www.axisengineering.co.uk/assets/og-banner.png">
@@ -17,7 +17,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site-pages.css">
+<link rel="stylesheet" href="/assets/home.css">
+<link rel="stylesheet" href="/assets/site-pages.css?v=20261015-inner1">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -40,64 +41,43 @@
 </script>
 </head>
 <body>
+<noscript><style>@media(max-width:940px){.header-inner{flex-wrap:wrap;padding-block:12px}.nav-toggle{display:none}.site-nav{display:flex;position:static;order:3;flex-direction:row;flex-wrap:wrap;gap:8px 20px;width:100%;padding:0;box-shadow:none;border:0}.site-nav a{font-size:.875rem}}</style></noscript>
 <a class="skip-link" href="#main">Skip to main content</a>
-<header class="ph">
-  <div class="wrap ph-inner">
-    <a class="brand" href="/" aria-label="Axis Engineering — home">
-      <img src="/assets/axis-symbol.png" width="200" height="140" alt="Axis Engineering">
-      <span class="wm"><b>AXIS</b><span>ENGINEERING</span></span>
-    </a>
-    <nav class="ph-nav" id="phNav" aria-label="Primary">
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/" aria-label="Axis Engineering — home"><img src="/assets/axis-symbol.png" width="200" height="140" alt=""><span class="wm"><b>AXIS</b><span>ENGINEERING</span></span></a>
+    <nav id="siteNav" class="site-nav" aria-label="Primary">
       <a href="/linear-induction-motors/">Motors</a>
       <a href="/permanent-magnet-brakes/">Brakes</a>
       <a href="/linear-induction-motor-design/">Design</a>
       <a href="/technical-resources/">Resources</a>
       <a href="/#applications">Applications</a>
-      
-      <a href="/contact/">Contact</a>
+      <a href="/contact/" class="mobile-contact">Contact</a>
     </nav>
-    <a class="btn" href="/contact/">Start a project</a>
-    <button class="nav-toggle" id="phNavToggle" aria-label="Menu" aria-expanded="false" aria-controls="phNav"><span></span><span></span><span></span></button>
+    <a class="btn header-contact" href="/contact/">Start a project <span aria-hidden="true">↗</span></a>
+    <button id="navToggle" class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="siteNav"><span></span><span></span><span></span></button>
   </div>
 </header>
-<section class="ph-hero"><div class="wrap"><div class="crumb"><a href="/">Home</a> / Maglev propulsion</div><span class="eyebrow">Application</span><h1>Linear Motor Propulsion for Maglev Systems</h1><p class="lede">The contactless thrust path for levitated vehicles — high-speed linear-motor propulsion, sized and simulated at system level.</p></div></section>
-<main id="main" class="wrap" tabindex="-1">
-<p class="lead-in">Maglev takes the wheel out of the equation, and the linear motor is what moves the vehicle once it is off the rail. This page looks at propulsion - the thrust that gets the vehicle moving and holds it at speed - a separate job from the levitation and guidance that carry and steer it.</p>
-<section class="psec"><h2>The contactless thrust path</h2><p>A linear motor is a rotary motor unrolled flat: rather than spinning, it sends a magnetic field travelling along its length, and that field pulls a reaction plate along with it. The force crosses a small air gap instead of passing through a wheel, so the drive does not depend on grip between vehicle and track - a natural fit for a levitated vehicle with no wheel contact, and free of the wheel slip that holds an ordinary drive back on steep grades or in the wet. A variable-speed drive speeds the travelling field up to match the vehicle, so the motor holds useful thrust from a standing start to line speed rather than at one fixed speed, sized so it stays within its electrical, air-gap and temperature limits right across that range.</p><div class="callout">Propulsion and levitation are separate jobs. The linear motor supplies thrust across the air gap; the suspension carries and guides the vehicle. Sizing each to its own duty keeps both honest.</div></section>
-<section class="psec"><h2>Where the primary sits</h2><p>The active part of the motor is the primary; the passive part it works against is a plain reaction plate or rail. There are two main ways to arrange them, and the choice comes down to route length, service pattern and how the vehicles are maintained.</p><div class="pcards"><div class="pcard"><h3>Primary on the vehicle</h3><p>The primary travels on the vehicle and works against a plain reaction rail that runs the length of the route. This uses the fewest motors, but needs continuous rail along the whole track.</p></div><div class="pcard"><h3>Primary in the track</h3><p>The primary is built into the track and the vehicle carries only a short reaction plate. The vehicle stays light and simple, but the track has to be powered and controlled section by section as the vehicle passes.</p></div></div></section>
-<section class="psec"><h2>The reaction rail and the air gap</h2><p>The plain reaction rail the motor works against has a big say in how much thrust you get. On a levitated vehicle the air gap is held by the suspension rather than by a wheel, so propulsion and suspension have to be designed together: the gap the motor is sized for has to be the gap the vehicle actually runs at, right across its speed range and loads, or the thrust figures will not hold up in service.</p></section>
-<section class="psec"><h2>Proven over the whole journey</h2><p>A propulsion system has to work over a real journey, not just at a single design point. We size the motor, model it in detail and simulate the full route - the gradients, station stops and speed profile - and check the temperatures the motor and reaction rail will really see before anything is built. That is where the layout, air-gap budget and drive strategy are proven together, so the figures we quote are ones the system can actually hold in service.</p></section>
-<section class="psec"><h2>Related</h2><div class="rellinks"><a href="/linear-induction-motors/">Linear induction motors</a> <a href="/double-sided-lim-dslim/">DSLIM</a> <a href="/applications/people-movers/">People movers</a></div></section>
-<div class="page-cta"><h2>Planning a levitated vehicle and need the propulsion sized to it?</h2><p>Tell us the route, speed profile and gap budget, and we will model the thrust path end to end.</p><a class="btn" href="/contact/">Start a project</a></div>
-</main>
-<footer class="pf">
-  <div class="wrap">
-    <div class="pf-grid">
-      <div>
-        <h4>Axis Engineering</h4>
-        <p class="pf-about">Design, manufacture and simulation of linear induction motors and permanent-magnet braking solutions. Driven without contact.</p>
-      </div>
-      <div>
-        <h4>Explore</h4>
-        <a href="/linear-induction-motors/">Linear induction motors</a>
-        <a href="/permanent-magnet-brakes/">Permanent-magnet brakes</a>
-        <a href="/double-sided-lim-dslim/">Double-sided LIM</a>
-        <a href="/technical-resources/">Technical resources</a>
-      </div>
-      <div>
-        <h4>Company</h4>
-        <a href="/">Home</a>
-        
-        <a href="/contact/">Contact</a>
-        <a href="/privacy/">Privacy notice</a>
-      </div>
-    </div>
-    <div class="pf-bottom">
-      <span>&copy; 2026 Axis Engineering.</span>
-      <span>Unit 15, Elms Business Park, Swadlincote DE12 7AP</span>
-    </div>
+<main id="main" class="content-page" tabindex="-1">
+  <section class="ph-hero"><div class="wrap"><div class="crumb"><a href="/">Home</a> / Maglev propulsion</div><p class="eyebrow">Application</p><h1>Linear motors for maglev propulsion</h1><p class="lede">Contactless thrust for levitated vehicles. Motor performance is assessed alongside the suspension’s working gap and the route duty.</p></div></section>
+  <div class="wrap technical-content">
+    <nav class="page-index" aria-label="On this page"><span>On this page</span><a href="#propulsion">Propulsion is separate from levitation</a><a href="#layout">Choose the primary location</a><a href="#air-gap">Match the motor gap to the suspension</a><a href="#route">Assess the complete journey</a></nav>
+<section class="psec" id="propulsion"><h2>Propulsion is separate from levitation</h2><div class="section-body"><p>The linear motor supplies longitudinal thrust; suspension and guidance support and steer the vehicle. Axis’s scope here is the propulsion motor, not the complete levitation system.</p>
+<p>A travelling magnetic field acts on a conductive reaction plate across an air gap. A variable-frequency drive changes field speed as the vehicle accelerates, while current, slip and thermal limits determine usable thrust.</p></div></section>
+<section class="psec" id="layout"><h2>Choose the primary location</h2><div class="section-body"><div class="table-scroll" tabindex="0" role="region" aria-label="Propulsion layouts"><table><caption>Propulsion layouts</caption><thead><tr><th scope="col">Design choice</th><th scope="col">Primary on vehicle</th><th scope="col">Primary in track</th></tr></thead><tbody><tr><th scope="row">Vehicle</th><td data-label="Primary on vehicle">Powered primary travels with the vehicle.</td><td data-label="Primary in track">Short, passive reaction plate.</td></tr><tr><th scope="row">Track</th><td data-label="Primary on vehicle">Passive reaction rail along the driven route.</td><td data-label="Primary in track">Motor sections powered and controlled as required.</td></tr><tr><th scope="row">Trade-off</th><td data-label="Primary on vehicle">Moving motor mass and power supply versus continuous-rail cost.</td><td data-label="Primary in track">Simpler vehicle propulsion hardware versus more active track equipment.</td></tr></tbody></table></div><p>Compare route length, fleet and service pattern, and maintenance arrangements.</p></div></section>
+<section class="psec" id="air-gap"><h2>Match the motor gap to the suspension</h2><div class="section-body"><p>Reaction-rail material and geometry affect thrust. The suspension must maintain the gap assumed in the motor design across speed, load and alignment variations.</p>
+<p>Propulsion and suspension teams therefore need one agreed gap budget. A nominal-gap result alone does not establish performance over the vehicle’s full movement envelope.</p></div></section>
+<section class="psec" id="route"><h2>Assess the complete journey</h2><div class="section-body"><ul><li><strong>Route:</strong> speed profile, gradients, acceleration and station stops.</li><li><strong>Electrical:</strong> drive frequency, voltage, current and sectional energisation.</li><li><strong>Thermal:</strong> motor and reaction-rail temperatures over repeated service.</li><li><strong>Interfaces:</strong> gap tolerance, mounting loads and guidance requirements.</li></ul><p>Axis records the layout assumptions and predicted operating range so the propulsion interfaces can be checked with the wider system.</p></div></section>
+    <nav class="related-links" aria-label="Related pages"><span>Related</span><a href="/linear-induction-motors/">Linear induction motors</a> <a href="/double-sided-lim-dslim/">DSLIM</a> <a href="/applications/people-movers/">People movers</a></nav>
+    <section class="page-cta" aria-labelledby="enquiry-heading"><div><h2 id="enquiry-heading">Developing a levitated vehicle?</h2><p>Share the route, speed profile, load and gap budget.</p></div><a class="btn" href="/contact/">Start a project <span aria-hidden="true">↗</span></a></section>
   </div>
+</main>
+<footer class="site-footer">
+  <div class="wrap footer-top"><div><strong>Axis Engineering</strong><p>Driven without contact. Designed and built in the UK.</p></div>
+    <nav aria-label="Footer"><a href="/technical-resources/">Technical resources</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy</a></nav>
+  </div>
+  <div class="wrap footer-bottom"><span>© <span id="year">2026</span> Axis Engineering</span><span>Swadlincote, Derbyshire · United Kingdom</span></div>
 </footer>
-<script src="/assets/site-pages.js" defer></script>
+<script src="/assets/site-pages.js?v=20261015-inner1" defer></script>
 </body>
 </html>
