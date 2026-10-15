@@ -9,6 +9,11 @@ dedicated `contact/` page. Homepage/contact styles and behaviour live in
 in `assets/home.css` plus `assets/site-pages.css` and `assets/site-pages.js`.
 No build step and no dependencies.
 
+Space Grotesk and Inter are self-hosted under `assets/fonts/`, with their open
+font licences. Every page shares `assets/fonts.css` and preloads the two common
+Latin WOFF2 files. Keep those preload paths and the font-face URLs identical to
+avoid duplicate downloads. Do not reintroduce external Google Fonts requests.
+
 **Hosting:** GitHub Pages — served from the `main` branch (root) at
 <https://www.axisengineering.co.uk/>. Pushing to `main` triggers deployment.
 Verify the deployment and the custom domain before describing a change as live.
