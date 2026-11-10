@@ -9,6 +9,14 @@ dedicated `contact/` page. Homepage/contact styles and behaviour live in
 in `assets/home.css` plus `assets/site-pages.css` and `assets/site-pages.js`.
 No build step and no dependencies.
 
+Cloudflare Web Analytics is installed once before the closing body tag on all
+14 HTML pages. Its public beacon token identifies this site; it is not an API
+credential. Keep the snippet on new pages and avoid duplicate installation.
+Reporting is under Cloudflare > Observability > Analytics > Web analytics for
+www.axisengineering.co.uk. Visits are not unique people; initial figures include
+our verification visits. Reports begin at installation and have no historic
+traffic. The privacy notice discloses the service. Hosting remains GitHub Pages.
+
 Space Grotesk and Inter are self-hosted under `assets/fonts/`, with their open
 font licences. Every page shares `assets/fonts.css` and preloads the two common
 Latin WOFF2 files. Keep those preload paths and the font-face URLs identical to
