@@ -10,7 +10,7 @@ in `assets/home.css` plus `assets/site-pages.css` and `assets/site-pages.js`.
 No build step and no dependencies.
 
 Cloudflare Web Analytics is installed once before the closing body tag on all
-14 HTML pages. Its public beacon token identifies this site; it is not an API
+15 HTML pages. Its public beacon token identifies this site; it is not an API
 credential. Keep the snippet on new pages and avoid duplicate installation.
 Reporting is under Cloudflare > Observability > Analytics > Web analytics for
 www.axisengineering.co.uk. Visits are not unique people; initial figures include

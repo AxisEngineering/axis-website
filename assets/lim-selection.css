@@ -1,0 +1,7 @@
+.lim-selection-figure{margin:24px 0;padding:0}
+.lim-selection-figure svg{display:block;width:100%;max-width:660px;height:auto}
+.lim-selection-scroll{overflow:auto}
+.lim-selection-scroll svg{min-width:520px}
+.lim-selection-figure figcaption{margin-top:12px;font-size:.875rem;line-height:1.6;color:var(--slate)}
+@media(max-width:600px){.lim-selection-figure{margin-inline:-8px}}
+@media print{.lim-selection-figure{break-inside:avoid}}
